@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Navbar.css';
 
 class Navbar extends Component {
+
     render() {
         return (
             <div>
@@ -13,7 +14,7 @@ class Navbar extends Component {
                             <li><a href = '/saved'>View Saved Recipes</a></li>
                             <li><a href = '/submit'>Submit Recipe</a></li>
                             <li className = 'log'><a href ='#'>Log In</a></li>
-                            <li><a href = '#'>Log Out</a></li>
+                            <li className = 'log'><a href = '#'>Log Out</a></li>
                         </ul>
                     </div>                     
                 </div> 

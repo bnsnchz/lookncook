@@ -4,7 +4,7 @@ class SubmitRecipes extends Component {
     render() {
         return (
             <div>
-                <h1>Submit Recipes</h1>
+                <h1>Submit Recipe </h1>
             </div>
         )
     }
