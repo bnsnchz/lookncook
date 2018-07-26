@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+#searchForm {
+    text-align: center;
+}
+
+input[type=text] {
+    border-color:rgb(57, 57, 238);
+    border-radius: 10px;
+    height : 16px;
+    width : 200px;
+    text-align: center;
+}
+
+
+ .searchRecipe, button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 2px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#recipeResults {
+    text-align: left;
+    padding: 0 15%;
+}
+
+#recipeUL {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.recipeList{
+    display: block;
+    border-color:rgb(57, 57, 238);
+    text-justify: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
