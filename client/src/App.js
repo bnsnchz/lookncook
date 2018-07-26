@@ -14,10 +14,10 @@ const App = () => {
       <Router>
         <Wrapper>
           <Navbar />
-            <Route exact path = '/' component={Home} />
-            <Route exact path = '/search' component={SearchRecipes} />
-            <Route exact path = '/saved' component={SavedRecipes} />
-            <Route exact path = '/submit' component={SubmitRecipes} />
+          <Route exact path = '/' component={Home} />
+          <Route exact path = '/search' component={SearchRecipes} />
+          <Route exact path = '/saved' component={SavedRecipes} />
+          <Route exact path = '/submit' component={SubmitRecipes} />
         </Wrapper>
       </Router>
     )

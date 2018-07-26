@@ -1,17 +1,18 @@
-ul {
+#navbarUL {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    display:inline-block;
+    top: 0;
+    width:100%;
 }
 
-li {
+.navbarli {
     float:left;
 }
 
-li a {
+.navbarli a {
     display: block;
     color: white;
     text-align: center;
@@ -19,21 +20,15 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.navbarli a:hover {
     background-color: #111;
 }
 
 
-#directory ul {
-    display: block;;
-}
-
-
 #navbar {
-    /* width:100%; */
     display: block;
 }
 
-/* .log li {
-    float: right;
+/* .navbarli:last-child {
+    border-right: none;
 } */
