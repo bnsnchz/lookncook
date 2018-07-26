@@ -1,37 +1,47 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class SubmitRecipes extends Component {
     state = {
         recipeTitle:'',
         instructionList:'',
         ingredientList:''
-        //wait for models to finish and replicate model format
-
     }
+
+    submitRecipe = () => {
+        var objData = {
+            title : this.state.recipeTitle,
+            instructions: this.state.instructionList.split(/\n/),
+            ingredients: this.state.ingredientList.split(/\n/)
+        }
+        console.log(objData);
+
+        // axios.post('/api/recipes', objData)
+        // .then(response => {
+        //     console.log('we received something back from backend - hooray!');
+        // }).catch(err => {
+        //     console.log(err);
+        // })
+    }
+
     handleInputChange = event => {
         event.preventDefault();
         const {name, value} = event.target
         this.setState({
             [name]:value
         })
-        this.handleBulletPoint();
+        console.log(value.split(/\n/))
     }
 
     handleFormSubmit= event => {
         event.preventDefault();
         console.log('formSubmit clicked');
-        //axios request to POST recipe
+        this.submitRecipe(this.state);
     }
 
-    handleBulletPoint = (event) => {
-        if (event === 13) {
-            console.log('you hit enter key');
-        }
-    }
-    // handleAdditionalInstructions = event => {
-    //     event.preventDefault();
-    //     console.log('clicked add');
-    // }
+ 
+    
+
 
     render() {
         return (
