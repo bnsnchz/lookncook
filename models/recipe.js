@@ -7,6 +7,10 @@ const recipeSchema = new Schema({
     required: true,
     unique: true
   },
+  cooktime: {
+    type: Number,
+    required: false
+  },
   ingredients: {
     type: Array,
     required: true
