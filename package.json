@@ -21,11 +21,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
-<<<<<<< HEAD
     "if-env": "^1.0.4",
     "mongoose": "^5.2.5"
-=======
-    "if-env": "^1.0.4"
->>>>>>> 0cb4f18... updating
   }
 }
