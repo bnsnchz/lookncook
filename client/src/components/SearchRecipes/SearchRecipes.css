@@ -1,21 +1,18 @@
-h1 {
-    text-align: center;
-}
-#searchForm {
+.searchTitle {
     text-align: center;
 }
 
-input[type=text] {
-    border-color:rgb(57, 57, 238);
-    border-radius: 10px;
-    height : 16px;
-    width : 200px;
+.searchBox {
+    border-radius: 5px;
+    height : 20px;
+    width : 500px;
     text-align: center;
+    margin-right:1%;
 }
 
 
- .searchRecipe, button {
-    background-color: #4CAF50; /* Green */
+ .searchRecipe {
+    background-color: #4f7a7f; /* Green */
     border: none;
     border-radius: 10px;
     color: white;
@@ -24,7 +21,20 @@ input[type=text] {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    height: 30px;
+    width: 100px;
 }
+
+.recipeList{
+    display: block;
+    text-justify: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid #777777;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+
 
 #recipeResults {
     text-align: left;
@@ -37,12 +47,8 @@ input[type=text] {
     padding: 0;
 }
 
-
-.recipeList{
-    display: block;
-    border-color:rgb(57, 57, 238);
-    text-justify: left;
-    padding: 14px 16px;
-    text-decoration: none;
+#searchForm {
+    text-align: center;
 }
+
 

@@ -57,7 +57,10 @@ class SubmitRecipes extends Component {
                         name='ingredientList'
                         value= {this.state.ingredientList} 
                         onChange={this.handleInputChange}
-                        placeholder='Ingredients...'>
+                        placeholder='Add your ingrediens list here...'
+                        rows = '10'
+                        cols = '40'
+                        >
                     </textarea>
                     <br/>
                     <label htmlFor='recipeTitle'>Instruction</label>
@@ -68,9 +71,9 @@ class SubmitRecipes extends Component {
                         name='instructionList' 
                         value={this.state.instructionList}
                         onChange={this.handleInputChange}
-                        placeholder='Instructions' 
+                        placeholder='Add your instructions here...' 
                         rows = '10' 
-                        cols = '100'>
+                        cols = '50'>
                     </textarea>
                     <br/>
                     <button id="submitRecipe" 
