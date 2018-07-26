@@ -2,16 +2,6 @@ body, html {
     height: 100%;
 }
 
-.hero-image {
-    background-image: url("https://media.istockphoto.com/photos/cooking-hotpot-picture-id640305574?k=6&m=640305574&s=612x612&w=0&h=kOlIXvPvUsRieB-3aMNrw6NhKANTGF2bnj8A3WNz8N4=");
-    height: 50%;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
 .hero-text {
     text-align: center;
     position: absolute;
@@ -19,4 +9,10 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+#logo{
+    margin-left: 10%;
+    margin-bottom: -20%;
+    width: 75vw;
 }

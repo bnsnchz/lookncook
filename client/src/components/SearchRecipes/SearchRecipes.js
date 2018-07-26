@@ -2,12 +2,17 @@ import React, {Component} from 'react';
 import './SearchRecipes.css'
 class SearchRecipes extends Component {
     state = {
-        search:''
-    }
-    
-    handleInputchange() {
+        recipes: [],
+        search:'',
 
     }
+    
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
     handleSubmit() {
 
@@ -19,9 +24,9 @@ class SearchRecipes extends Component {
     render() {
         return (
             <div>
-                <h1>Search Recipes</h1>
+                <h1 className="searchTitle">Search Recipes</h1>
                 <form id = 'searchForm'>
-                    <input type = 'text'></input>
+                    <input  onChange={this.handleInputchange} name='search' value={this.state.name} className="searchBox" type = 'text'></input>
                     <button className = 'searchRecipe' type = 'submit'>Search</button>
                 </form>
                 <div id = 'recipeResults'>
