@@ -18,12 +18,12 @@ class SubmitRecipes extends Component {
         }
         console.log(objData);
 
-        // axios.post('/api/recipes', objData)
-        // .then(response => {
-        //     console.log('we received something back from backend - hooray!');
-        // }).catch(err => {
-        //     console.log(err);
-        // })
+        axios.post('/api/recipes', objData)
+        .then(response => {
+            console.log('we received something back from backend - hooray!');
+        }).catch(err => {
+            console.log(err);
+        })
     }
 
     handleInputChange = event => {
@@ -36,7 +36,7 @@ class SubmitRecipes extends Component {
     }
 
     handleFormSubmit= event => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log('formSubmit clicked');
         this.submitRecipe(this.state);
     }
