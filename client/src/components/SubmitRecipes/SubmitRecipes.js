@@ -5,12 +5,14 @@ class SubmitRecipes extends Component {
     state = {
         recipeTitle:'',
         instructionList:'',
-        ingredientList:''
+        ingredientList:'',
+        cookTime: ''
     }
 
     submitRecipe = () => {
         var objData = {
             title : this.state.recipeTitle,
+            cooktime: this.state.cookTime,
             instructions: this.state.instructionList.split(/\n/),
             ingredients: this.state.ingredientList.split(/\n/)
         }
@@ -59,6 +61,18 @@ class SubmitRecipes extends Component {
                         placeholder='Required'>
                     </input>
                     <br/>
+                    <label htmlFor='recipeTitle'>Cook Time</label>
+                    <br />
+                    <input
+                        type='text'
+                        id='cookTime'
+                        name='cookTime'
+                        value={this.state.cookTime}
+                        onChange={this.handleInputChange}
+                        className='formTitle'
+                        placeholder='Time in minutes'>
+                    </input>
+                    <br />
                     <label htmlFor='ingredientList'>Ingredient List</label>
                     <br/>
                     <textarea 
