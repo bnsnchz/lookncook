@@ -50,11 +50,10 @@ class SubmitRecipes extends Component {
 
     render() {
         return (
-            <div>
+            <div id = 'submit-form'>
                 <form>
                     <br/>
                     <label htmlFor='recipeTitle'>Recipe Title</label>
-                    <br/>
                     <br/>
                     <input 
                         type = 'text' 
@@ -64,11 +63,11 @@ class SubmitRecipes extends Component {
                         onChange={this.handleInputChange}
                         className = 'formTitle'
                         placeholder='Required'
-                        rows = '10'
-                        cols = '50'>
+                        size = '50'>
                     </input>
                     <br/>
-                    <label htmlFor='recipeTitle'>Cook Time</label>
+                    <br/>
+                    <label htmlFor='cookTime'>Cook Time</label>
                     <br />
                     <input
                         type='text'
@@ -77,13 +76,12 @@ class SubmitRecipes extends Component {
                         value={this.state.cookTime}
                         onChange={this.handleInputChange}
                         className='formTitle'
-                        placeholder='Time in minutes'>
+                        placeholder='Time in minutes'
+                        size = '50'>
                     </input>
                     <br />
+                    <br />
                     <label htmlFor='keywords'>Keywords</label>
-                    <br/>
-                    <label htmlFor='ingredientList'>Ingredient List</label>
-                    <br/>
                     <br/>
                     <textarea 
                         type = 'text' 
@@ -97,6 +95,7 @@ class SubmitRecipes extends Component {
                         >
                     </textarea>
                     <br />
+                    <br />
                     <label htmlFor='ingredientList'>Ingredient List</label>
                     <br />
                     <textarea
@@ -105,15 +104,14 @@ class SubmitRecipes extends Component {
                         name='ingredientList'
                         value={this.state.ingredientList}
                         onChange={this.handleInputChange}
-                        placeholder='Add your ingrediens list here...'
+                        placeholder='Add your ingredients here...'
                         rows='10'
-                        cols='40'
+                        cols='50'
                     >
                     </textarea>
                     <br/>
                     <br/>
                     <label htmlFor='recipeTitle'>Instructions</label>
-                    <br/>
                     <br/>
                     <textarea 
                         type = 'text' 
