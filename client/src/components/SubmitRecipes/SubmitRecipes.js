@@ -88,7 +88,7 @@ class SubmitRecipes extends Component {
                     <br />
                     <label htmlFor='keywords'>
                         Keywords
-                        <div class="tooltip">  <i class="far fa-question-circle"></i>
+                        <div class="tooltip">  <i class="far fa-xs fa-question-circle"></i>
                             <span class="tooltiptext">Formatting Tips:
                             Please create a new line for each new set of instructions. For example:
                             <br/>
@@ -114,8 +114,8 @@ class SubmitRecipes extends Component {
                     <br />
                     <label htmlFor='ingredientList'>
                         Ingredient List
-                        <div class="tooltip">  <i class="far fa-question-circle"></i>
-                            <span class="tooltiptext">Formatting Tips:
+                        <div className="tooltip">  <i className="far fa-question-circle fa-xs"></i>
+                            <span className="tooltiptext">Formatting Tips:
                             Please create a new line for each new set of instructions. For example:
                             <br/>
                             (1)Cut Vegetables&#9166;
@@ -140,8 +140,8 @@ class SubmitRecipes extends Component {
                     <br/>
                     <label htmlFor='recipeTitle'>
                         Instructions
-                        <div class="tooltip">  <i class="far fa-question-circle"></i>
-                            <span class="tooltiptext">Formatting Tips:
+                        <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
+                            <span className="tooltiptext">Formatting Tips:
                             Please create a new line for each new set of instructions. For example:
                             <br/>
                             (1)Cut Vegetables&#9166;
