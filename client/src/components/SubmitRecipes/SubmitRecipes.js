@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SubmitRecipes.css'
 
 class SubmitRecipes extends Component {
     state = {
@@ -37,7 +38,9 @@ class SubmitRecipes extends Component {
         return (
             <div>
                 <form>
+                    <br/>
                     <label htmlFor='recipeTitle'>Recipe Title</label>
+                    <br/>
                     <br/>
                     <input 
                         type = 'text' 
@@ -46,10 +49,14 @@ class SubmitRecipes extends Component {
                         value={this.state.recipeTitle}
                         onChange={this.handleInputChange}
                         className = 'formTitle'
-                        placeholder='Required'>
+                        placeholder='Required'
+                        rows = '10'
+                        cols = '50'>
                     </input>
                     <br/>
+                    <br/>
                     <label htmlFor='ingredientList'>Ingredient List</label>
+                    <br/>
                     <br/>
                     <textarea 
                         type = 'text' 
@@ -57,13 +64,15 @@ class SubmitRecipes extends Component {
                         name='ingredientList'
                         value= {this.state.ingredientList} 
                         onChange={this.handleInputChange}
-                        placeholder='Add your ingrediens list here...'
+                        placeholder='Add your ingredient list here...'
                         rows = '10'
-                        cols = '40'
+                        cols = '50'
                         >
                     </textarea>
                     <br/>
-                    <label htmlFor='recipeTitle'>Instruction</label>
+                    <br/>
+                    <label htmlFor='recipeTitle'>Instructions</label>
+                    <br/>
                     <br/>
                     <textarea 
                         type = 'text' 
@@ -75,6 +84,7 @@ class SubmitRecipes extends Component {
                         rows = '10' 
                         cols = '50'>
                     </textarea>
+                    <br/>
                     <br/>
                     <button id="submitRecipe" 
                         onClick={this.handleFormSubmit}>

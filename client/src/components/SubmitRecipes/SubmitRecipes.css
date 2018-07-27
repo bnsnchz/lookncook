@@ -1,0 +1,55 @@
+.searchTitle {
+    text-align: center;
+}
+
+.searchBox {
+    border-radius: 5px;
+    height : 20px;
+    width : 500px;
+    text-align: center;
+    margin-right:1%;
+    text-align: center;
+   
+}
+
+label {
+    border-radius: 50px;
+    height : 20px;
+    width : 500px;
+    font-size:18px;
+    font-size: 30px;
+    font-weight: bold;
+   margin-left: 45%;
+}
+
+form {
+
+    background-image: url('https://cdn.wallpapersafari.com/12/50/HxY48y.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+button {
+    background-color: #4f7a7f; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 2px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    height: 75px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+}
+
+#ingredientList,#recipeTitle,#instructionList {
+    font-size: 16px;
+    margin-left: 35%;
+    
+    
+}
+
