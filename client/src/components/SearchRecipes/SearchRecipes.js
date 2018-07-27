@@ -70,9 +70,12 @@ class SearchRecipes extends Component {
                     <ul id = 'recipeUL'>
                        {this.state.recipes.map((recipe, i) => {
                            return(
-                               <li key ={i}>
-                                {recipe.dishname}
-                               </li>
+                            <div className="recipeList" key ={i}>
+                                <img className="dishPic" src={recipe.image} alt={recipe.dishname}/>
+                                <li id = {recipe._id}>
+                                    {recipe.dishname}
+                                </li>
+                            </div>
                            )
                        })}
                     </ul>

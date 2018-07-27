@@ -1,31 +1,35 @@
 .searchTitle {
     text-align: center;
+    font-size: 75px;
 }
 
 .searchBox {
     border-radius: 5px;
-    height : 20px;
-    width : 500px;
-    text-align: center;
+    height : 75px;
+    width : 1000px;
+    /* text-align: center; */
     margin-right:1%;
-    font-family: "Futura";
-
+    font-size: 50px;
 }
 
 
  .searchRecipe {
-    background-color: #4f7a7f; /* Green */
+    background-color: #4f7a7f;
     border: none;
     border-radius: 10px;
     color: white;
-    padding: 2px 8px;
+    padding: 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    height: 30px;
-    width: 100px;
-    font-family: "Futura";
+    font-size: 50px;
+    height: 75px;
+    width: 200px;
+}
+
+.dishPic{
+    max-width: 300px;
+    float: left;
 }
 
 .recipeList{
@@ -36,8 +40,7 @@
     border: 1px solid #777777;
     margin-top: 2%;
     border-radius: 10px;
-    font-family: "Futura";
-
+    font-size: 35px;
 }
 
 

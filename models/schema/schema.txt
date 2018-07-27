@@ -1,7 +1,9 @@
 
-db.recipes.insertMany([{
-        "dishname" : "Steamed rice",
+db.recipes.insertMany([
+    {
+        "dishname" : "steamed rice",
         "cooktime" : "20",
+        "image" : "https://img-aws.ehowcdn.com/560x560/photos.demandstudios.com/getty/article/3/137/AA015968.jpg",
         "keywords": [
             "grains",
             "sidedish",
@@ -23,8 +25,9 @@ db.recipes.insertMany([{
             "after 20 minutes on low flame rice is done."
         ]
     },  {
-        "dishname" : "Green beans with Bacon",
+        "dishname" : "green beans with bacon",
         "cooktime" : "20",
+        "image" : "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/10/12/0/FNM-110111_Neelys-Thanksgiving-003a_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382540832163.jpeg",
         "keywords" : [
             "pork",
             "veggies",
@@ -47,8 +50,9 @@ db.recipes.insertMany([{
             "Sprinkle with pepper, lemon juice to serve: Put the beans and bacon into a large serving bowl and sprinkle generously with freshly ground black pepper. Toss with lemon juice or vinegar and serve at once"
         ]
     },  {
-        "dishname" : "Watermelon pizza",
+        "dishname" : "watermelon pizza",
         "cooktime" : "10",
+        "image" : "https://d39ziaow49lrgk.cloudfront.net/wp-content/uploads/2017/07/FB-COLLAGE-Watermelon-Fruit-Pizza-with-Coconut-Yogurt.jpg?x88542",
         "keywords" : [
             "summer",
             "fruit",
@@ -68,10 +72,11 @@ db.recipes.insertMany([{
             "Top with blueberries and strawberries."
         ]
     },  {
-        "dishname" : "Borscht",
+        "dishname" : "borscht",
         "cooktime" : "170",
+        "image" : "https://www.curiouscuisiniere.com/wp-content/uploads/2013/12/Chunky-Polish-Borscht-3427.21.jpg",
         "keywords": [
-            "Russian",
+            "russian",
             "soup",
             "stew",
             "beets",
@@ -107,6 +112,7 @@ db.recipes.insertMany([{
     },  {
         "dishname" : "Chicken Enchiladas",
         "cooktime" : "25",
+        "image" : "http://www.hispanicfoodnetwork.com/wp-content/uploads/2016/10/Chicken-Enchilada-Recipe-1.jpg",
         "keywords" : [
             "mexican",
             "chicken",
@@ -127,44 +133,353 @@ db.recipes.insertMany([{
             "Serve warm."
         ]
     },  {
-
+        "dishname" : "Mac n cheese",
+        "cooktime" : "50",
+        "image" : "https://www.thechunkychef.com/wp-content/uploads/2016/12/Family-Favorite-Baked-Mac-and-Cheese-17.jpg",
+        "keywords" : [
+            "comfort food",
+            "baked",
+            "pasta",
+            "cheese"
+        ],
+        "ingredients" : [
+            "pasta",
+            "butter",
+            "sharp cheddar cheese",
+            "heavy cream",
+            "panko bread crumbs",
+            "pepper",
+            "salt"
+        ],
+        "instructions" : [
+            "In salted water cook pasta 1 minute under package instructions. Usually about 8 minutes. Drain",
+            "In a sauce pan melt butter over medium heat, add in 4 cups of cheese, heavy cream and salt & pepper. Stir continuously until melted, about 2 to 3 minutes.",
+            "Pre-heat oven to 350 degrees. Spray or butter 9 x 13 baking dish. Pour noodles in baking dish and pour sauce over and stir to combine.",
+            "In a bowl mix 2 cups of cheese and panko crumbs to combine. Sprinkle evenly over the macaroni mixture. Bake for 20 to 30 minutes until bubbly and golden on top."
+        ]
     },  {
-
+        "dishname" : "Lasagna",
+        "cooktime" : "115",
+        "image" : "https://lh3.googleusercontent.com/OFDEYkMDu0DAbVfP-UG3qafeG8H6KYc75J-CCVGj5fH5QWxvV5JiOwwCnv9l0UBMwOMQmkEm84jqEFUftS8PEi8=s320-c-e365",
+        "keywords" : [
+            "Italian",
+            "baked",
+            "pasta",
+            "beef"
+        ],
+        "ingredients" : [
+            "1 lb. ground beef",
+            "2-1/2 cups KRAFT Shredded Low-Moisture Part-Skim Mozzarella Cheese, divided",
+            "1 container (15 oz.) POLLY-O Natural Part Skim Ricotta Cheese",
+            "1/2 cup KRAFT Grated Parmesan Cheese, divided",
+            "1/4 cup chopped fresh parsley",
+            "1 egg, beaten",
+            "1 jar (24 oz.) CLASSICO FAMILY FAVORITES Traditional Pasta Sauce",
+            "1 cup water",
+            "12 lasagna noodles, uncooked"
+        ],
     },  {
-
+        "dishname" : "Crispy cheese and bacon potatoes",
+        "cooktime" : "60",
+        "image" : "https://lh3.googleusercontent.com/__U9hbgS-qe2ei56LqXSk8Na9VkuiRQK8cnxFlIQ5nsoEKLi9aJpufsutlCtlvOcXMku73vNZVVecK72wC5t5A=s320-c-e365",
+        "keywords" : [
+            "breakfast",
+            "potato",
+            "bacon",
+            "fried", 
+            "cheese"
+        ],
+        "ingredients" : [
+            "1/2 pound bacon",
+            "3 extra large russet potatoes, peeled and chopped into 1/2\"-3/4\" pieces, about 6 cups worth",
+            "1 teaspoon kosher salt",
+            "3/4 teaspoon freshly ground black pepper",
+            "1 1/2 cups shredded cheddar or Mexican blend shredded cheeses",
+            "3 green onions, sliced thin"
+        ],
+        "instructions": [
+            "COOK THE BACON: Spread the bacon strips out across a large rimmed baking sheet pan and place on the middle rack of a COLD oven.", 
+            "Set the temperature to 400 degrees.", 
+            "Set a timer for 16 minutes and check the bacon.",
+            "Remove it from the oven when it is as crisp or crunchy as you like. I remove ours at 18 minutes and it's a great balance of chewy crunch. If you like your bacon crispy enough to crumble, you will probably want to cook it another minute past that.",
+            "COOK THE POTATOES: While the bacon is cooking, peel and chop the potatoes.", 
+            "Transfer the bacon to a paper towel lined plate to drain. There should be 2-3 tablespoons of bacon grease left on the sheet pan. (If there is more than that, drain off a bit.) Put the potatoes on the pan and toss with tongs to thoroughly coat them in the bacon grease.", 
+            "Sprinkle with salt and pepper.", 
+            "Spread the potatoes out in a single layer and bake for 20 minutes, stir well and bake an additional 20 minutes.", 
+            "Stir again, making sure that none of the potatoes are sticking to the tray.", 
+            "Bake another 15 minutes",
+            "Chop the bacon into small pieces.", 
+            "Remove the potatoes from the oven, stir again and sprinkle generously with shredded cheese and chopped bacon.", 
+            "Return the tray to the oven and bake an additional 2-3 minutes, until the cheese has melted.", 
+            "Top with sliced green onions just before serving. Enjoy!"
+        ]
     },  {
-
+        "dishname" : "Boiled potatoes",
+        "cooktime" : "40",
+        "image" : "https://lh3.googleusercontent.com/__U9hbgS-qe2ei56LqXSk8Na9VkuiRQK8cnxFlIQ5nsoEKLi9aJpufsutlCtlvOcXMku73vNZVVecK72wC5t5A=s320-c-e365",
+        "keywords" : [
+            "potato",
+            "boiled",
+            "low-fat", 
+            "yummy",
+            "lemonchiffon"
+        ],
+        "ingredients" : [
+            "1 pound Yukon Gold potatoes or Baby Dutch yellow potatoes",
+            "2 cloves of garlic (sliced in half)",
+            "1 bay leaf",
+            "Kosher salt",
+            "2 tablespoons butter (Kerrygold’s Pure Irish Butter is my favorite. Bonus—it completely fits the holiday)",
+            "3 – 4 tablespoons chopped parsley or herb of your choice",
+            "Sea salt"
+        ],
+        "instructions" : [
+            "Bring a pot of water to a boil.",  
+            "Cut the potatoes in half, or quarters if they are larger.", 
+            "When the water is boiling, add the potatoes, garlic cloves and bay leaf, plus a good handful of kosher salt.", 
+            "Allow everything to cook for about 15 minutes or until the potatoes are done",
+            "Strain the potatoes and remove the bay leaf and pieces of garlic.", 
+            "Put the pot back on the stove and add the butter.  When the butter melts, add the potatoes and give them a good toss to coat the potatoes in all of the butter’s tastiness.", 
+            "Sprinkle with your chopped herbs and a healthy pinch of sea salt."
+        ]
     },  {
-
+        "dishname" : "Meatloaf",
+        "cooktime" : "105",
+        "image" : "https://pioneerwoman.files.wordpress.com/2010/09/5007085748_7400c77973_o1.jpg?w=585&zoom=2",
+        "keywords" : [
+            "comfort food",
+            "beef",
+            "American"
+        ],
+        "ingredients": [
+            "1 cup Whole Milk",
+            "6 slices White Bread",
+            "2 pounds Ground Beef",
+            "1 cup (heaping) Freshly Grated Parmesan Cheese",
+            "1/4 teaspoon Seasoned Salt",
+            "3/4 teaspoons Salt",
+            "Freshly Ground Black Pepper",
+            "1/3 cup Minced Flat-leaf Parsley",
+            "4 whole Eggs, Beaten",
+            "10 slices Thin/regular Bacon",
+            "Sauce:",
+            "1-1/2 cup Ketchup",
+            "1/3 cup Brown Sugar",
+            "1 teaspoon Dry Mustard",
+            "Tabasco To Taste"
+        ],
+        "instructions" : [
+            "Preheat oven to 350 degrees. Pour milk over the bread slices. Allow it to soak in for several minutes. ",
+            "Place the ground beef, milk-soaked bread, Parmesan, seasoned salt, salt, black pepper, and parsley in a large mixing bowl. Pour in beaten eggs.",
+            "With clean hands, mix the ingredients until well combined. Form the mixture into a loaf shape on a broiler pan, which will allow the fat to drain. (Line the bottom of the pan with foil to avoid a big mess!)",
+            "Lay bacon slices over the top, tucking them underneath the meatloaf. ",
+            "Make the sauce: add ketchup, brown sugar, mustard, and hot sauce in a mixing bowl. Stir together. Pour 1/3 of the mixture over the top of the bacon. Spread with a spoon. ",
+            "Bake for 45 minutes, then pour another 1/3 of the sauce over the top. Bake for another 15 minutes. Slice and serve with remaining sauce.",
+            "Serve with mashed potatoes. Yummy!"
+        ]
     },  {
-
+        "dishname" : "Kimchi",
+        "cooktime" : "2880",
+        "image" : "https://www.davidlebovitz.com/wp-content/uploads/2008/03/11814048335_ff4d16496d.jpg",
+        "keywords" : [
+            "Korean",
+            "pickeled",
+            "sidedish"
+        ],
+        "ingredients": [
+            "1 large Napa cabbage (2 pounds, 1kg)",
+            "2 tablespoons coarse salt (do not use fine table salt)",
+            "1/3 cup (80ml) white rice vinegar",
+            "3 tablespoons Korean chili pepper paste (gochujang)",
+            "1 tablespoon very-finely minced garlic",
+            "2 tablespoons coarse Korean chili powder (gokchu garu)",
+            "1 tablespoon very-finely minced fresh ginger",
+            "4 scallions, sliced in 2-inch (5cm) batons, including the green part"
+        ],
+        "instructions": [
+            "Remove the tough outer leaves of the cabbage and slice it lengthwise in half. Remove the core.",
+            "Cut the cabbage into 2-inch (5cm) pieces. Toss the cabbage with the salt in a large bowl, then transfer it to a non-reactive colander. Set a plate on top then weigh it down with something heavy for 24 hours.",
+            "Mix together the vinegar, chili paste, garlic, chili powder, and ginger in a large, nonreactive bowl.",
+            "Add the cabbage in handfuls to the marinade, taking small bunches at the time and squeezing them of any excess water before adding them to the marinade. Mix the cabbage with the marinade, adding the scallions as well.",
+            "Pack into a jar, cover tightly, and let stand at room temperature 48 hours, then chill for 4 days before serving."
+        ]
     },  {
-
+        "dishname" : "Octopus Salad",
+        "cooktime" : "30",
+        "image" : "https://www.davidlebovitz.com/wp-content/uploads/2008/03/11814048335_ff4d16496d.jpg",
+        "keywords" : [
+            "Portuguese",
+            "seafood",
+            "salad",
+            "citrus"
+        ],
+        "ingredients" : [
+            " 1 medium octopus",
+            " 4 bread slices",
+            " 2 medium onions",
+            " Pepper (to taste)",
+            " 3 cloves of garlic",
+            " Parsley (to taste)",
+            " Coriander (to taste)",
+            " 100 ml / (6 3/4 tablespoons) olive oil",
+            " 1 tablespoon vinegar",
+            " Salt (to taste)"
+        ],
+        "instructions" : [
+            "Prepare the octopus. Wash it well and place in a pressure cooker with water, a peeled onion and a sprig of parsley. Leave to cook about 20 minutes. Drain the octopus, remove to a plate and cut into pieces.",
+            "Season the octopus with a little salt, pepper, chopped parsley, chopped coriander, the remaining chopped onion and chopped garlic. Drizzle with olive oil and vinegar and mix everything with the help of two forks",
+            "Serve immediately."
+        ]
     },  {
-
+        "dishname" : "Chicken Vindaloo",
+        "cooktime" : "45",
+        "image" : "https://lh4.ggpht.com/oo-ikubAO4Gj5EbUAReJcbrf5o9FILoN3_NLzkyh5dfvRpNv0h_XNQNN3Y_w3ZbfwS0XiNtxwXg8I6_HXThtIA=s320-c-e365",
+        "keywords" : [
+            "Indian",
+            "chicken",
+            "potatoes",
+            "curry"
+        ],
+        "ingredients" : [
+            "onions",
+            "tomatoes",
+            "distilled white vinegar",
+            "large garlic clove",
+            "peeled fresh ginger",
+            "tomato paste",
+            "garam masala",
+            "ground turmeric",
+            "paprika",
+            "ground cumin",
+            "ground coriander",
+            "cayenne pepper",
+            "vegetable oil",
+            "skinless boneless chicken thighs",
+            "russet potatoes",
+            "low salt chicken broth"
+        ],
+        "instructions": [
+            "Blend first 11 ingredients and 1/4 teaspoon cayenne pepper in processor until paste forms.",
+            "Heat oil in heavy large pot over medium-high heat. Add paste from processor and cook until golden, stirring occasionally, about 3 minutes.",
+            "Add chicken and potatoes; sauté 5 minutes. ",
+            "Add broth; bring to boil.",
+            "Reduce heat to medium-low; cover and simmer until potatoes are tender, stirring occasionally, about 15 minutes.",
+            "Uncover and simmer until chicken is cooked through, about 5 minutes longer.",
+            "Season with more cayenne, if desired, and salt and pepper."
+        ]
     },  {
-
+        "dishname" : "Eggs benedict",
+        "cooktime" : "25",
+        "image" : "http://lh3.googleusercontent.com/VZ9umdU6yMcZZ3VD8UndcZPkgfa5LhEB3M0vgEKWNINR2UAGt8hKQyTeyMNfNMVtyXsPsOy7zizo1gDZpmq_=s360",
+        "keywords" : [
+            "breakfast",
+            "eggs",
+            "pork",
+            "english muffins"
+        ],
+        "ingredients" : [
+            "English muffins",
+            "canadian bacon",
+            "eggs",
+            "butter",
+            "lemon",
+            "cayenne pepper"
+        ],
+        "directions": [
+            "Bring a pot of water to a boil. While the water’s boiling, place a few English muffins halves and an equal number of Canadian bacon slices on a cookie sheet.",
+            "Lightly butter the English muffins and place them under the broiler for just a few minutes, or until the English muffins are very lightly golden. Be careful not to dry out the Canadian bacon.",
+            "Now if you do not have an egg poacher you can poach your eggs by doing the following: With a spoon, begin stirring the boiling water in a large, circular motion. When the tornado’s really twisting crack in an egg. Or two. Or three. The reason for the swirling is so the egg will wrap around itself as it cook, keeping it together. Cook for about 2 ½ to 3 minutes.",
+            "In a small saucepan, melt 2 sticks of butter until sizzling. But don’t let it burn!",
+            "Separate three eggs and place the yolks into a blender. ",
+            "Turn the blender on low to allow the yolks to combine, then begin pouring the very hot butter in a then stream into the blender. The blender should remain on the whole time, and you should be careful to pour in the butter very slowly. Keep pouring butter until it’s all gone, then immediately begin squeezing lemon juice into the blender. If you are going to add Cayenne pepper this is the point at which you would do that.",
+            "Place the English muffins on the plate, face up.",
+            "Next, place a slice of Canadian bacon on each half. Vegetarian variation: you can omit the Canadian bacon altogether, or you can wilt fresh spinach and place it on the muffins for Eggs Florentine, which is divine in its own right. ",
+            "Place the egg on top of the bacon and then top with a generous helping of Hollandaise sauce."
+        ]
     },  {
-
+        "dishname" : "Split pea soup with ham",
+        "cooktime" : "85",
+        "image" : "https://www.simplyscratch.com/wp-content/uploads/2016/01/Split-Pea-Soup-with-Ham-l-SimplyScratch.com-34-768x513.jpg",
+        "keywords" : [
+            "soup",
+            "fiber",
+            "pork"
+        ],
+        "ingredients" : [
+            "3 tablespoons unsalted butter",
+            "2 cups diced yellow onion",
+            "2/3 cup diced carrot (about 2 medium)",
+            "1/2 cup diced celery (about 2 small)",
+            "4 sprigs fresh thyme",
+            "2 smoked ham hocks (about 1-1/2 to 2 pounds in total weight)",
+            "2 cups dried split green peas, sorted and rinsed",
+            "8 cups water",
+            "3/4 to 1 teaspoon kosher salt",
+            "1/4 teaspoon freshly ground black pepper"
+        ],
+        "instructions" : [
+            "Melt butter in a large Dutch oven over medium-low heat. Add vegetables, stir, cover and cook for 5-8 minutes (stirring occasionally) until the vegetables just start to soften.",
+            "Add in the thyme leaves, ham hocks, peas and water. Cover and increase heat to high and bring to a boil. Once boiling, crack the lid and reduce the heat to a simmer and cook for 1 hour or until the ham is tender and the peas are melting into the soup.",
+            "Remove the ham hocks to a cutting board to cool and discard the thyme stems.",
+            "Ladle 4 to 5 cups of the soup into a blender. Remove the center plug from the lid and cover with a kitchen towel to allow the steam to safely escape when pureeing.", 
+            "Pour the pureed soup back into the pot with the remaining soup and keep warm on low heat",
+            "Discard the skin on the ham hocks and remove the meat from the bone (discard the bones as well).", 
+            "Dice the ham into small pieces and add it back to the pot. Taste and season with salt and pepper as desired and serve piping hot."
+        ]
     },  {
-
+        "dishname" : "mashed potatoes",
+        "cooktime" : "85",
+        "image" : "https://lh3.googleusercontent.com/vULTJbI_o01ole7tv4VwTryGBUqfnzH72fEVE0pni_WELIph8Ge4U0xQouxSQW_ItM4cHwW3mwWbqRdhS_xSqw=s320-c-e365",
+        "keywords" : [
+            "potato",
+            "clark",
+            "lemonchiffon",
+            "puree",
+            "side"
+        ],
+        "ingredients" : [
+            "red potato",
+            "kosher salt",
+            "half & half",
+            "butter",
+            "prepared horseradish",
+            "ground white pepper"
+        ],
+        "instructions" : [
+            "In a large sauce pan, set over medium-high heat, add the potatoes and salt and bring the water to a boil. Reduce the heat to medium-low and cook until the potatoes are tender but still firm.",
+            "Add the butter and half-and-half to a small saucepan and heat on medium-low just to warm the half-and-half and melt the butter. Remove from the heat and reserve.",
+            "Drain the potatoes and mash slightly with a potato masher, add the butter-cream mixture slowly while mashing, add the horseradish and combine. Taste the mash and add the salt and white pepper as well as any additional horseradish, depending on your preference.",
+            "Transfer the potatoes to a warmed serving bowl and serve immediately. Serves 6 to 8"
+        ]
     },  {
+        "dishname" : "potatoes au gratin",
+        "cooktime" : "85",
+        "image" : "https://lh3.googleusercontent.com/1UaqgvAZrw346jUpat4-at6mkz6-Jhjymn8AkVY2Kwu48E0TXbuH9OnhsR_k5OF-5UV_MSxx6qbnFPnawzTtqQ=s320-c-e365",
+        "keywords" : [
+            "potato",
+            "italian",
+            "lemonchiffon",
+            "heavy"
 
-    },  {
-
-    },  {
-
-    },  {
-
-    },  {
-
-    },  {
-
-    },  {
-
-    },  {
-
-    },  {
+        ],
+        "ingredients" : [
+            "Butter to grease the baking dish",
+            "2-1/2 cups heavy cream",
+            "1-1/2 teaspoons salt",
+            "1/4 teaspoon ground black pepper",
+            "3 large Russet or Yukon Gold potatoes (about 2-1/4 pounds), peeled and sliced very thin",
+            "1 cup grated Parmigiano-Reggiano"
+        ],
+        "instructions": [
+            "Preheat the oven to 350°F. Grease an 8-inch (or 2-quart) baking dish with butter",
+            "In a mixing bowl with a pouring spout (or large liquid measuring cup), whisk together the cream, salt and pepper.",
+            "Arrange some of the potato slices, edges overlapping, in a single layer on the bottom of the prepared baking dish.", 
+            "Sprinkle 1/4 of the cheese over the potatoes and pour 1/4 of the cream mixture over top.", 
+            "Repeat with the remaining potatoes, cheese and cream, forming 4 layers. Pour any leftover cream over top.",
+            "Place in the oven and bake, uncovered, for about an hour, or until the potatoes are tender when pierced with a knife and golden brown on top.",
+            "Let the dish settle and cool for about ten minutes before serving."
+        ]
+    }
         
-    }]
-}
+    ]
+)

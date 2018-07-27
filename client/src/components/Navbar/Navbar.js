@@ -13,7 +13,7 @@ class Navbar extends Component {
                             <li className='navbarli'><a href = '/search'>Search Recipes</a></li>
                             <li className='navbarli'><a href = '/saved'>View Saved Recipes</a></li>
                             <li className='navbarli'><a href = '/submit'>Submit Recipe</a></li>
-                            <li className='navbarlilog'><a href ='#'>Log In</a></li>
+                            <li className='navbarlilog'><a href ='/signin'>Log In</a></li>
                             <li className='navbarlilog'><a href = '#'>Log Out</a></li>
                         </ul>
                     </div>                     
