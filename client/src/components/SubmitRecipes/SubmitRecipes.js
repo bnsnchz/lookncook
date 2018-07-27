@@ -53,7 +53,9 @@ class SubmitRecipes extends Component {
             <div id = 'submit-form'>
                 <form>
                     <br/>
-                    <label htmlFor='recipeTitle'>Recipe Title</label>
+                    <label htmlFor='recipeTitle'>
+                        Recipe Title 
+                    </label>
                     <br/>
                     <input 
                         type = 'text' 
@@ -67,7 +69,10 @@ class SubmitRecipes extends Component {
                     </input>
                     <br/>
                     <br/>
-                    <label htmlFor='cookTime'>Cook Time</label>
+                    <label htmlFor='cookTime'>
+                        Cook Time
+                        
+                    </label>
                     <br />
                     <input
                         type='text'
@@ -81,9 +86,20 @@ class SubmitRecipes extends Component {
                     </input>
                     <br />
                     <br />
-                    <label htmlFor='keywords'>Keywords</label>
+                    <label htmlFor='keywords'>
+                        Keywords
+                        <div class="tooltip">  <i class="far fa-xs fa-question-circle"></i>
+                            <span class="tooltiptext">Formatting Tips:
+                            Please create a new line for each new set of instructions. For example:
+                            <br/>
+                            (1)Cut Vegetables&#9166;
+                            <br/>
+                            (2)Wash Vegetables&#9166;
+                            </span>
+                        </div>
+                    </label>
                     <br/>
-                    <textarea 
+                    <textarea
                         type = 'text' 
                         id='keywords' 
                         name='keywords'
@@ -96,7 +112,18 @@ class SubmitRecipes extends Component {
                     </textarea>
                     <br />
                     <br />
-                    <label htmlFor='ingredientList'>Ingredient List</label>
+                    <label htmlFor='ingredientList'>
+                        Ingredient List
+                        <div className="tooltip">  <i className="far fa-question-circle fa-xs"></i>
+                            <span className="tooltiptext">Formatting Tips:
+                            Please create a new line for each new set of instructions. For example:
+                            <br/>
+                            (1)Cut Vegetables&#9166;
+                            <br/>
+                            (2)Wash Vegetables&#9166;
+                            </span>
+                        </div>
+                    </label>
                     <br />
                     <textarea
                         type='text'
@@ -111,7 +138,18 @@ class SubmitRecipes extends Component {
                     </textarea>
                     <br/>
                     <br/>
-                    <label htmlFor='recipeTitle'>Instructions</label>
+                    <label htmlFor='recipeTitle'>
+                        Instructions
+                        <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
+                            <span className="tooltiptext">Formatting Tips:
+                            Please create a new line for each new set of instructions. For example:
+                            <br/>
+                            (1)Cut Vegetables&#9166;
+                            <br/>
+                            (2)Wash Vegetables&#9166;
+                            </span>
+                        </div>
+                    </label>
                     <br/>
                     <textarea 
                         type = 'text' 

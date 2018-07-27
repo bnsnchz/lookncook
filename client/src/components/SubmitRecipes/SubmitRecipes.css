@@ -16,7 +16,7 @@ label {
 
 
 button {
-    background-color: #4f7a7f; /* Green */
+    background-color: #4f7a7f;
     border: none;
     border-radius: 10px;
     color: white;
@@ -41,3 +41,50 @@ button {
     
 }
 
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    font-size:25px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    height:200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size:20px;
+    text-align:left;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -95px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.far{
+    margin-left: 5%;
+}
