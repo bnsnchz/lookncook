@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import SignIn from './components/SignIn';
 import axios from "axios";
-import { get } from 'http';
+import Dashboard from './components/Dashboard';
 
 class App extends Component {
 

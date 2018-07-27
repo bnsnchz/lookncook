@@ -89,12 +89,14 @@ class SubmitRecipes extends Component {
                     <label htmlFor='keywords'>
                         Keywords
                         <div class="tooltip">  <i class="far fa-xs fa-question-circle"></i>
-                            <span class="tooltiptext">Formatting Tips:
-                            Please create a new line for each new set of instructions. For example:
+                            <span class="tooltiptext">Keyword Tips:
+                            Adding keywords related to your recipe helps users find it! Please make sure to format it in the following way:
                             <br/>
-                            (1)Cut Vegetables&#9166;
+                            Beef&#9166;
                             <br/>
-                            (2)Wash Vegetables&#9166;
+                            Asian&#9166;
+                            <br/>
+                            Noodles&#9166;
                             </span>
                         </div>
                     </label>
@@ -116,11 +118,11 @@ class SubmitRecipes extends Component {
                         Ingredient List
                         <div className="tooltip">  <i className="far fa-question-circle fa-xs"></i>
                             <span className="tooltiptext">Formatting Tips:
-                            Please create a new line for each new set of instructions. For example:
+                            Please create a new line for each different ingredient. For example:
                             <br/>
-                            (1)Cut Vegetables&#9166;
+                            (1)Two Potatoes &#9166;
                             <br/>
-                            (2)Wash Vegetables&#9166;
+                            (2)1/4 TBSP Salt &#9166;
                             </span>
                         </div>
                     </label>
