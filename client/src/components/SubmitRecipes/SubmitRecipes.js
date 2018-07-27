@@ -14,7 +14,7 @@ class SubmitRecipes extends Component {
         var objData = {
             title : this.state.recipeTitle,
             cooktime: this.state.cookTime,
-            keywords: this.state.keywords.split(/\n/),
+            keywords: this.state.keywords.toLowerCase().split(/\n/),
             instructions: this.state.instructionList.split(/\n/),
             ingredients: this.state.ingredientList.split(/\n/)
         }

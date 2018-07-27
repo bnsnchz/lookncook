@@ -37,7 +37,7 @@ class SearchRecipes extends Component {
 
     searchRecipes = () => {
         var search = {
-            search:this.state.search.split(' ')
+            search:this.state.search.toLowerCase().split(' ')
         }
         axios.post('/api/search', search)
         .then(response => {
