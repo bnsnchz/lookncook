@@ -7,6 +7,10 @@ const recipeSchema = new Schema({
     required: true,
     unique: true
   },
+  image: {
+    type: String,
+    required: false
+  },
   cooktime: {
     type: String,
     required: false
@@ -20,8 +24,12 @@ const recipeSchema = new Schema({
     required: true
   },
   instructions: {
-      type: Array,
-      required: true,
+    type: Array,
+    required: true,
+  }, 
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
   }
 });
 
