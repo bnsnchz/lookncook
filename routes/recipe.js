@@ -18,8 +18,21 @@ router.post('/api/recipes',  function(req,res) {
   });
 });
 
+router.post('/api/search', function(req,res) {
+  console.log(req.body.search);
+  
+  Recipe.find(
+    {keywords:{$in:req.body.search}}
+  )
+  .then(response => {
+    res.json(response);
+  })
+  .catch(error => {
+    res.json(error);
+  })
+})
+
 router.get('/api/recipes', function(req,res) {
-  console.log(req.body)
   Recipe.find()
   .then(response => {
     res.json(response)
