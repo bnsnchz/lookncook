@@ -6,7 +6,6 @@ class SearchRecipes extends Component {
     state = {
         recipes: [],
         search:'',
-
     }
 
     componentDidMount() {
@@ -22,21 +21,30 @@ class SearchRecipes extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.getRecipes(this.state.search)
+        this.searchRecipes()
     }
 
     getRecipes = () => {
-        
-        console.log(this.state.search);
-        axios.get('/api/recipes/').then(response => {
-            console.log(response);
+        axios.get('/api/recipes').then(response => {
             this.setState({
                 recipes: response.data
-            }, ()=> {
-                console.log(this.state.recipes);
             })
         })
         .catch(error => {
+            console.log(error);
+        })
+    }
+
+    searchRecipes = () => {
+        var search = {
+            search:this.state.search.split(' ')
+        }
+        axios.post('/api/search', search)
+        .then(response => {
+            this.setState({
+                recipes:response.data
+            })
+        }).catch(error => {
             console.log(error);
         })
     }
