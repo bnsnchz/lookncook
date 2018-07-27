@@ -29,7 +29,11 @@
 
 .dishPic{
     max-width: 300px;
-    float: left;
+    /* float: left; */
+}
+
+.dishName{
+    /* float:right; */
 }
 
 .recipeList{

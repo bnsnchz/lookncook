@@ -2,19 +2,6 @@
     margin:auto;
     text-align: center;
 }
-.searchTitle {
-    text-align: center;
-}
-
-.searchBox {
-    border-radius: 5px;
-    height : 20px;
-    width : 500px;
-    text-align: center;
-    margin-right:1%;
-    text-align: center;
-   
-}
 
 label {
     border-radius: 50px;
