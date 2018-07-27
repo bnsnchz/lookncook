@@ -9,9 +9,21 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-family: "Futura";
+
 }
 
 #logo{
     margin-left: 10%;
     width: 75vw;
+}
+
+h3 {
+    font-family: "Futura";
+
+}
+
+p {
+    font-family: "Futura";
+
 }

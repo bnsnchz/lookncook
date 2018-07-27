@@ -20,6 +20,8 @@ label {
     font-size: 30px;
     font-weight: bold;
    margin-left: 45%;
+   font-family: "Futura";
+
 }
 
 form {
@@ -44,11 +46,14 @@ button {
     text-align: center;
     vertical-align: middle;
     margin-left: auto;
+    font-family: "Futura";
 }
 
 #ingredientList,#recipeTitle,#instructionList {
     font-size: 16px;
     margin-left: 35%;
+    font-family: "Futura";
+
     
     
 }
