@@ -6,6 +6,7 @@ router.post('/api/recipes',  function(req,res) {
   Recipe.create({
     dishname: req.body.title,
     cooktime: req.body.cooktime,
+    keywords: req.body.keywords,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions
   })

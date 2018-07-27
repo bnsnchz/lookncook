@@ -5,6 +5,7 @@ class SubmitRecipes extends Component {
     state = {
         recipeTitle:'',
         instructionList:'',
+        keywords: '',
         ingredientList:'',
         cookTime: ''
     }
@@ -13,6 +14,7 @@ class SubmitRecipes extends Component {
         var objData = {
             title : this.state.recipeTitle,
             cooktime: this.state.cookTime,
+            keywords: this.state.keywords.split(/\n/),
             instructions: this.state.instructionList.split(/\n/),
             ingredients: this.state.ingredientList.split(/\n/)
         }
@@ -73,18 +75,32 @@ class SubmitRecipes extends Component {
                         placeholder='Time in minutes'>
                     </input>
                     <br />
-                    <label htmlFor='ingredientList'>Ingredient List</label>
+                    <label htmlFor='keywords'>Keywords</label>
                     <br/>
                     <textarea 
                         type = 'text' 
-                        id='ingredientList' 
-                        name='ingredientList'
-                        value= {this.state.ingredientList} 
+                        id='keywords' 
+                        name='keywords'
+                        value= {this.state.keywords} 
                         onChange={this.handleInputChange}
-                        placeholder='Add your ingrediens list here...'
+                        placeholder='Add some keywords or tags here...'
                         rows = '10'
                         cols = '40'
                         >
+                    </textarea>
+                    <br />
+                    <label htmlFor='ingredientList'>Ingredient List</label>
+                    <br />
+                    <textarea
+                        type='text'
+                        id='ingredientList'
+                        name='ingredientList'
+                        value={this.state.ingredientList}
+                        onChange={this.handleInputChange}
+                        placeholder='Add your ingrediens list here...'
+                        rows='10'
+                        cols='40'
+                    >
                     </textarea>
                     <br/>
                     <label htmlFor='recipeTitle'>Instruction</label>

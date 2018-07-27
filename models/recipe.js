@@ -8,7 +8,11 @@ const recipeSchema = new Schema({
     unique: true
   },
   cooktime: {
-    type: Number,
+    type: String,
+    required: false
+  },
+  keywords: {
+    type: Array,
     required: false
   },
   ingredients: {
