@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './SubmitRecipes.css'
 
 class SubmitRecipes extends Component {
     state = {
@@ -51,7 +52,9 @@ class SubmitRecipes extends Component {
         return (
             <div>
                 <form>
+                    <br/>
                     <label htmlFor='recipeTitle'>Recipe Title</label>
+                    <br/>
                     <br/>
                     <input 
                         type = 'text' 
@@ -60,7 +63,9 @@ class SubmitRecipes extends Component {
                         value={this.state.recipeTitle}
                         onChange={this.handleInputChange}
                         className = 'formTitle'
-                        placeholder='Required'>
+                        placeholder='Required'
+                        rows = '10'
+                        cols = '50'>
                     </input>
                     <br/>
                     <label htmlFor='recipeTitle'>Cook Time</label>
@@ -77,6 +82,9 @@ class SubmitRecipes extends Component {
                     <br />
                     <label htmlFor='keywords'>Keywords</label>
                     <br/>
+                    <label htmlFor='ingredientList'>Ingredient List</label>
+                    <br/>
+                    <br/>
                     <textarea 
                         type = 'text' 
                         id='keywords' 
@@ -85,7 +93,7 @@ class SubmitRecipes extends Component {
                         onChange={this.handleInputChange}
                         placeholder='Add some keywords or tags here...'
                         rows = '10'
-                        cols = '40'
+                        cols = '50'
                         >
                     </textarea>
                     <br />
@@ -103,7 +111,9 @@ class SubmitRecipes extends Component {
                     >
                     </textarea>
                     <br/>
-                    <label htmlFor='recipeTitle'>Instruction</label>
+                    <br/>
+                    <label htmlFor='recipeTitle'>Instructions</label>
+                    <br/>
                     <br/>
                     <textarea 
                         type = 'text' 
@@ -115,6 +125,7 @@ class SubmitRecipes extends Component {
                         rows = '10' 
                         cols = '50'>
                     </textarea>
+                    <br/>
                     <br/>
                     <button id="submitRecipe" 
                         onClick={this.handleFormSubmit}>

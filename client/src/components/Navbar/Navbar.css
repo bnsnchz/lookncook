@@ -12,6 +12,15 @@
     float:left;
 }
 
+a {
+    font-family: "Futura";
+}
+
+h1{
+    font-family: "Futura";
+
+}
+
 .navbarli a {
     display: block;
     color: white;

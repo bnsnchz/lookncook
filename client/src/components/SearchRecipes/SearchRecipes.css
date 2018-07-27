@@ -8,6 +8,8 @@
     width : 500px;
     text-align: center;
     margin-right:1%;
+    font-family: "Futura";
+
 }
 
 
@@ -23,6 +25,7 @@
     font-size: 16px;
     height: 30px;
     width: 100px;
+    font-family: "Futura";
 }
 
 .recipeList{
@@ -33,6 +36,8 @@
     border: 1px solid #777777;
     margin-top: 2%;
     border-radius: 10px;
+    font-family: "Futura";
+
 }
 
 
@@ -50,5 +55,4 @@
 #searchForm {
     text-align: center;
 }
-
 
