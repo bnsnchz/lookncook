@@ -42,6 +42,7 @@ class App extends Component {
           <Route exact path = '/search' component={SearchRecipes} />
           <Route exact path = '/saved' component={SavedRecipes} />
           <Route exact path = '/submit' component={SubmitRecipes} />
+          <Route path = '/user' component ={Dashboard} />
           <Route exact path = '/signin' component={SignIn} />
         </Wrapper>
       </Router>
