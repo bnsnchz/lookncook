@@ -14,6 +14,13 @@ class Navbar extends Component {
         // }
     }
     
+    stylesShow = {
+        "display":"block"
+    }
+    stylesNone = {
+        "display":"none"
+    }
+
     render() {
         return (
             <div>
@@ -24,9 +31,9 @@ class Navbar extends Component {
                             <li className='navbarli'><a href = '/search'>Search Recipes</a></li>
                             <li className='navbarli'><a href = '/saved'>View Saved Recipes</a></li>
 
-                            <li className='navbarli'><a href = '/submit'>{this.state.authenticated===false?null:"Submit Recipe"}</a></li>
+                            <li className='navbarli'><a style = {this.state.authenticated===false?this.stylesNone:this.stylesShow} href = '/submit'>{this.state.authenticated===false?null:"Submit Recipe"}</a></li>
 
-                            <li className='navbarli'><a href ='/user'>{this.state.authenticated===false?null:"Account"}</a></li>
+                            <li className='navbarli'><a style = {this.state.authenticated===false?this.stylesNone:this.stylesShow} href ='/user'>{this.state.authenticated===false?null:"Account"}</a></li>
                             
                             <li className = 'navbarlilog'><a href ='/signin'>{this.state.authenticated===false?"Log In":"Log Out"}</a></li>
                         </ul>
