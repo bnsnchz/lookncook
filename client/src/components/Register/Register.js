@@ -1,43 +1,44 @@
 import React, {Component} from 'react';
-import './SignIn.css';
+import './Register.css';
 import axios from 'axios';
 
-class SignIn extends Component {
+
+class Register extends Component {
+
     state = {
-        userName : "",
-        password : "",
-        error    : null
+        // authenticated:false,
+        userName: "",
+        password: "",
+        token: ""
     }
-
-
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-        [name]: value
+            [name]: value
         });
-    };
-
-    handleSumitForm = event => {
+    }
+    handleSubmit = event => {
         event.preventDefault();
-
-        axios.post("/login", this.state).then(res=>{
-            if (res.data===true){
-                this.props.setLogin();
-                this.props.history.push('/');
-            }else{
-                this.setState({
-                    error: "Incorrect User Name or Password"
-                });
-            }
+        var userInfo = {
+            username: this.state.userName,
+            password:this.state.password,
+            token:this.state.token
+        }
+        console.log("button clicked");
+        axios.post("/register", userInfo)
+        .then(res => {
+            console.log(res);
+        })
+        .catch(error=> {
+            console.log(error)
         })
     }
 
-
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <h1 className="signInTitle">Sign In</h1>
-                <form id="signIn">
+                <h1>Hello New User, please REGISTER</h1>
+                <form id="register">
                     <label htmlFor="userName">
                     User Name:
                     </label>
@@ -75,9 +76,9 @@ class SignIn extends Component {
                         
                         <button
                             onClick={this.handleSubmit}
-                            className='signIn'
+                            className='register'
                             type = 'submit'>
-                            Log In
+                            Register
                         </button>
 
                         <span>{this.state.error}</span>
@@ -87,4 +88,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default Register;

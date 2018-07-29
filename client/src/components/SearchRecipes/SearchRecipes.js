@@ -35,6 +35,8 @@ class SearchRecipes extends Component {
         })
     }
 
+   
+
     searchRecipes = () => {
         var search = {
             search:this.state.search.toLowerCase().split(' ')
@@ -72,11 +74,10 @@ class SearchRecipes extends Component {
                            return(
                             <div className="recipeList" key ={i}>
                                 <img className="dishPic" src={recipe.image} alt={recipe.dishname}/>
-                                <li className="dishName" id = {recipe._id}>
+                                <li className="dishName" 
+                                    id = {recipe._id}>
                                     {recipe.dishname}<br/>
-                                    {/* {recipe.ingredients} */}
                                 </li>
-
                             </div>
                            )
                        })}

@@ -8,8 +8,10 @@ import Wrapper from './components/Wrapper';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import SignIn from './components/SignIn';
+import Register from "./components/Register";
 import axios from "axios";
 import Dashboard from './components/Dashboard';
+
 
 class App extends Component {
 
@@ -34,19 +36,31 @@ class App extends Component {
   }
 
   render(){ 
-       return (
+    return (
       <Router>
-        <Wrapper>
-          <Navbar />
-          <Route exact path = '/' component={Home} />
-          <Route exact path = '/search' component={SearchRecipes} />
-          <Route exact path = '/saved' render ={(props) => <SavedRecipes {...props} authenticated={this.state.authenticated}/>}/>
-          <Route exact path = '/submit' render ={(props) => <SubmitRecipes {...props} authenticated={this.state.authenticated}/>} />
-          <Route path = '/user' render ={(props) => <Dashboard {...props} authenticated={this.state.authenticated}/>} />
-          <Route exact path = '/signin' render ={(props) => <SignIn {...props} setLogin={this.setLogin}/>} />
-        </Wrapper>
+          <Wrapper>
+              <Navbar />
+              <Route exact path = '/' component={Home} />
+              <Route exact path = '/search' component={SearchRecipes} />
+              <Route exact path = '/saved' render ={(props) => 
+                <SavedRecipes {...props} authenticated={this.state.authenticated}/>}
+              />
+              <Route exact path = '/submit' render ={(props) => 
+                <SubmitRecipes {...props} authenticated={this.state.authenticated}/>} 
+              />
+              <Route path = '/user' render ={(props) => 
+                <Dashboard {...props} authenticated={this.state.authenticated}/>} 
+              />
+              <Route exact path = '/signin' render ={(props) => 
+                <SignIn {...props} setLogin={this.setLogin}/>} 
+              />
+              <Route exact path = '/register' render ={(props) => 
+                <Register {...props}/>} 
+              />
+          </Wrapper>
       </Router>
-    )}
+    )
+  }
 
 
 }

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Recipe = require('../models/recipe.js');
+const User = require('../models/user.js');
 
 router.post('/api/recipes',  function(req,res) {
   console.log(req.body);
@@ -41,4 +42,38 @@ router.get('/api/recipes', function(req,res) {
     console.log(error)
   });
 });
+
+
+
+var loggedIn = false;
+
+router.get('/auth', function(req,res) {
+  res.json(loggedIn)
+})
+router.post('/login', function(req,res) {
+  
+  User.find({
+    username: req.body.username,
+  }).then(response => {
+    if (response.username === req.body.username && response.password === req.body.password) {
+      console.log('true');
+      loggedIn=true;
+    }
+    res.json(loggedIn);
+  }).catch(error => {
+    res.json(error);
+  })
+})
+
+router.post('/register', function(req,res) {
+  User.create({
+    username : req.body.username,
+    password: req.body.password,
+    token: req.body.token
+  }).then(response => {
+    res.json(response);
+  }).catch(error => {
+    console.log(error);
+  })
+})
 module.exports = router;
