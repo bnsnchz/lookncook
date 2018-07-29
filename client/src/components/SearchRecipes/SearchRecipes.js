@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './SearchRecipes.css'
 import axios from 'axios';
 
@@ -18,6 +19,14 @@ class SearchRecipes extends Component {
       [name]: value
     });
   };
+
+//   handleRedirect= id => {
+//       axios.get(`recipe/${id}`)
+//       .then(results => {
+//           console.log(id)
+//           window.location.href = "/"
+//       })
+//   }
 
     handleSubmit = event => {
         event.preventDefault();
@@ -72,7 +81,9 @@ class SearchRecipes extends Component {
                            return(
                             <div className="recipeList" key ={i}>
                                 <img className="dishPic" src={recipe.image} alt={recipe.dishname}/>
-                                <li className="dishName" id = {recipe._id}>
+                                <li className="dishName" 
+                                onClick ={()=>
+                                this.handleRedirect({})}id = {recipe._id}>
                                     {recipe.dishname}<br/>
                                     {/* {recipe.ingredients} */}
                                 </li>
