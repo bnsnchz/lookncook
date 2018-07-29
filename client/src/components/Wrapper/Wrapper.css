@@ -1,3 +1,10 @@
+#wrapper{
+    background-position: right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+}
 
 h1 {
     font-family: "Futura";

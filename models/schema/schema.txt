@@ -31,7 +31,8 @@ db.recipes.insertMany([
         "keywords" : [
             "pork",
             "veggies",
-            "bacon"
+            "bacon", 
+            "green beans"
         ],
         "ingredients" : [ 
             "1 pound fresh green beans, ends snipped off and discarded, extra long beans, cut in half if you want", 
@@ -56,7 +57,8 @@ db.recipes.insertMany([
         "keywords" : [
             "summer",
             "fruit",
-            "pizza"
+            "pizza", 
+            "watermelon"
         ],
         "ingredients" : [ 
             "1 seedless watermelon", 
@@ -80,7 +82,8 @@ db.recipes.insertMany([
             "soup",
             "stew",
             "beets",
-            "beef"
+            "beef", 
+            "borscht"
         ],
         "ingredients" : [ 
             "8 cups beef broth or beef stock", 
@@ -110,13 +113,14 @@ db.recipes.insertMany([
             "Serve ladled into bowls with a dollop of sour cream and a sprinkling of fresh dill."
         ]
     },  {
-        "dishname" : "Chicken Enchiladas",
+        "dishname" : "chicken enchiladas",
         "cooktime" : "25",
         "image" : "http://www.hispanicfoodnetwork.com/wp-content/uploads/2016/10/Chicken-Enchilada-Recipe-1.jpg",
         "keywords" : [
             "mexican",
             "chicken",
-            "cheese"
+            "cheese", 
+            "enchiladas"
         ],
         "ingredients" : [ 
             "2 chicken breasts, boneless and skinless", 
@@ -133,14 +137,16 @@ db.recipes.insertMany([
             "Serve warm."
         ]
     },  {
-        "dishname" : "Mac n cheese",
+        "dishname" : "mac n cheese",
         "cooktime" : "50",
         "image" : "https://www.thechunkychef.com/wp-content/uploads/2016/12/Family-Favorite-Baked-Mac-and-Cheese-17.jpg",
         "keywords" : [
             "comfort food",
             "baked",
             "pasta",
-            "cheese"
+            "cheese",
+            "mac", 
+            "macncheese"
         ],
         "ingredients" : [
             "pasta",
@@ -158,14 +164,16 @@ db.recipes.insertMany([
             "In a bowl mix 2 cups of cheese and panko crumbs to combine. Sprinkle evenly over the macaroni mixture. Bake for 20 to 30 minutes until bubbly and golden on top."
         ]
     },  {
-        "dishname" : "Lasagna",
+        "dishname" : "lasagna",
         "cooktime" : "115",
         "image" : "https://lh3.googleusercontent.com/OFDEYkMDu0DAbVfP-UG3qafeG8H6KYc75J-CCVGj5fH5QWxvV5JiOwwCnv9l0UBMwOMQmkEm84jqEFUftS8PEi8=s320-c-e365",
         "keywords" : [
             "Italian",
             "baked",
             "pasta",
-            "beef"
+            "beef", 
+            "lasagna",
+            "my mom's dank"
         ],
         "ingredients" : [
             "1 lb. ground beef",
@@ -179,7 +187,7 @@ db.recipes.insertMany([
             "12 lasagna noodles, uncooked"
         ],
     },  {
-        "dishname" : "Crispy cheese and bacon potatoes",
+        "dishname" : "crispy cheese and bacon potatoes",
         "cooktime" : "60",
         "image" : "https://lh3.googleusercontent.com/__U9hbgS-qe2ei56LqXSk8Na9VkuiRQK8cnxFlIQ5nsoEKLi9aJpufsutlCtlvOcXMku73vNZVVecK72wC5t5A=s320-c-e365",
         "keywords" : [
@@ -187,7 +195,9 @@ db.recipes.insertMany([
             "potato",
             "bacon",
             "fried", 
-            "cheese"
+            "cheese", 
+            "cripsy",
+            "potatoes"
         ],
         "ingredients" : [
             "1/2 pound bacon",
@@ -214,15 +224,16 @@ db.recipes.insertMany([
             "Top with sliced green onions just before serving. Enjoy!"
         ]
     },  {
-        "dishname" : "Boiled potatoes",
+        "dishname" : "boiled potatoes",
         "cooktime" : "40",
-        "image" : "https://lh3.googleusercontent.com/__U9hbgS-qe2ei56LqXSk8Na9VkuiRQK8cnxFlIQ5nsoEKLi9aJpufsutlCtlvOcXMku73vNZVVecK72wC5t5A=s320-c-e365",
+        "image" : "http://www.dvo.com/link/0313_015658329.jpg",
         "keywords" : [
             "potato",
             "boiled",
             "low-fat", 
             "yummy",
-            "lemonchiffon"
+            "lemonchiffon", 
+            "potatoes"
         ],
         "ingredients" : [
             "1 pound Yukon Gold potatoes or Baby Dutch yellow potatoes",
@@ -243,13 +254,15 @@ db.recipes.insertMany([
             "Sprinkle with your chopped herbs and a healthy pinch of sea salt."
         ]
     },  {
-        "dishname" : "Meatloaf",
+        "dishname" : "meatloaf",
         "cooktime" : "105",
         "image" : "https://pioneerwoman.files.wordpress.com/2010/09/5007085748_7400c77973_o1.jpg?w=585&zoom=2",
         "keywords" : [
             "comfort food",
             "beef",
-            "American"
+            "american",
+            "meatloaf",
+            "meat"
         ],
         "ingredients": [
             "1 cup Whole Milk",
@@ -278,13 +291,14 @@ db.recipes.insertMany([
             "Serve with mashed potatoes. Yummy!"
         ]
     },  {
-        "dishname" : "Kimchi",
+        "dishname" : "kimchi",
         "cooktime" : "2880",
         "image" : "https://www.davidlebovitz.com/wp-content/uploads/2008/03/11814048335_ff4d16496d.jpg",
         "keywords" : [
-            "Korean",
-            "pickeled",
-            "sidedish"
+            "korean",
+            "pickled",
+            "sidedish",
+            "kimchi"
         ],
         "ingredients": [
             "1 large Napa cabbage (2 pounds, 1kg)",
@@ -304,14 +318,16 @@ db.recipes.insertMany([
             "Pack into a jar, cover tightly, and let stand at room temperature 48 hours, then chill for 4 days before serving."
         ]
     },  {
-        "dishname" : "Octopus Salad",
+        "dishname" : "octopus Salad",
         "cooktime" : "30",
-        "image" : "https://www.davidlebovitz.com/wp-content/uploads/2008/03/11814048335_ff4d16496d.jpg",
+        "image" : "https://i.pinimg.com/originals/ac/03/a2/ac03a25dbdc1389372a4219dd2d7777a.jpg",
         "keywords" : [
-            "Portuguese",
+            "portuguese",
             "seafood",
             "salad",
-            "citrus"
+            "citrus", 
+            "octopus"
+            
         ],
         "ingredients" : [
             " 1 medium octopus",
@@ -331,14 +347,15 @@ db.recipes.insertMany([
             "Serve immediately."
         ]
     },  {
-        "dishname" : "Chicken Vindaloo",
+        "dishname" : "chicken vindaloo",
         "cooktime" : "45",
         "image" : "https://lh4.ggpht.com/oo-ikubAO4Gj5EbUAReJcbrf5o9FILoN3_NLzkyh5dfvRpNv0h_XNQNN3Y_w3ZbfwS0XiNtxwXg8I6_HXThtIA=s320-c-e365",
         "keywords" : [
-            "Indian",
+            "indian",
             "chicken",
             "potatoes",
-            "curry"
+            "curry", 
+            "vindaloo"
         ],
         "ingredients" : [
             "onions",
@@ -368,14 +385,15 @@ db.recipes.insertMany([
             "Season with more cayenne, if desired, and salt and pepper."
         ]
     },  {
-        "dishname" : "Eggs benedict",
+        "dishname" : "eggs benedict",
         "cooktime" : "25",
         "image" : "http://lh3.googleusercontent.com/VZ9umdU6yMcZZ3VD8UndcZPkgfa5LhEB3M0vgEKWNINR2UAGt8hKQyTeyMNfNMVtyXsPsOy7zizo1gDZpmq_=s360",
         "keywords" : [
             "breakfast",
             "eggs",
             "pork",
-            "english muffins"
+            "english muffins",
+            "benedict"
         ],
         "ingredients" : [
             "English muffins",
@@ -397,13 +415,15 @@ db.recipes.insertMany([
             "Place the egg on top of the bacon and then top with a generous helping of Hollandaise sauce."
         ]
     },  {
-        "dishname" : "Split pea soup with ham",
+        "dishname" : "split pea soup with ham",
         "cooktime" : "85",
         "image" : "https://www.simplyscratch.com/wp-content/uploads/2016/01/Split-Pea-Soup-with-Ham-l-SimplyScratch.com-34-768x513.jpg",
         "keywords" : [
             "soup",
             "fiber",
-            "pork"
+            "pork",
+            "split pea",
+            "ham"
         ],
         "ingredients" : [
             "3 tablespoons unsalted butter",
@@ -435,7 +455,8 @@ db.recipes.insertMany([
             "clark",
             "lemonchiffon",
             "puree",
-            "side"
+            "side",
+            "mashed"
         ],
         "ingredients" : [
             "red potato",
@@ -459,7 +480,9 @@ db.recipes.insertMany([
             "potato",
             "italian",
             "lemonchiffon",
-            "heavy"
+            "heavy",
+            "potatoes",
+            "gratin"
 
         ],
         "ingredients" : [
