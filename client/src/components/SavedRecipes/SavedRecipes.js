@@ -13,6 +13,7 @@ class SavedRecipes extends Component {
         return (
             <div>
                 <h1>Saved Recipes</h1>
+                <p id="noshow-bottom2">blank</p>
             </div>
         )
     }

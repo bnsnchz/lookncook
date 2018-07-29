@@ -71,6 +71,7 @@ class SignIn extends Component {
 
                         <span>{this.state.error}</span>
                 </form>
+                <p className="noshow-bottom">blank</p>
             </div>
         )
     }

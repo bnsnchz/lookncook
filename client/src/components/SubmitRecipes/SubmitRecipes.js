@@ -130,7 +130,7 @@ class SubmitRecipes extends Component {
                         Submit Recipe
                     </button>
                 </form>
-               
+                <p className="noshow-bottom">blank</p>
             </div>
         )
     }

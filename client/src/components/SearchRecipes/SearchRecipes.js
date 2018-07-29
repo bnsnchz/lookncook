@@ -80,6 +80,7 @@ class SearchRecipes extends Component {
                        })}
                     </ul>
                 </div>
+                <p className="noshow-bottom">blank</p>
             </div>
         )
     }
