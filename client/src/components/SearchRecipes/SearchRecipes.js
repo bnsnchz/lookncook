@@ -74,7 +74,7 @@ class SearchRecipes extends Component {
                                 <img className="dishPic" src={recipe.image} alt={recipe.dishname}/>
                                 <li className="dishName" id = {recipe._id}>
                                     {recipe.dishname}<br/>
-                                    {recipe.ingredients}
+                                    {/* {recipe.ingredients} */}
                                 </li>
 
                             </div>

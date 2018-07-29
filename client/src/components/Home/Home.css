@@ -1,5 +1,14 @@
-body, html {
+body,
+html {
     height: 100%;
+}
+
+h3 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+p {
+    font-family: 'Playfair Display SC', serif;
 }
 
 .hero-text {
@@ -9,21 +18,20 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-family: "Futura";
-
+    font-family: 'Playfair Display SC', serif;
 }
 
-#logo{
+.homeDiv {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 2.5%;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: slategray;
+}
+
+#logo {
     margin-left: 10%;
     width: 75vw;
-}
-
-h3 {
-    font-family: "Futura";
-
-}
-
-p {
-    font-family: "Futura";
-
 }
