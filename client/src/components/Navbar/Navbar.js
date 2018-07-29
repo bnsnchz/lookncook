@@ -35,7 +35,7 @@ class Navbar extends Component {
 
                             <li className='navbarli'><a style = {this.state.authenticated===false?this.stylesNone:this.stylesShow} href ='/user'>{this.state.authenticated===false?null:"Account"}</a></li>
                             
-                            <li className = 'navbarlilog'><a href ='/signin'>{this.state.authenticated===false?"Log In":"Log Out"}</a></li>
+                            <li className = 'navbarlilog'><a href ='/signin'>{this.state.authenticated===false?"Log In / Register":"Log Out"}</a></li>
                         </ul>
                     </div>                     
                 </div> 

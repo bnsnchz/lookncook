@@ -40,10 +40,10 @@ class App extends Component {
           <Navbar />
           <Route exact path = '/' component={Home} />
           <Route exact path = '/search' component={SearchRecipes} />
-          <Route exact path = '/saved' component={SavedRecipes} />
-          <Route exact path = '/submit' component={SubmitRecipes} />
-          <Route path = '/user' component ={Dashboard} />
-          <Route exact path = '/signin' component={SignIn} />
+          <Route exact path = '/saved' render ={(props) => <SavedRecipes {...props} authenticated={this.state.authenticated}/>}/>
+          <Route exact path = '/submit' render ={(props) => <SubmitRecipes {...props} authenticated={this.state.authenticated}/>} />
+          <Route path = '/user' render ={(props) => <Dashboard {...props} authenticated={this.state.authenticated}/>} />
+          <Route exact path = '/signin' render ={(props) => <SignIn {...props} setLogin={this.setLogin}/>} />
         </Wrapper>
       </Router>
     )}
