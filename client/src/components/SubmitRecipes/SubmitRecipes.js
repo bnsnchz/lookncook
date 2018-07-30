@@ -8,9 +8,24 @@ class SubmitRecipes extends Component {
         instructionList:'',
         keywords: '',
         ingredientList:'',
-        cookTime: ''
+        cookTime: '',
+        authenticated: this.props.authenticated,
+        session:false
     }
-
+    
+    componentDidMount() {    
+        this.checkSession();
+    }
+    checkSession = () => {
+        if (this.state.session === true) {
+            this.setState({
+                session:true,
+                authenticated:true
+            })
+        } else {
+            window.location.href = '/signin'
+        }
+    }
     submitRecipe = () => {
         var objData = {
             title : this.state.recipeTitle,

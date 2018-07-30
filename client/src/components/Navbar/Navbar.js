@@ -13,9 +13,10 @@ class Navbar extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.checkSession();
-    // }
+    //This needs to be worked on. Not working atm. Need to finish back end session
+    componentDidMount() {    
+        this.checkSession();
+    }
     checkSession = () => {
         if (this.state.session === true) {
             this.setState({
