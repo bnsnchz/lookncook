@@ -47,7 +47,7 @@ class Navbar extends Component {
                         value = {this.state.selectValue}
                         onChange={this.handleDropdownChange} id = "navbarSELECT">
                             <option  
-                                value ="" selected="selected">Menu
+                                value ="">Menu
                             </option>
                             <option 
                                 value ="/">Home
@@ -67,7 +67,6 @@ class Navbar extends Component {
                            
                         </select>
                         <a id = 'logInOut'  
-                            
                             href = {this.props.authenticated===true?'/':'/signin'}>{this.props.authenticated===false?"Log In ":"Log Out"}
                         </a>
                     </div>                     

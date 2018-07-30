@@ -50,6 +50,12 @@ class SearchRecipes extends Component {
         })
     }
 
+    saveRecipe = (event) => {
+        event.preventDefault();
+        axios.post('/api/saved').then(response => {
+            
+        })
+    }
    
 
     searchRecipes = () => {
@@ -89,14 +95,17 @@ class SearchRecipes extends Component {
                            return(
                             <div className="recipeList" key ={i}>
                                 <div id = 'imgContainer'>
+                                    <button 
+                                        onClick={() => {this.saveRecipe}}id = 'saveBtn'>Save Recipe</button>
                                     <img className="dishPic" onClick={() =>
-                                this.handleRedirect(recipe._id)} src={recipe.image} alt={recipe.dishname}/>
+                                    this.handleRedirect(recipe._id)} src={recipe.image} alt={recipe.dishname}/>
                                 </div>
                                 <div id = 'nameContainer'>
-                                <li className="dishName" onClick ={()=>
-                                this.handleRedirect(recipe._id)} id = {recipe._id}>
-                                {recipe.dishname}<br/>
-                                </li>
+                                    <li className="dishName" onClick ={()=>
+                                    this.handleRedirect(recipe._id)} id = {recipe._id}>
+                                    {recipe.dishname}
+                                    <br/>
+                                    </li>
                                 </div>
                             </div>
                            )
