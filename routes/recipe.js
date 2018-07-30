@@ -50,7 +50,9 @@ router.get('/api/recipes', function(req,res) {
 var loggedIn = false;
 
 router.get('/auth', function(req,res) {
-  res.json(loggedIn)
+  if (req.session){
+    res.json(loggedIn)
+  }
 })
 
 router.post('/signin', function(req,res) {
@@ -58,22 +60,24 @@ router.post('/signin', function(req,res) {
     username: req.body.username,
   }).then(response => {
     if (response[0].username === req.body.username && encrypt.decrypt(response[0].password) === req.body.password) {
-      console.log('conditional hit')
-      var token = `t${Math.random()}`;
-      response[0].token = token;
-      res.cookie('token', token);
-      req.session.user = response[0];
-      console.log(req.session.user);
-      response[0].update(
-        {username:response[0].username}, //Where to look
-        {$set:{token:response[0].token}}, //Data field to update
-      )
-      .then(result => {
-        console.log('true');
-        loggedIn=true;
-        res.json(loggedIn, result);
-      })
+      loggedIn=true;
+      // console.log('conditional hit')
+      // var token = `t${Math.random()}`;
+      // response[0].token = token;
+      // res.cookie('token', token);
+      // console.log(res.cookie())
+      // req.session.user = response;
+      // console.log(req.session.user);
+      // response[0].update(
+      //   {username:response[0].username}, //Where to look
+      //   {$set:{token:response[0].token}}, //Data field to update
+      // ).then(result => {
+      //   console.log('true');
+      // })
     }
+
+    res.json(loggedIn);
+
   }).catch(error => {
     res.json(error);
   })

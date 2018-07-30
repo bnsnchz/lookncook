@@ -22,6 +22,7 @@ class App extends Component {
 
   componentDidMount(){
     axios.get("/auth").then(res=>{
+      console.log(res.data)
       this.setState({
         loaded: true,
         authenticated: res.data
@@ -29,6 +30,14 @@ class App extends Component {
     });
   }
 
+  setLogout = event => {
+    event.preventDefault();
+    this.setState({
+      authenticated: false,
+      loaded: false
+    })
+    window.location.href = "/"
+  }
   setLogin = () => {
     this.setState({
       authenticated: true
@@ -39,7 +48,7 @@ class App extends Component {
     return (
       <Router>
           <Wrapper>
-              <Navbar />
+              <Navbar logOut={this.setLogout} authenticated = {this.state.authenticated}/>
               <Route exact path = '/' component={Home} />
               <Route exact path = '/search' component={SearchRecipes} />
               <Route exact path = '/saved' render ={(props) => 
@@ -52,7 +61,7 @@ class App extends Component {
                 <Dashboard {...props} authenticated={this.state.authenticated}/>} 
               />
               <Route exact path = '/signin' render ={(props) => 
-                <SignIn {...props} setLogin={this.setLogin}/>} 
+                <SignIn {...props} setLogin={this.setLogin}/>}
               />
               <Route exact path = '/register' render ={(props) => 
                 <Register {...props}/>} 

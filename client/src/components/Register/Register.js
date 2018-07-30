@@ -29,6 +29,7 @@ class Register extends Component {
         axios.post("/register", userInfo)
         .then(res => {
             console.log(res.data);
+            window.location.href ='/signin'
         })
         .catch(error=> {
             console.log(error)
