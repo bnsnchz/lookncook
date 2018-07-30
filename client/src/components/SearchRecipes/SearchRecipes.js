@@ -89,11 +89,11 @@ class SearchRecipes extends Component {
                        {this.state.recipes.map((recipe, i) => {
                            return(
                             <div className="recipeList" key ={i}>
-                                <img className="dishPic" src={recipe.image} alt={recipe.dishname}/>
-                                <li className="dishName" 
-                                onClick ={()=>
+                                <img className="dishPic" onClick={() =>
+                                this.handleRedirect(recipe._id)} src={recipe.image} alt={recipe.dishname}/>
+                                <li className="dishName" onClick ={()=>
                                 this.handleRedirect(recipe._id)} id = {recipe._id}>
-                                    {recipe.dishname}<br/>
+                                {recipe.dishname}<br/>
                                 </li>
                             </div>
                            )
