@@ -42,8 +42,10 @@ class RecipePage extends Component {
     render() {
         return(
             <div>
+                <br />
+                <br/>
+                <img id="recipe-image" src={this.state.image} />
                 <h1>{this.state.dishname}</h1>
-                <image id="recipe-image" url="./" />
                 <h3>Cook time: {this.state.cooktime} minutes</h3>
                 <div id="ingredients-container">
                 <h3>Ingredients:</h3>
