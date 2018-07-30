@@ -7,6 +7,7 @@ class SearchRecipes extends Component {
     state = {
         recipes: [],
         search:'',
+        recipeObject: []
     }
 
     componentDidMount() {
@@ -20,13 +21,19 @@ class SearchRecipes extends Component {
     });
   };
 
-//   handleRedirect= id => {
-//       axios.get(`recipe/${id}`)
-//       .then(results => {
-//           console.log(id)
-//           window.location.href = "/"
-//       })
-//   }
+  handleRedirect= id => {
+      axios.post(`/recipe/${id}`, id)
+      .then(results => {
+          this.setState({
+              recipeObject: results.data[0]
+          })
+          this.props.history.push(this.state.recipeObject, `/recipe/${id}`)
+          console.log("this is results.data: ", results.data)
+        //   window.location.href = "/"
+
+      })
+
+  }
 
     handleSubmit = event => {
         event.preventDefault();
@@ -85,7 +92,7 @@ class SearchRecipes extends Component {
                                 <img className="dishPic" src={recipe.image} alt={recipe.dishname}/>
                                 <li className="dishName" 
                                 onClick ={()=>
-                                this.handleRedirect({})}id = {recipe._id}>
+                                this.handleRedirect(recipe._id)} id = {recipe._id}>
                                     {recipe.dishname}<br/>
                                 </li>
                             </div>
@@ -99,3 +106,4 @@ class SearchRecipes extends Component {
 }
 
 export default SearchRecipes;
+

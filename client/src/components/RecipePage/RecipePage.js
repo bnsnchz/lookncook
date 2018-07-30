@@ -15,17 +15,26 @@ class RecipePage extends Component {
     }
     
     componentDidMount() {
-
+        this.getRecipeById()
     }
 
-    onClick() {
+    onClick = event => {
         event.preventDefault();
 
     }
 
-    getRecipeById = () => {
-        axios.get("api/recipes/:id").then(response => {
+    getRecipeById = (props) => {
+        axios.get(`/recipes/${props._id}`).then(response => {
+            this.setState({
+                dishname: response.dishname,
+                image: response.image,
+                cooktime: response.cooktime,
+                ingredients: response.ingredients,
+                instructions : response.instructions,
+                createdBy : response.createdBy
+            })
             console.log(response)
+            
         })
     }
     render() {

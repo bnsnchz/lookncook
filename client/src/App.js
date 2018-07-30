@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import SignIn from './components/SignIn';
 import Register from "./components/Register";
+import RecipePage from "./components/RecipePage"
 import axios from "axios";
 import Dashboard from './components/Dashboard';
 
@@ -40,6 +41,7 @@ class App extends Component {
       <Router>
           <Wrapper>
               <Navbar />
+              <Route path = "/recipe" component={RecipePage} />
               <Route exact path = '/' component={Home} />
               <Route exact path = '/search' component={SearchRecipes} />
               <Route exact path = '/saved' render ={(props) => 
