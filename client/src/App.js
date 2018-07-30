@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import SearchRecipes from './components/SearchRecipes';
-import SavedRecipes from './components/SavedRecipes';
 import SubmitRecipes from './components/SubmitRecipes';
 import Wrapper from './components/Wrapper';
 import Navbar from './components/Navbar';
@@ -69,9 +68,7 @@ class App extends Component {
               />
               {!this.state.authenticated? <Redirect to="/signin"/>: null}
               <Route path="/recipe" component={RecipePage} /> 
-              <Route exact path = '/saved' render ={(props) => 
-                <SavedRecipes {...props} authenticated={this.state.authenticated}/>}
-              />
+              
               <Route exact path = '/submit' render ={(props) => 
                 <SubmitRecipes {...props} authenticated={this.state.authenticated}/>} 
               />

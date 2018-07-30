@@ -26,7 +26,7 @@ class Navbar extends Component {
 
                             <li className='navbarli'><a style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow} href ='/user'>{this.props.authenticated===false?null:"Account"}</a></li>
                             
-                            <li onClick ={this.props.authenticated === true? this.props.logOut:null}className = 'navbarlilog'><a href = {this.props.authenticated===true?'/':'/signin'}>{this.props.authenticated===false?"Log In / Register":"Log Out"}</a></li>
+                            <li onClick ={this.props.authenticated === true? this.props.logOut:null}className = 'navbarlilog'><a href = {this.props.authenticated===true?'/':'/signin'}>{this.props.authenticated===false?"Log In ":"Log Out"}</a></li>
                         </ul>
                     </div>                     
                 </div> 
