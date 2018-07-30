@@ -33,6 +33,7 @@
     max-width: 30vw;
     float: left;
     max-height:50vh;
+    border-radius:10px;
 }
 
 .dishName {
@@ -54,7 +55,7 @@
     font-size: 35px;
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: slategray;
+    background-color:rgba(119, 119, 119, .6);
 }
 
 #recipeResults {

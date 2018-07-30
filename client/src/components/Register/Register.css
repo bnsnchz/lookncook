@@ -23,13 +23,12 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-shadow: 2px 2px 4px #000000;
-    ;
-    margin-top: 4%
+    margin-top: 4%;
 }
 
 #register {
     text-align: center;
-    background-color: #777777;
+    background-color: rgba(119, 119, 119, .6);
     border-radius: 25px;
     border: 5px solid white;
     width: 50vw;

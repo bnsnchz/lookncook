@@ -49,10 +49,10 @@ class RecipePage extends Component {
             <div>
                 <br />
                 <br/>
+                <div id="title-container"> 
                 <img id="recipe-image" src={this.state.image} alt={this.state.dishname}/>
-                <div id="title-container">
                 <h1>{this.state.dishname}</h1>
-                <h3>Cook time: {this.state.cooktime} minutes</h3>
+                <h3 className="cookTime">Cook time:</h3><p>{this.state.cooktime} minutes</p>
                 <h3>Ingredients:</h3>
                 <ol>
                     {this.state.ingredients.map((ingredients, i) => {
