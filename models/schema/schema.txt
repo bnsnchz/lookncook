@@ -1,9 +1,35 @@
 
 db.recipes.insertMany([
     {
+        "dishname" : "Avocado toast",
+        "cooktime" : "7",
+        "image" : "https://gimmedelicious.com/wp-content/uploads/2016/07/avocado-toast-10-of-13.jpg",
+        "keywords": [
+            "toast",
+            "avocado",
+            "eggs"
+        ],
+        "ingredients" : [ 
+            "1 avocado peeled and seeded", 
+            "2 tablespoons chopped cilantro", 
+            "1/2 teaspoon red pepper flakes (optional)", 
+            "salt & pepper to taste",
+            "2 slices whole grain bread (or bread of choice)",
+            "2 eggs (fried, scrambled, or poached, optional)",
+            "1 1/2 tablespoons grapeseed oil"
+        ],
+        "instructions" : [ 
+            "In a small bowl combine and mash the avocado, cilantro, lime, and salt + pepper to taste.", 
+            "grease skillet with grapeseed oil", 
+            "Drop one crakced egg in pan once hot, add dash of salt and pepper to one side of egg. Flip after 1 minute. Repeat this process for egg #2", 
+            "Toast 2 slices of whole grain in a toaster for 3 minutes until golden and crispy.", 
+            "Spread half of the avocado mixture on each slice of toasted bread.", 
+            "Top with fried, scrambled, or poached egg." 
+        ]
+    },  {
         "dishname" : "steamed rice",
         "cooktime" : "20",
-        "image" : "https://img-aws.ehowcdn.com/560x560/photos.demandstudios.com/getty/article/3/137/AA015968.jpg",
+        "image" : "https://weewok.ca/wp-content/uploads/2016/11/recipe-steamed_rice-500x370.png",
         "keywords": [
             "grains",
             "sidedish",
@@ -48,6 +74,41 @@ db.recipes.insertMany([
             "Sauté the green beans in the bacon fat: Once the green beans are cooked, sauté them over medium-high heat for 1-2 minutes in the bacon fat.", 
             "Dice the bacon and add to the pan and sauté another minute.", 
             "Sprinkle with pepper, lemon juice to serve: Put the beans and bacon into a large serving bowl and sprinkle generously with freshly ground black pepper. Toss with lemon juice or vinegar and serve at once"
+        ]
+        },  {
+        "dishname" : "Lemonchiffon Cake",
+        "cooktime" : "55",
+        "image" : "http://cdn3.craftsy.com/a/general/wp-content/uploads/2015/09/chiffon-2.jpg",
+        "keywords": [
+            "Lemonchiffon",
+            "cake",
+            "dessert",
+            "clark"
+        ],
+        "ingredients" : [ 
+            "2¼ cups cake flour", 
+            "1½ cups sugar, divided", 
+            "1 teaspoon baking powder", 
+            "½ teaspoon salt",
+            "8 large egg whites, room temperature",
+            "7 large egg yolks",
+            "1/3 cup vegetable oil",
+            "½ cup milk",
+            "¼ cup lemon juice",
+            "1 tablespoon lemon zest",
+            "1 teaspoon vanilla extract"
+        ],
+        "instructions" : [ 
+            "Preheat oven to 325 F. Take out a 10-inch tube pan and set aside. Do not grease the pan.", 
+            "In a medium bowl, sift together flour, ¾ cup sugar, baking powder and salt.", 
+            "In another medium bowl, whisk together egg yolks, vegetable oil, milk, lemon juice, lemon zest and vanilla extract until smooth. Combine the flour mixture and the egg mixture and whisk until smooth. Set aside.", 
+            "In a large bowl, beat the egg whites until very foamy. With the mixer on high speed, gradually stream in the remaining ¾ cup sugar. Continue to beat the egg whites until they form stiff peaks, 4 minutes.", 
+            "Add one-third of the egg white mixture to the egg yolk mixture and whisk to combine. This will lighten the batter.", 
+            "Add in another third of the egg white mixture and fold in, using a spatula, until the egg whites are well-combined.", 
+            "Add in the remaining egg white mixture and fold it in until no streaks of egg whites remain. Pour batter into prepared pan.",
+            "Bake for 50-55 minutes, until the cake springs back when lightly pressed and appears to be set.",
+            "Take the cake out of the oven and immediately flip the pan upside down, standing it up on its “feet” or carefully placing the pan over a bottle. Cool the cake completely before up-righting the cake. ",
+            "Run a thin knife around the edge of the pan to loosen the cake, then transfer it to a cake stand to serve. Store leftovers in an airtight container."
         ]
     },  {
         "dishname" : "watermelon pizza",
@@ -187,7 +248,8 @@ db.recipes.insertMany([
             "potato",
             "bacon",
             "fried", 
-            "cheese"
+            "cheese",
+            "clark"
         ],
         "ingredients" : [
             "1/2 pound bacon",
@@ -216,13 +278,14 @@ db.recipes.insertMany([
     },  {
         "dishname" : "Boiled potatoes",
         "cooktime" : "40",
-        "image" : "https://lh3.googleusercontent.com/__U9hbgS-qe2ei56LqXSk8Na9VkuiRQK8cnxFlIQ5nsoEKLi9aJpufsutlCtlvOcXMku73vNZVVecK72wC5t5A=s320-c-e365",
+        "image" : "http://www.dvo.com/link/0313_015658329.jpg",
         "keywords" : [
             "potato",
             "boiled",
             "low-fat", 
             "yummy",
-            "lemonchiffon"
+            "lemonchiffon", 
+            "clark"
         ],
         "ingredients" : [
             "1 pound Yukon Gold potatoes or Baby Dutch yellow potatoes",
@@ -306,7 +369,7 @@ db.recipes.insertMany([
     },  {
         "dishname" : "Octopus Salad",
         "cooktime" : "30",
-        "image" : "https://www.davidlebovitz.com/wp-content/uploads/2008/03/11814048335_ff4d16496d.jpg",
+        "image" : "https://i.pinimg.com/originals/b6/07/92/b60792761ed3a85ef078905e45200cb8.jpg",
         "keywords" : [
             "Portuguese",
             "seafood",
@@ -459,7 +522,8 @@ db.recipes.insertMany([
             "potato",
             "italian",
             "lemonchiffon",
-            "heavy"
+            "heavy",
+            "clark"
 
         ],
         "ingredients" : [
