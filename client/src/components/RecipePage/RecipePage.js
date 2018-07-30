@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./RecipePage.css"
 
 
 class RecipePage extends Component {
@@ -63,7 +64,10 @@ class RecipePage extends Component {
                 <ol>
                     {this.state.instructions.map((instructions, i)=>{
                         return (
-                            <li key={i}>{instructions}</li>
+                            <div>
+                                <li key={i}><div id="step-container">{instructions}</div><button id="instruction-btn">✔</button></li>
+                            <br/>
+                            </div>
                         )
                     })}
                     
