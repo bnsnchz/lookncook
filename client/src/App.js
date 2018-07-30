@@ -68,7 +68,7 @@ class App extends Component {
               <Route exact path = '/submit' render ={(props) => 
                 <SubmitRecipes {...props} authenticated={this.state.authenticated}/>} 
               />
-              <Route path = '/user' render ={(props) => 
+              <Route exact path = '/user' render ={(props) => 
                 <Dashboard {...props} authenticated={this.state.authenticated}/>} 
               />
               <Route exact path = '/signin' render ={(props) => 
