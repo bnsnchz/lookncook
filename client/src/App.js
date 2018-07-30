@@ -40,7 +40,6 @@ class App extends Component {
           authenticated: false,
           loaded: true
         });
-        window.location.href = "/"
       }
     });
   }
@@ -68,7 +67,7 @@ class App extends Component {
               <Route exact path = '/register' render ={(props) => 
                 <Register {...props}/>} 
               />
-                {!this.state.authenticated? <Redirect to="/signin"/>: null}
+              {!this.state.authenticated? <Redirect to="/signin"/>: null}
               <Route path="/recipe" component={RecipePage} /> 
               <Route exact path = '/saved' render ={(props) => 
                 <SavedRecipes {...props} authenticated={this.state.authenticated}/>}

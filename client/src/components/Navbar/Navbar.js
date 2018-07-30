@@ -12,20 +12,7 @@ class Navbar extends Component {
             "display":"none"
         }
     }
-
-    componentDidMount() {
-        this.checkSession();
-    }
-    checkSession = () => {
-        if (this.state.session === true) {
-            this.setState({
-                authenticated:true
-            })
-        }
-    }
     
-    
-
     render() {
         return (
             <div>

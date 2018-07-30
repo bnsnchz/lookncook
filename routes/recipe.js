@@ -66,7 +66,7 @@ router.get("/recipe/:id", function(req, res){
     // (`/recipe/${req.params.id}`, response)
   })
   .catch(error => {
-    console.log(error)
+    res.json(error)
   });
 });
 
@@ -139,7 +139,6 @@ router.get("/userInfo", function(req,res) {
   User.find(
     {username:req.session.user[0].username}
   ).then(response => {
-    // console.log(`Sesh user: ${response}`);
     res.json(response);
   }).catch(error => {
     res.json(error);
