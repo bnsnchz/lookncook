@@ -14,3 +14,21 @@ button {
 
 }
 
+span.line_wrap {
+    position:relative;
+    display:inline-block;        
+}
+span.line {
+    display:inline-block;
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    border-top:1px solid grey;
+    -webkit-transition: width 0.5s ease-in;
+}
+span.line_wrap:hover span.line {
+    width:100%;    
+}​
+/* <p>This is <span class='line_wrap'><span class='line'></span>weird</span></p>​
+ */

@@ -43,7 +43,7 @@ button {
     font-family: "Futura";
 }
 
-#ingredientList,#recipeTitle,#instructionList {
+#ingredientList,#recipeTitle,#instructionList, #keywords, #cookTime {
     font-size: 16px;
     margin-left: 35%;
     font-family: "Futura";
