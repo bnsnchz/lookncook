@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./SavedRecipes.css"
 
 class SavedRecipes extends Component {
     componentDidMount() {
@@ -12,7 +13,7 @@ class SavedRecipes extends Component {
     render() {
         return (
             <div>
-                <h1>Saved Recipes</h1>
+                <img id="savedImage" src="./assets/images/saved.png" alt="savedImage" />
             </div>
         )
     }

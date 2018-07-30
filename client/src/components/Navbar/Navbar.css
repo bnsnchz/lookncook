@@ -13,11 +13,11 @@
 }
 
 a {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'chalk', Fallback, serif;
 }
 
 h1{
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'chalk', Fallback, serif;
 
 }
 
@@ -54,3 +54,5 @@ h1{
 /* .navbarli:last-child {
     border-right: none;
 } */
+
+

@@ -5,7 +5,7 @@ class Home extends Component {
         return (
             <div>
                 <div>
-                    <img id="logo" src="./images/lookncook.png" alt="logo" />
+                    <img id="logo" src="./assets/images/lookncook.png" alt="logo" />
                     <div className="homeDiv">
                         <h3>About</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate finibus molestie. Cras pretium quis sem quis finibus. Nunc pulvinar sapien nisi, non congue elit eleifend vel. Quisque vehicula libero at felis iaculis viverra. Aenean congue quam quam, id scelerisque nisi efficitur non. Vivamus tristique augue in lectus lacinia vestibulum. Nulla congue gravida nisi.

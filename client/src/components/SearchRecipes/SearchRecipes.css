@@ -1,10 +1,3 @@
-.searchTitle {
-    text-align: center;
-    font-size: 75px;
-    font-family: 'Playfair Display SC', serif;
-    ;
-}
-
 .searchBox {
     border-radius: 5px;
     height: 5%;
@@ -30,7 +23,7 @@
     height: 100%;
     width: 20%;
     margin-top: -2%;
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'chalk', Fallback, serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     ;
 }
@@ -43,8 +36,8 @@
 .dishName {
     margin-left: 50%;
     font-size: 45px;
-    font-family: 'Playfair Display SC', serif;
-    ;
+    font-family: 'chalk', Fallback, serif;
+    color:white;
 }
 
 .recipeList {
@@ -74,4 +67,9 @@
 
 #searchForm {
     text-align: center;
+}
+
+
+#searchRecipes{
+    margin-left:12%;
 }
