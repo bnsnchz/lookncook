@@ -34,7 +34,7 @@ class SignIn extends Component {
                 });
             }else{
                 this.setState({
-                    error: "Account does not"
+                    error: "Cannot find account."
                 });
             }
         })
