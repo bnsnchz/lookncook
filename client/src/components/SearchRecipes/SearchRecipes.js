@@ -53,6 +53,7 @@ class SearchRecipes extends Component {
     render() {
         return (
             <div>
+                <Clock/>
                 <h1 className="searchTitle">Search Recipes</h1>
                 <form id = 'searchForm'>
                     <input  
