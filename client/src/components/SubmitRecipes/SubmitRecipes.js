@@ -23,7 +23,7 @@ class SubmitRecipes extends Component {
 
         axios.post('/api/recipes', objData)
         .then(response => {
-            console.log('we received something back from backend - hooray!');
+            console.log("Bon Appetit")
         }).catch(err => {
             console.log(err);
         })

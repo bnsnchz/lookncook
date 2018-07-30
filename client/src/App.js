@@ -22,7 +22,6 @@ class App extends Component {
 
   componentDidMount(){
     axios.get("/auth").then(res=>{
-      console.log(res.data)
         this.setState({
           loaded: true,
           authenticated: res.data
