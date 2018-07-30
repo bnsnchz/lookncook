@@ -57,7 +57,9 @@ router.post("/recipe/:id", function(req, res) {
 router.get("/recipe/:id", function(req, res){
   Recipe.find({ _id: req.params.id })
   .then(response =>{
-    res.send(response.data[0])
+    // console.log(response[0])
+    res.send(response)
+    console.log(response[0])
     // (`/recipe/${req.params.id}`, response)
   })
   .catch(error => {
