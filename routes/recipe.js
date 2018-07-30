@@ -84,10 +84,8 @@ router.get('/auth', function(req,res) {
 })
 
 router.get("/logout", function(req,res) {
-  // console.log(req.session);
   req.session.destroy()
   req.session = null;
-  // console.log(req.session)
   res.send("Session ended.");
   
 })
@@ -136,6 +134,19 @@ router.post('/register', function(req,res) {
     }
   })
 })
+
+
+router.get("/userInfo", function(req,res) {
+  User.find(
+    {username:req.session.user[0].username}
+  ).then(response => {
+    // console.log(`Sesh user: ${response}`);
+    res.json(response);
+  }).catch(error => {
+    res.json(error);
+  })
+})
+
 module.exports = router;
 
 
