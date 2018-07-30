@@ -35,12 +35,16 @@ class App extends Component {
 
   setLogout = event => {
     event.preventDefault();
+    // console.log('hit');
     axios.get('/logout').then(res => {
-      this.setState({
-        authenticated: false,
-        loaded: false
-      });
-      window.location.href = "/"
+      console.log(res.data);
+      if (res.data === "Session ended."){
+        this.setState({
+          authenticated: false,
+          loaded: false
+        });
+        window.location.href = "/"
+      }
     });
   }
 

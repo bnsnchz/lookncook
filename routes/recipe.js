@@ -73,10 +73,12 @@ router.get("/recipe/:id", function(req, res){
 var loggedIn = false;
 
 router.get('/auth', function(req,res) {
-  if (req.session){
+  console.log(req.session)
+  if (req.session.user){
     loggedIn=true
     res.json(loggedIn)
   } else {
+    loggedIn = false;
     res.json(loggedIn)
   }
 })
@@ -84,6 +86,7 @@ router.get('/auth', function(req,res) {
 router.get("/logout", function(req,res) {
   // console.log(req.session);
   req.session.destroy()
+  req.session = null;
   // console.log(req.session)
   res.send("Session ended.");
   
@@ -103,11 +106,11 @@ router.post('/signin', function(req,res) {
         {username:req.body.username},
         {$set:{token:token}},
       ).then(result => {
-        res.json(result);
+        res.json(loggedIn);
+      }).catch(err => {
+        res.json(err);
       })
     }
-
-    res.json(loggedIn);
 
   }).catch(error => {
     res.json(error);
