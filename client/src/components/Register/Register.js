@@ -28,7 +28,7 @@ class Register extends Component {
         console.log("button clicked");
         axios.post("/register", userInfo)
         .then(res => {
-            console.log(res);
+            console.log(res.data);
         })
         .catch(error=> {
             console.log(error)
@@ -66,15 +66,6 @@ class Register extends Component {
                          required
                          placeholder="8 characters minimum"/>
                         <br/>
-                        
-                        <p>
-                            <a style = {{fontSize:"14px"}}href = '/register'>
-                            Don't have an account yet?
-                                <br/> 
-                            Click here to create one.
-                            </a>
-                        </p>
-                        
                         <button
                             onClick={this.handleSubmit}
                             className='register'

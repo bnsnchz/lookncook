@@ -9,8 +9,7 @@ const userSchema = new Schema({
   },
   token: {
     type: String,
-    required: false,
-    unique: true
+    required: false
   },
   password: {
     type: String,

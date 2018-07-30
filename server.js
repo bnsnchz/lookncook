@@ -1,12 +1,26 @@
 const express = require("express");
+const session = require('express-session');
 const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routes = require("./routes/recipe.js");
+const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Define middleware here
+// app.use(cookieParser());
+app.use(
+  session({
+    secret: "whateverWeWant", 
+    resave: false, 
+    saveUninitialized: true, //
+    cookie: {
+      secure: "auto",
+      maxAge: 9999999
+    }
+  })
+);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
