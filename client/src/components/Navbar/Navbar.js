@@ -66,12 +66,10 @@ class Navbar extends Component {
                             
                            
                         </select>
-                        <li>
-                            <a id = 'logInOut'  
-                                
-                                href = {this.props.authenticated===true?'/':'/signin'}>{this.props.authenticated===false?"Log In ":"Log Out"}
-                            </a>
-                        </li>
+                        <a id = 'logInOut'  
+                            
+                            href = {this.props.authenticated===true?'/':'/signin'}>{this.props.authenticated===false?"Log In ":"Log Out"}
+                        </a>
                     </div>                     
                 </div> 
             </div>
