@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Clock from "../CountdownClock/Clock.js"
 import './SearchRecipes.css'
 import axios from 'axios';
 

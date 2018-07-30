@@ -14,7 +14,7 @@ button {
 
 }
 
-span.line_wrap {
+/* span.line_wrap {
     position:relative;
     display:inline-block;        
 }
@@ -30,5 +30,5 @@ span.line {
 span.line_wrap:hover span.line {
     width:100%;    
 }​
-/* <p>This is <span class='line_wrap'><span class='line'></span>weird</span></p>​
- */
+<p>This is <span class='line_wrap'><span class='line'></span>weird</span></p>​
+  */
