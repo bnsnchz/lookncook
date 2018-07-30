@@ -19,7 +19,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 35px;
+    font-size: 200%;
     height: 100%;
     width: 20%;
     margin-top: -2%;
@@ -36,7 +36,7 @@
 }
 
 .dishName {
-    margin-left: 50%;
+    /* margin-left: 50%; */
     font-size: 45px;
     font-family: 'chalk', Fallback, serif;
     color: white;
@@ -45,27 +45,35 @@
 
 .recipeList {
     display: block;
-    text-justify: left;
+    /* text-justify: center; */
     padding: 20px;
     text-decoration: none;
     border: 1px solid #777777;
     margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
     border-radius: 10px;
     font-size: 35px;
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: slategray;
+    /* text-align:center; */
+    
 }
 
 #recipeResults {
     text-align: center;
     padding: 0 15%;
+    
 }
 
 #recipeUL {
     list-style-type: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    overflow:auto;
 }
 
 #searchForm {
@@ -76,3 +84,77 @@
     margin-left: 12%;
     width: 75vw;
 }
+
+#imgContainer{
+    display:flex;
+    text-align: center;
+}
+
+img{
+    margin:auto;
+    display:inline-block;
+}
+
+#nameContainer{
+    display:block;
+    text-align:center;
+}
+
+
+@media (max-width: 950px) {
+    #recipeUL{ 
+        grid-template-columns: 100%; 
+    }
+    .dishPic {
+        max-width: 60vw;
+        float: left;
+        max-height:50vh;
+        padding-top: 0 ;
+        padding-bottom:0;
+        margin-top:0;
+        margin-bottom:0;
+    }
+}
+@media (max-width: 615px) {
+
+    .searchRecipe{
+        font-size:25px;
+    }
+    #recipeUL{ 
+        grid-template-columns: 100%; 
+    }
+    .dishPic {
+        max-width: 50vw;
+        float: left;
+        max-height:35vh;
+        padding-top: 0 ;
+        padding-bottom:0;
+        margin-top:0;
+        margin-bottom:0;
+    }
+}
+@media (max-width: 480px) {
+    #recipeUL{ 
+        grid-template-columns: 100%; 
+    }
+
+    .dishPic {
+        max-width: 40vw;
+        float: left;
+        max-height:25vh;
+        padding-top: 0 ;
+        padding-bottom:0;
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+    .dishName {
+        font-size: 30px;
+    }
+
+    .searchRecipe{
+        font-size:12px;
+    }
+  }
+
+  
