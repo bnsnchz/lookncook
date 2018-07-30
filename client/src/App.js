@@ -50,6 +50,7 @@ class App extends Component {
       <Router>
           <Wrapper>
               <Navbar logOut={this.setLogout} authenticated = {this.state.authenticated}/>
+              <Route path="/recipe" component={RecipePage} /> 
               <Route exact path = '/' component={Home} />
               <Route exact path = '/search' component={SearchRecipes} />
               <Route exact path = '/saved' render ={(props) => 
