@@ -60,6 +60,7 @@ class App extends Component {
             <Switch>
               <Route exact path = '/' component={Home} />
               <Route exact path = '/search' component={SearchRecipes} />
+              <Route path="/recipe" component={RecipePage} /> 
               <Route exact path = '/signin' render ={(props) => 
               <SignIn {...props} setLogin={this.setLogin}/>}
               />
@@ -67,7 +68,6 @@ class App extends Component {
                 <Register {...props}/>} 
               />
               {!this.state.authenticated? <Redirect to="/signin"/>: null}
-              <Route path="/recipe" component={RecipePage} /> 
               
               <Route exact path = '/submit' render ={(props) => 
                 <SubmitRecipes {...props} authenticated={this.state.authenticated}/>} 
