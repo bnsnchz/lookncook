@@ -27,14 +27,18 @@ class RecipePage extends Component {
     getRecipeById = () => {
         axios.get(window.location).then(response => {
             var recipe = response.data[0]
-            this.setState({
-                dishname: recipe.dishname,
-                image: recipe.image,
-                cooktime: recipe.cooktime,
-                ingredients: recipe.ingredients,
-                instructions : recipe.instructions,
-                createdBy : recipe.createdBy
-            })
+            if (recipe) {
+                this.setState({
+                    dishname: recipe.dishname,
+                    image: recipe.image,
+                    cooktime: recipe.cooktime,
+                    ingredients: recipe.ingredients,
+                    instructions : recipe.instructions,
+                    createdBy : recipe.createdBy
+                })
+            } else {
+                this.props.history.push("/search")
+            }
         // console.log(JSON.stringify(response.data[0])); 
         console.log(this.state);
 
