@@ -88,6 +88,7 @@ class SignIn extends Component {
                             Log In
                         </button>
                         <br/>
+                        <br/>
                         <span className="invalidLogIn">{this.state.error}</span>
                 </form>
             </div>

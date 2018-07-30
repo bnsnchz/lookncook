@@ -5,12 +5,14 @@ html {
 
 h3 {
     font-family: "chalk", Fallback, serif;
-    color:white
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:white;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .hero-text {
@@ -20,7 +22,7 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .homeDiv {
@@ -30,12 +32,12 @@ p {
     width: 75vw;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: slategray;
+    background-color: rgba(119, 119, 119, .6);
 }
 
 #logo {
     margin-left: 20%;
-    margin-bottom:5%;
+    margin-bottom: 5%;
     width: 60vw;
-    text-align:center;
+    text-align: center;
 }
