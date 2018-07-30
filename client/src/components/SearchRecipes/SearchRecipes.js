@@ -29,7 +29,7 @@ class SearchRecipes extends Component {
           })
           this.props.history.push(this.state.recipeObject, `/recipe/${id}`)
           console.log("this is results.data: ", results.data)
-        //   window.location.href = "/"
+          window.location.href = `/recipe/${id}`
 
       })
 

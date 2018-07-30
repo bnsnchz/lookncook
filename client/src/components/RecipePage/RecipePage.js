@@ -24,7 +24,7 @@ class RecipePage extends Component {
     }
 
     getRecipeById = (props) => {
-        axios.get(`/recipes/${props._id}`).then(response => {
+        axios.get(window.location).then(response => {
             this.setState({
                 dishname: response.dishname,
                 image: response.image,
@@ -33,7 +33,7 @@ class RecipePage extends Component {
                 instructions : response.instructions,
                 createdBy : response.createdBy
             })
-            console.log(response)
+            console.log("this is response recipe: ", response)
             
         })
     }
