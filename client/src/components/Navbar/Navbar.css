@@ -56,3 +56,29 @@ h1{
 } */
 
 
+#directory select {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    
+}
+
+#logInOut {
+    display:none;
+    position:fixed;
+    top:0;
+    right:0;
+}
+
+#navbarSELECT {
+    background-color:gray;
+}
+
+@media (max-width: 440px) {
+    #directory ul     { display: none; }
+    #directory select { display: inline-block; }
+    #logInOut {display:inline-block}
+  }
+
+  

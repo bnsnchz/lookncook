@@ -13,17 +13,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(
-//   cookieParser({
-//     secret: "youCanLookButCanYouCook",
-//     resave: false, 
-//     saveUninitialized: true, 
-//     cookie: {
-//       secure: "auto",
-//       maxAge:9999
-//     }
-//   })
-// );
+
 app.use(
   session({
     secret: "youCanLookButCanYouCook", 
@@ -31,7 +21,7 @@ app.use(
     saveUninitialized: true, 
     cookie: {
       secure: "auto",
-      maxAge: 99999
+      maxAge: 1800000000
     }
   })
 );
