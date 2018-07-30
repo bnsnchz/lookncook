@@ -1,21 +1,21 @@
 #submit-form {
-    margin:auto;
+    margin: auto;
     text-align: center;
 }
 
 label {
     border-radius: 50px;
-    height : 20px;
-    width : 500px;
-    font-size:18px;
+    height: 20px;
+    width: 500px;
+    font-size: 18px;
     font-size: 30px;
     font-weight: bold;
-   font-family: "Futura";
-
+    font-family: "chalk", Fallback, serif;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-
-button {
+#submitRecipe {
     background-color: #4f7a7f;
     border: none;
     border-radius: 10px;
@@ -30,36 +30,36 @@ button {
     text-align: center;
     vertical-align: middle;
     margin-left: auto;
-    font-family: "Futura";
+    font-family: "chalk", Fallback, serif;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#ingredientList,#recipeTitle,#instructionList, #keywords, #cookTime {
+#ingredientList,
+#recipeTitle,
+#instructionList,
+#keywords,
+#cookTime {
     font-size: 16px;
-    font-family: "Futura";
-
-    
-    
+    font-family: "chalk", Fallback, serif;
 }
-
-
 
 .tooltip {
     position: relative;
     display: inline-block;
-    font-size:25px;
+    font-size: 25px;
 }
 
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 400px;
-    height:200px;
+    height: 200px;
     background-color: #555;
     color: #fff;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-    font-size:18px;
-    text-align:left;
+    font-size: 18px;
+    text-align: left;
     position: absolute;
     z-index: 1;
     bottom: 125%;
@@ -85,6 +85,6 @@ button {
     opacity: 1;
 }
 
-.far{
+.far {
     margin-left: 5%;
 }

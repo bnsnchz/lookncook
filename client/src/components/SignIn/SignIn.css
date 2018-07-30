@@ -1,0 +1,78 @@
+.signInForm {
+    margin: auto;
+    text-align: center;
+}
+
+.signInTitle {
+    width: 50vw;
+    max-width: 500px;
+    margin:auto;
+}
+
+.userInput {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.userName {
+    width: 50%;
+    height: 4vh;
+    margin-left: 2%;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.passwordInput {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#password {
+    width: 50%;
+    height: 4vh;
+    margin-left: 3.5%;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.invalidLogIn {
+    background: color #777777;
+    font-size: 35px;
+    font-family: "chalk", Fallback, serif;
+    color: lightcoral;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.registerLink {
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.signIn {
+    background-color: #4f7a7f;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    height: 100%;
+    width: 20%;
+    margin-top: -2%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-shadow: 2px 2px 4px #000000;
+    ;
+    margin-top:1%
+}
+
+#signIn{
+    background-color: #777777;
+    border-radius:25px;
+    border:5px solid white;
+    width:75vw;
+    margin:auto;
+    padding:40px;
+}
