@@ -1,0 +1,4 @@
+@font-face{
+    font-family:'chalk';
+    src: local('chalk'), url("/assets/fonts/Chalkduster.ttf") format("truetype");
+}
