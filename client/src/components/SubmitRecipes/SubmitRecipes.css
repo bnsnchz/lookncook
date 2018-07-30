@@ -15,7 +15,7 @@ label {
 }
 
 
-button {
+#submitRecipe {
     background-color: #4f7a7f;
     border: none;
     border-radius: 10px;
