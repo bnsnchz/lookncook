@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import SignIn from './components/SignIn';
 import Register from "./components/Register";
+import RecipePage from "./components/RecipePage"
 import axios from "axios";
 import Dashboard from './components/Dashboard';
 
