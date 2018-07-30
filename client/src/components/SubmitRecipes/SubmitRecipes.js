@@ -71,7 +71,12 @@ class SubmitRecipes extends Component {
                     <br/>
                     <label htmlFor='cookTime'>
                         Cook Time
-                        
+                        <div class="tooltip">  <i class="far fa-xs fa-question-circle"></i>
+                            <span class="tooltiptext">
+                            Please enter cook time in minutes only.
+                            ie (2 hours = 120 minutes, 1 hour = 60 minutes, 1.5 hours = 90 minutes)
+                            </span>
+                        </div>
                     </label>
                     <br />
                     <input

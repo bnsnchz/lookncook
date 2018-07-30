@@ -13,28 +13,28 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(
-  cookieParser({
-    secret: "youCanLookButCanYouCook",
-    resave: false, 
-    saveUninitialized: true, 
-    cookie: {
-      secure: "auto",
-      maxAge:9999
-    }
-  })
-);
 // app.use(
-//   session({
-//     secret: "youCanLookButCanYouCook", 
+//   cookieParser({
+//     secret: "youCanLookButCanYouCook",
 //     resave: false, 
 //     saveUninitialized: true, 
 //     cookie: {
 //       secure: "auto",
-//       maxAge: 99999
+//       maxAge:9999
 //     }
 //   })
 // );
+app.use(
+  session({
+    secret: "youCanLookButCanYouCook", 
+    resave: false, 
+    saveUninitialized: true, 
+    cookie: {
+      secure: "auto",
+      maxAge: 99999
+    }
+  })
+);
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

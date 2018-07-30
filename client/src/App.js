@@ -24,21 +24,26 @@ class App extends Component {
   componentDidMount(){
     axios.get("/auth").then(res=>{
       console.log(res.data)
-      this.setState({
-        loaded: true,
-        authenticated: res.data
-      });
-    });
-  }
+      if (res.data === true) {
+        this.setState({
+          loaded: true,
+          authenticated: res.data
+        });
+      };
+    });      
+  };
 
   setLogout = event => {
     event.preventDefault();
-    this.setState({
-      authenticated: false,
-      loaded: false
-    })
-    window.location.href = "/"
+    axios.get('/logout').then(res => {
+      this.setState({
+        authenticated: false,
+        loaded: false
+      });
+      window.location.href = "/"
+    });
   }
+
   setLogin = () => {
     this.setState({
       authenticated: true
