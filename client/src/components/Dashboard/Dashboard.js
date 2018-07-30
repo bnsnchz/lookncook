@@ -9,19 +9,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        axios.get("/auth").then(res=>{
-            console.log(res.data)
-            if (res.data === true) {
-              this.setState({
-                loaded: true,
-                authenticated: res.data
-              }, () => {
-                this.getUserInfo();
-              });
-            } else {
-                this.props.history.push('/signin')
-            };
-          });  
+        this.getUserInfo();  
     }
 
     getUserInfo = () => {

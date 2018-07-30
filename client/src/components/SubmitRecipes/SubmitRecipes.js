@@ -11,19 +11,6 @@ class SubmitRecipes extends Component {
         cookTime: ''
     }
 
-    componentDidMount() {
-        axios.get("/auth").then(res=>{
-            console.log(res.data)
-            if (res.data === true) {
-              this.setState({
-                loaded: true,
-                authenticated: res.data
-              });
-            } else {
-                this.props.history.push('/signin');
-            };
-          });  
-    }
     submitRecipe = () => {
         var objData = {
             title : this.state.recipeTitle,

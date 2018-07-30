@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import SearchRecipes from './components/SearchRecipes';
 import SavedRecipes from './components/SavedRecipes';
 import SubmitRecipes from './components/SubmitRecipes';
@@ -24,24 +24,21 @@ class App extends Component {
   componentDidMount(){
     axios.get("/auth").then(res=>{
       console.log(res.data)
-      if (res.data === true) {
         this.setState({
           loaded: true,
           authenticated: res.data
         });
-      };
     });      
   };
 
   setLogout = event => {
     event.preventDefault();
-    // console.log('hit');
     axios.get('/logout').then(res => {
       console.log(res.data);
       if (res.data === "Session ended."){
         this.setState({
           authenticated: false,
-          loaded: false
+          loaded: true
         });
         window.location.href = "/"
       }
@@ -55,13 +52,24 @@ class App extends Component {
   }
 
   render(){ 
+    if (!this.state.loaded) {
+      return null;
+    }
     return (
       <Router>
-          <Wrapper>
-              <Navbar logOut={this.setLogout} authenticated = {this.state.authenticated}/>
-              <Route path="/recipe" component={RecipePage} /> 
+        <Wrapper>
+          <Navbar logOut={this.setLogout} authenticated = {this.state.authenticated}/>
+            <Switch>
               <Route exact path = '/' component={Home} />
               <Route exact path = '/search' component={SearchRecipes} />
+              <Route exact path = '/signin' render ={(props) => 
+              <SignIn {...props} setLogin={this.setLogin}/>}
+              />
+              <Route exact path = '/register' render ={(props) => 
+                <Register {...props}/>} 
+              />
+                {!this.state.authenticated? <Redirect to="/signin"/>: null}
+              <Route path="/recipe" component={RecipePage} /> 
               <Route exact path = '/saved' render ={(props) => 
                 <SavedRecipes {...props} authenticated={this.state.authenticated}/>}
               />
@@ -71,13 +79,9 @@ class App extends Component {
               <Route exact path = '/user' render ={(props) => 
                 <Dashboard {...props} authenticated={this.state.authenticated}/>} 
               />
-              <Route exact path = '/signin' render ={(props) => 
-                <SignIn {...props} setLogin={this.setLogin}/>}
-              />
-              <Route exact path = '/register' render ={(props) => 
-                <Register {...props}/>} 
-              />
-          </Wrapper>
+              <Redirect to="/" />
+          </Switch>
+        </Wrapper>
       </Router>
     )
   }

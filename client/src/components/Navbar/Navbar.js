@@ -34,7 +34,6 @@ class Navbar extends Component {
                         <ul id = 'navbarUL'>
                             <li className='navbarli'><a href = '/'>Home</a></li>
                             <li className='navbarli'><a href = '/search'>Search Recipes</a></li>
-                            <li className='navbarli'><a href = '/saved'>View Saved Recipes</a></li>
 
                             <li className='navbarli'><a style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow} href = '/submit'>{this.props.authenticated===false?null:"Submit Recipe"}</a></li>
 

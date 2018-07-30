@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Recipe = require('../models/recipe.js');
 const User = require('../models/user.js');
 const encrypt = require('../encryption.js');
+var loggedIn = false;
 
 router.post('/api/recipes',  function(req,res) {
   console.log(req.body);
@@ -70,10 +71,8 @@ router.get("/recipe/:id", function(req, res){
 });
 
 
-var loggedIn = false;
 
 router.get('/auth', function(req,res) {
-  console.log(req.session)
   if (req.session.user){
     loggedIn=true
     res.json(loggedIn)
