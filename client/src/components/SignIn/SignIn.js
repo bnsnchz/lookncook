@@ -28,9 +28,13 @@ class SignIn extends Component {
             if (res.data===true){
                 this.props.setLogin();
                 this.props.history.push('/');
-            }else{
+            } else if (res.data===false) {
                 this.setState({
                     error: "Incorrect User Name or Password"
+                });
+            }else{
+                this.setState({
+                    error: "Account does not"
                 });
             }
         })
@@ -66,7 +70,7 @@ class SignIn extends Component {
                          onChange={this.handleInputChange} className="password"
                          minLength="8"
                          required
-                         placeholder="8 characters minimum"/>
+                         placeholder="Required"/>
                         <br/>
                         
                         <p>

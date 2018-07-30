@@ -107,6 +107,9 @@ router.post('/signin', function(req,res) {
       }).catch(err => {
         res.json(err);
       })
+    } else {
+      loggedIn = false;
+      res.json(loggedIn)
     }
 
   }).catch(error => {
