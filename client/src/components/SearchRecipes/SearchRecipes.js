@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './SearchRecipes.css'
 import axios from 'axios';
 
@@ -70,7 +69,7 @@ class SearchRecipes extends Component {
     render() {
         return (
             <div>
-                <h1 className="searchTitle">Search Recipes</h1>
+                <img id="searchRecipes" src="./assets/images/search.png" alt="search" />
                 <form id = 'searchForm'>
                     <input  
                         onChange={this.handleInputChange} name='search' 
