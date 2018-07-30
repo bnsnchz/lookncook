@@ -8,8 +8,8 @@ class RecipePage extends Component {
         dishname: "",
         image: "",
         cooktime: "",
-        ingredients: "",
-        instructions: "", 
+        ingredients: [],
+        instructions: [], 
         createdBy: ""
 
     }
@@ -44,26 +44,28 @@ class RecipePage extends Component {
             <div>
                 <h1>{this.state.dishname}</h1>
                 <image id="recipe-image" url="./" />
-                <h3>Cook time: X</h3>
+                <h3>Cook time: {this.state.cooktime} minutes</h3>
                 <div id="ingredients-container">
+                <h3>Ingredients:</h3>
                 <ol>
-                    <h3>Ingredients:</h3>
-                    <li>Ingredient ...</li>
-                    <li>Ingredient ...</li>
-                    <li>Ingredient ...</li>
-                    <li>Ingredient ...</li>
-                    <li>Ingredient ...</li>
+                    {this.state.ingredients.map((ingredients, i) => {
+                        return(
+                            <li key={i}>{ingredients}</li>
+                        )
+                    })}
                 </ol>
             </div>
             <br/>
             <div id="instructions-container">
+                <h3>Directions: </h3>
                 <ol>
-                    <h3>Directions: </h3>
-                    <li>Step 1 ...</li>
-                    <li>Step 2 ...</li>
-                    <li>Step 3 ...</li>
-                    <li>Step 4 ...</li>
-                    <li>Step 5 ...</li>
+                    {this.state.instructions.map((instructions, i)=>{
+                        return (
+                            <li key={i}>{instructions}</li>
+                        )
+                    })}
+                    
+
                 </ol>
                 </div>
             </div>
