@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-<<<<<<< HEAD
 import "./SavedRecipes.css"
-=======
-import axios from 'axios';
->>>>>>> 3c0564b39e2d9752c5f1371c02e9b733ded3fe8b
+import axios from "axios"
 
 class SavedRecipes extends Component {
     componentDidMount() {

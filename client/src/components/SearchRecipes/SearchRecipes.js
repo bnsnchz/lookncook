@@ -20,7 +20,6 @@ class SearchRecipes extends Component {
     });
   };
 
-<<<<<<< HEAD
   handleRedirect= id => {
       axios.post(`/recipe/${id}`, id)
       .then(results => {
@@ -35,8 +34,6 @@ class SearchRecipes extends Component {
 
   }
 
-=======
->>>>>>> benSunday
     handleSubmit = event => {
         event.preventDefault();
         this.searchRecipes()
