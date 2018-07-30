@@ -84,8 +84,8 @@ class SubmitRecipes extends Component {
                     <br/>
                     <label htmlFor='cookTime'>
                         Cook Time
-                        <div class="tooltip">  <i class="far fa-xs fa-question-circle"></i>
-                            <span class="tooltiptext">
+                        <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
+                            <span className="tooltiptext">
                             Please enter cook time in minutes only.
                             ie (2 hours = 120 minutes, 1 hour = 60 minutes, 1.5 hours = 90 minutes)
                             </span>
@@ -106,8 +106,8 @@ class SubmitRecipes extends Component {
                     <br />
                     <label htmlFor='keywords'>
                         Keywords
-                        <div class="tooltip">  <i class="far fa-xs fa-question-circle"></i>
-                            <span class="tooltiptext">Keyword Tips:
+                        <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
+                            <span className="tooltiptext">Keyword Tips:
                             Adding keywords related to your recipe helps users find it! Please make sure to format it in the following way:
                             <br/>
                             Beef&#9166;
@@ -185,7 +185,7 @@ class SubmitRecipes extends Component {
                     <br/>
                     <button id="submitRecipe" 
                         onClick={this.handleFormSubmit}>
-                        Submit Recipe
+                        Submit
                     </button>
                 </form>
                

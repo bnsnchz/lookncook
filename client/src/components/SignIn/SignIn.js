@@ -39,10 +39,10 @@ class SignIn extends Component {
 
     render(){
         return(
-            <div>
-                <h1 className="signInTitle">Sign In</h1>
+            <div className="signInForm">
+                <img className="signInTitle" src="./assets/images/signin.png" alt="signin" />
                 <form id="signIn">
-                    <label htmlFor="userName">
+                    <label className="userInput" htmlFor="userName">
                     User Name:
                     </label>
                     <input 
@@ -55,7 +55,7 @@ class SignIn extends Component {
                         className = "userName"
                         placeholder="Required"/>
                     <br/>
-                    <label htmlFor="password">
+                    <label className="passwordInput" htmlFor="password">
                     Password:
                     </label>
                     <input
@@ -70,7 +70,7 @@ class SignIn extends Component {
                         <br/>
                         
                         <p>
-                            <a style = {{fontSize:"14px"}}href = '/register'>
+                            <a className="registerLink" href = '/register'>
                             Don't have an account yet?
                                 <br/> 
                             Click here to create one.
@@ -83,8 +83,8 @@ class SignIn extends Component {
                             type = 'submit'>
                             Log In
                         </button>
-
-                        <span>{this.state.error}</span>
+                        <br/>
+                        <span className="invalidLogIn">{this.state.error}</span>
                 </form>
             </div>
         )

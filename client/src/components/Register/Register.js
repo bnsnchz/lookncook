@@ -38,10 +38,10 @@ class Register extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Hello New User, please REGISTER</h1>
+            <div className="registerForm">
+                <img className="registerImage" src="./assets/images/register.png" alt="register" />
                 <form id="register">
-                    <label htmlFor="userName">
+                    <label className="userInput" htmlFor="userName">
                     User Name:
                     </label>
                     <input 
@@ -54,7 +54,7 @@ class Register extends Component {
                         className = "userName"
                         placeholder="Required"/>
                     <br/>
-                    <label htmlFor="password">
+                    <label className="passwordInput"htmlFor="password">
                     Password:
                     </label>
                     <input
