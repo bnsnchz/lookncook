@@ -59,7 +59,8 @@ class App extends Component {
           <Navbar logOut={this.setLogout} authenticated = {this.state.authenticated}/>
             <Switch>
               <Route exact path = '/' component={Home} />
-              <Route exact path = '/search' component={SearchRecipes} />
+              <Route exact path = '/search' render ={(props) => 
+                <SearchRecipes {...props} authenticated={this.state.authenticated}/>} />
               <Route path="/recipe" component={RecipePage} /> 
               <Route exact path = '/signin' render ={(props) => 
               <SignIn {...props} setLogin={this.setLogin}/>}

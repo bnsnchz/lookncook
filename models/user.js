@@ -15,10 +15,10 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  savedRecipes : {
+  savedRecipes : [{
       type: Schema.Types.ObjectId,
-      ref: "Recipe",
-  }
+      ref: "Recipe"
+  }]
 });
 
 

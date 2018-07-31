@@ -11,7 +11,8 @@ router.post('/api/recipes',  function(req,res) {
     cooktime: req.body.cooktime,
     keywords: req.body.keywords,
     ingredients: req.body.ingredients,
-    instructions: req.body.instructions
+    instructions: req.body.instructions,
+    createdBy: req.session.user[0]._id
   })
   .then(response => {
     res.json(response);
@@ -32,6 +33,18 @@ router.post('/api/search', function(req,res) {
     res.json(response);
   })
   .catch(error => {
+    res.json(error);
+  })
+})
+
+router.post('/api/saverecipe', function(req,res) {
+  console.log(req.body);
+  User.update(
+    {_id:req.session.user[0]._id},
+    {$push:{savedRecipes:req.body.id}}
+  ).then(response => {
+    res.json(response);
+  }).catch(error => {
     res.json(error);
   })
 })
@@ -141,9 +154,43 @@ router.post('/register', function(req,res) {
 router.get("/userInfo", function(req,res) {
   User.find(
     {username:req.session.user[0].username}
-  ).then(response => {
-    res.json(response);
+  ).populate('savedRecipes')
+  .then(response => {
+    // console.log(response);
+    res.send(response);
   }).catch(error => {
+    res.json(error);
+  })
+})
+
+router.get("/recipeInfo", function(req,res) {
+  Recipe.find(
+    {createdBy:req.session.user[0]._id}
+  )
+  .then(response => {
+    // console.log(response);
+    res.send(response);
+  }).catch(error => {
+    res.json(error);
+  })
+})
+
+router.post('/removesave', function(req,res) {
+  User.update(
+    {username:req.session.user[0].username},
+    {$pull:{savedRecipes:req.body.id}}
+  )
+  .then(response => {
+    User.find(
+      {username:req.session.user[0].username}
+    ).populate('savedRecipes')
+    .then(result => {
+      res.send(result);
+    }).catch(error => {
+      res.json(error);
+    })
+  })
+  .catch(error => {
     res.json(error);
   })
 })
