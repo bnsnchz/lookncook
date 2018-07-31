@@ -7,7 +7,7 @@ import SubmitRecipes from './components/SubmitRecipes';
 import Wrapper from './components/Wrapper';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Clock from './components/CountdownClock';
+import Timer from './components/Timer';
 
 const App = () => {
 

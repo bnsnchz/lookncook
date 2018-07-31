@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Clock from "../CountdownClock/Clock.js"
+import Timer from "../Timer/Timer.js"
 import './SearchRecipes.css'
 import axios from 'axios';
 
@@ -53,7 +53,7 @@ class SearchRecipes extends Component {
     render() {
         return (
             <div>
-                <Clock/>
+             
                 <h1 className="searchTitle">Search Recipes</h1>
                 <form id = 'searchForm'>
                     <input  
@@ -68,6 +68,7 @@ class SearchRecipes extends Component {
                     >Search
                     </button>
                 </form>
+                <Timer/>
                 <div id = 'recipeResults'>
                     <ul id = 'recipeUL'>
                        {this.state.recipes.map((recipe, i) => {
