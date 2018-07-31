@@ -6,7 +6,6 @@
 }
 
 #title-container {
-    margin-left: 2%;
     width: 85vw;
     display: block;
     text-justify: left;
@@ -24,7 +23,6 @@
 }
 
 #instructions-container {
-    margin-left: 2%;
     width: 85vw;
     margin-bottom: 3%;
     display: block;
@@ -66,4 +64,9 @@
 .cookTime {
     text-shadow: 2px 2px 4px #000000;
     font-family: "chalk", Fallback, serif;
+}
+
+.recipePage{
+    width:90vw;
+    margin:auto;
 }

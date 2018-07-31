@@ -46,14 +46,14 @@ class RecipePage extends Component {
     }
     render() {
         return(
-            <div>
+            <div className="recipePage">
                 <br />
                 <br/>
                 <div id="title-container"> 
                 <img id="recipe-image" src={this.state.image} alt={this.state.dishname}/>
-                <h1>{this.state.dishname}</h1>
-                <h3 className="cookTime">Cook time:</h3><p>{this.state.cooktime} minutes</p>
-                <h3>Ingredients:</h3>
+                <h1><u>{this.state.dishname}</u></h1>
+                <h3 className="cookTime"><u>Cook time:</u></h3><p>{this.state.cooktime} minutes</p>
+                <h3><u>Ingredients:</u></h3>
                 <ol>
                     {this.state.ingredients.map((ingredients, i) => {
                         return(
@@ -64,7 +64,7 @@ class RecipePage extends Component {
             </div>
             <br/>
             <div id="instructions-container">
-                <h3>Directions: </h3>
+                <h3><u>Directions: </u></h3>
                 <ol>
                     {this.state.instructions.map((instructions, i)=>{
                         return (
