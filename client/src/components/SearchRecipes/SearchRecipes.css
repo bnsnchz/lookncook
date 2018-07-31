@@ -30,7 +30,7 @@
 }
 
 .dishPic {
-    max-width: 30vw;
+    min-width: 25vw;
     float: left;
     max-height:50vh;
     border-radius:10px;
@@ -87,6 +87,7 @@
 #imgContainer{
     display:flex;
     text-align: center;
+    position:relative;
 }
 
 img{
@@ -99,7 +100,14 @@ img{
     text-align:center;
 }
 
+#imgContainer #saveBtn {
+    z-index:999;
+    position:absolute;
+    top:0;
+    right:10%;
 
+
+} 
 @media (max-width: 950px) {
     #recipeUL{ 
         grid-template-columns: 100%; 

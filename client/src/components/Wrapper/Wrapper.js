@@ -35,7 +35,6 @@ class Wrapper extends Component {
             default:
                 console.log("whooops")
         }
-        console.log(background);
         this.setState({
             styles: {
                 backgroundImage: "url(" + background + ")"
