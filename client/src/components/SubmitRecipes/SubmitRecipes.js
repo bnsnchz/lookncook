@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './SubmitRecipes.css'
+
 class SubmitRecipes extends Component {
     state = {
         recipeTitle:'',
         instructionList:'',
         keywords: '',
         ingredientList:'',
-        cookTime: ''
+        cookTime: '',
+        imageLink:''
     }
 
     submitRecipe = () => {
@@ -16,7 +18,8 @@ class SubmitRecipes extends Component {
             cooktime: this.state.cookTime,
             keywords: this.state.keywords.toLowerCase().split(/\n/),
             instructions: this.state.instructionList.split(/\n/),
-            ingredients: this.state.ingredientList.split(/\n/)
+            ingredients: this.state.ingredientList.split(/\n/),
+            image:this.state.imageLink
         }
         console.log(objData);
 
@@ -34,18 +37,11 @@ class SubmitRecipes extends Component {
         this.setState({
             [name]:value
         })
-        console.log(value.split(/\n/))
     }
 
     handleFormSubmit= event => {
-        // event.preventDefault();
-        console.log('formSubmit clicked');
         this.submitRecipe(this.state);
     }
-
- 
-    
-
 
     render() {
         return (
@@ -90,6 +86,26 @@ class SubmitRecipes extends Component {
                     </input>
                     <br />
                     <br />
+                    <label htmlFor='imageLink'>
+                        Image Link 
+                        <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
+                            <span className="tooltiptext">
+                            Add a tasty image to go with your recipe. Make sure to use a valid link or the image will not render properly!
+                            </span>
+                        </div>
+                    </label>
+                    <br/>
+                    <input 
+                        type = 'text' 
+                        id='imageLink' 
+                        name='imageLink' 
+                        value={this.state.imageLink}
+                        onChange={this.handleInputChange}
+                        className = 'formTitle'
+                        placeholder='Photo URL'
+                        size = '50'>
+                    </input>
+                    <br/>
                     <label htmlFor='keywords'>
                         Keywords
                         <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
@@ -100,7 +116,7 @@ class SubmitRecipes extends Component {
                             <br/>
                             Asian&#9166;
                             <br/>
-                            Noodles&#9166;
+                            Noodles
                             </span>
                         </div>
                     </label>
@@ -126,7 +142,7 @@ class SubmitRecipes extends Component {
                             <br/>
                             (1)Two Potatoes &#9166;
                             <br/>
-                            (2)1/4 TBSP Salt &#9166;
+                            (2)1/4 TBSP Salt
                             </span>
                         </div>
                     </label>
@@ -144,7 +160,7 @@ class SubmitRecipes extends Component {
                     </textarea>
                     <br/>
                     <br/>
-                    <label htmlFor='recipeTitle'>
+                    <label htmlFor='instructionList'>
                         Instructions
                         <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
                             <span className="tooltiptext">Formatting Tips:
@@ -152,7 +168,7 @@ class SubmitRecipes extends Component {
                             <br/>
                             (1)Cut Vegetables&#9166;
                             <br/>
-                            (2)Wash Vegetables&#9166;
+                            (2)Wash Vegetables
                             </span>
                         </div>
                     </label>

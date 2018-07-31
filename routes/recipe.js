@@ -10,6 +10,7 @@ router.post('/api/recipes',  function(req,res) {
     dishname: req.body.title,
     cooktime: req.body.cooktime,
     keywords: req.body.keywords,
+    image: req.body.image,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
     createdBy: req.session.user[0]._id
