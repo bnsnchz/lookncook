@@ -68,7 +68,6 @@ class SearchRecipes extends Component {
                     >Search
                     </button>
                 </form>
-                <Timer/>
                 <div id = 'recipeResults'>
                     <ul id = 'recipeUL'>
                        {this.state.recipes.map((recipe, i) => {
