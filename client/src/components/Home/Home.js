@@ -8,7 +8,7 @@ class Home extends Component {
                     <img id="logo" src="./assets/images/lookncook.png" alt="logo" />
                     <div className="homeDiv">
                         <h2>About</h2>
-                            <p> Hello there! Welcome to look & cook, the premiere recipe site that is dedicated to making your next culinary dish a total grand-slam. We strive to make it eaiser in order to help you formulate and search for recipes of your favorite dishes, sides, entrees, and desserts. To start, just head over to the account page and sign up so that you can save all of favorites that you find. We hope you enjoy what we have to offer and cannot wait to see what the community creates!
+                            <p> Hello there! Welcome to look & cook, the premiere recipe site that is dedicated to making your next culinary dish a total grand-slam. We strive to make it eaiser in order to help you formulate and search for recipes of your favorite dishes, sides, entrees, and desserts. To start, just head over to the login page and sign up so that you can save all of favorites that you find. We hope you enjoy what we have to offer and cannot wait to see what the community creates!
                             </p>
                         <h3>What Makes us Unique</h3>
                             <p>
