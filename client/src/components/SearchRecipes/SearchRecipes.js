@@ -73,6 +73,10 @@ class SearchRecipes extends Component {
         })
     }
 
+    // Strikethrough
+
+    
+
     render() {
         return (
             <div>

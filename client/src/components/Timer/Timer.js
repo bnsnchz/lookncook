@@ -5,7 +5,7 @@ import './Timer.css';
 class TimerInput extends React.Component {
   render() {
     return (
-      <div style={{marginLeft:150}}>
+      <div style={{marginLeft:150, color:"white" }}>
         <h2>Input your desired time</h2>
         <input type="number" value={this.props.value} onChange={this.props.handleChange} required />
       </div>
@@ -17,7 +17,7 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
-        <h3 style={{ fontSize: 50, marginLeft:200 }}>{this.props.value}:{this.props.seconds}</h3>
+        <h3 style={{ fontSize: 50, marginLeft:200, color:"white" }}>{this.props.value}:{this.props.seconds}</h3>
       </div>
     );
   }
@@ -26,8 +26,8 @@ class Timer extends React.Component {
 class StartButton extends React.Component {
   render() {
     return (
-      <div style={{ marginLeft: 150 }}>
-        <button className="btn btn-lg btn-success" disabled={!this.props.value} onClick={this.props.startCountDown}>Start</button>
+      <div style={{ marginLeft: 150  }}>
+        <button className="searchbutton" disabled={!this.props.value} onClick={this.props.startCountDown}>Start</button>
       </div>
 
     );

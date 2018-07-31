@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './SubmitRecipes.css'
-
 class SubmitRecipes extends Component {
     state = {
         recipeTitle:'',
