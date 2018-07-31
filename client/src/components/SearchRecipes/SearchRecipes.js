@@ -6,7 +6,13 @@ class SearchRecipes extends Component {
     state = {
         recipes: [],
         search:'',
-        recipeObject: []
+        recipeObject: [],
+        stylesShow: {
+            "display":"block"
+        },
+        stylesNone: {
+            "display":"none"
+        }
     }
 
     componentDidMount() {
@@ -14,11 +20,11 @@ class SearchRecipes extends Component {
     }
     
     handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+        const { name, value } = event.target;
+        this.setState({
+        [name]: value
+        });
+    };
 
   handleRedirect= id => {
       axios.post(`/recipe/${id}`, id)
@@ -50,10 +56,12 @@ class SearchRecipes extends Component {
         })
     }
 
-    saveRecipe = (event) => {
-        event.preventDefault();
-        axios.post('/api/saved').then(response => {
-            
+    saveRecipe = id => {
+        var recipeID = {
+            id:id
+        }
+        axios.post('/api/saverecipe', recipeID).then(res => {
+            console.log("saved recipe sucessfully");
         })
     }
    
@@ -95,14 +103,16 @@ class SearchRecipes extends Component {
                            return(
                             <div className="recipeList" key ={i}>
                                 <div id = 'imgContainer'>
-                                    <button 
-                                        onClick={() => {this.saveRecipe}}id = 'saveBtn'>Save Recipe</button>
+                                    <button
+                                        style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
+                                        onClick={ () => {this.saveRecipe(recipe._id)}}
+                                        id = 'saveBtn'>Save Recipe</button>
                                     <img className="dishPic" onClick={() =>
                                     this.handleRedirect(recipe._id)} src={recipe.image} alt={recipe.dishname}/>
                                 </div>
                                 <div id = 'nameContainer'>
-                                    <li className="dishName" onClick ={()=>
-                                    this.handleRedirect(recipe._id)} id = {recipe._id}>
+                                    <li className="dishName" 
+                                    onClick ={ () => this.handleRedirect(recipe._id)} id = {recipe._id}>
                                     {recipe.dishname}
                                     <br/>
                                     </li>
