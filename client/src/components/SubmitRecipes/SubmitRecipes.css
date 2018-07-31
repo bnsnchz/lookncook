@@ -10,7 +10,7 @@ label {
     font-size: 18px;
     font-size: 30px;
     font-weight: bold;
-    font-family: "chalk", Fallback, serif;
+    font-family: 'chalk';
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -30,7 +30,7 @@ label {
     text-align: center;
     vertical-align: middle;
     margin-left: auto;
-    font-family: "chalk", Fallback, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -41,7 +41,7 @@ label {
 #cookTime,
 #imageLink {
     font-size: 16px;
-    font-family: "chalk", Fallback, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .tooltip {
