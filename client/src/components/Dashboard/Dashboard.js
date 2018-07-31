@@ -47,13 +47,12 @@ class Dashboard extends Component {
     }
 
     handleRedirect= id => {
-        axios.post(`/recipe/${id}`, id)
+        axios.post(`/search/${id}`, id)
         .then(results => {
             this.setState({
                 recipeObject: results.data[0]
             })
-            this.props.history.push(this.state.recipeObject, `/recipe/${id}`)
-            window.location.href = `/recipe/${id}`
+            this.props.history.push(`/recipe/${id}`)
   
         })
   
