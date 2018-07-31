@@ -22,18 +22,18 @@ class Dashboard extends Component {
     }
     render() {
         return(
-            <div>
-                <h1>{this.state.userName}'s Page</h1>
-
-                <ul>
-                    {!this.state.savedRecipes?"You do not have any saved recipes at the moment":this.state.savedRecipes.map((recipe, i) => {
-                        return (
-                            <li key ={i}>
-                                {recipe.dishname}
-                            </li>
-                        )
-                    })}
-                </ul>
+            <div className="dashboard">
+                <img className="dashboardImg" src="./assets/images/dashboard.png" alt="dashboard" />
+                <h1 className="savedTitle"><u>Saved Recipes</u></h1>
+                    <ul className="savedRecipes">
+                        {!this.state.savedRecipes?"You do not have any saved recipes at the moment":this.state.savedRecipes.map((recipe, i) => {
+                            return (
+                                <li  className="" key ={i}>
+                                    {recipe.dishname}
+                                </li>
+                            )
+                        })}
+                    </ul>
             </div>
         )
     }

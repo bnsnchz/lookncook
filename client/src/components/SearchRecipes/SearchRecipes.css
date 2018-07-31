@@ -32,8 +32,8 @@
 .dishPic {
     min-width: 25vw;
     float: left;
-    max-height:50vh;
-    border-radius:10px;
+    max-height: 50vh;
+    border-radius: 10px;
 }
 
 .dishName {
@@ -57,22 +57,21 @@
     font-size: 35px;
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color:rgba(119, 119, 119, .6);
+    background-color: rgba(119, 119, 119, .6);
 }
 
 #recipeResults {
     text-align: center;
     padding: 0 15%;
-    
 }
 
 #recipeUL {
     list-style-type: none;
     margin: 10px;
     padding: 0;
-    display:grid;
+    display: grid;
     grid-template-columns: 50% 50%;
-    overflow:auto;
+    overflow: auto;
 }
 
 #searchForm {
@@ -84,82 +83,91 @@
     width: 75vw;
 }
 
-#imgContainer{
-    display:flex;
+#imgContainer {
+    display: flex;
     text-align: center;
-    position:relative;
+    position: relative;
 }
 
-img{
-    margin:auto;
-    display:inline-block;
+img {
+    margin: auto;
+    display: inline-block;
 }
 
-#nameContainer{
-    display:block;
-    text-align:center;
+#nameContainer {
+    display: block;
+    text-align: center;
 }
 
 #imgContainer #saveBtn {
-    z-index:999;
-    position:absolute;
-    top:0;
-    right:10%;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    right: 10%;
+}
 
+@media (max-width: 1920px) {
 
-} 
+    .dishPic {
+        /* max-width: 55vw; */
+        float: left;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 950px) {
-    #recipeUL{ 
-        grid-template-columns: 100%; 
+    #recipeUL {
+        grid-template-columns: 100%;
     }
     .dishPic {
         max-width: 60vw;
         float: left;
-        max-height:50vh;
-        padding-top: 0 ;
-        padding-bottom:0;
-        margin-top:0;
-        margin-bottom:0;
+        max-height: 50vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
-@media (max-width: 615px) {
 
-    .searchRecipe{
-        font-size:25px;
+@media (max-width: 615px) {
+    .searchRecipe {
+        font-size: 25px;
     }
-    #recipeUL{ 
-        grid-template-columns: 100%; 
+    #recipeUL {
+        grid-template-columns: 100%;
     }
     .dishPic {
         max-width: 50vw;
         float: left;
-        max-height:35vh;
-        padding-top: 0 ;
-        padding-bottom:0;
-        margin-top:0;
-        margin-bottom:0;
+        max-height: 35vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
-@media (max-width: 480px) {
-    #recipeUL{ 
-        grid-template-columns: 100%; 
-    }
 
+@media (max-width: 480px) {
+    #recipeUL {
+        grid-template-columns: 100%;
+    }
     .dishPic {
         max-width: 40vw;
         float: left;
-        max-height:25vh;
-        padding-top: 0 ;
-        padding-bottom:0;
-        margin-top:0;
-        margin-bottom:0;
+        max-height: 25vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
-
     .dishName {
         font-size: 30px;
     }
-
-    .searchRecipe{
-        font-size:12px;
+    .searchRecipe {
+        font-size: 12px;
     }
-  }
+}
