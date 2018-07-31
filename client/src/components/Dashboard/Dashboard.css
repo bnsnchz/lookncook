@@ -1,0 +1,19 @@
+.dashboard{
+    text-align: center;
+}
+
+.dashboardImg{
+    width:65vw;
+    margin:auto;
+}
+
+.savedTitle{
+    color:white;
+    font-family:"chalk",Fallback, serif;
+}
+
+.savedRecipes{
+    color:white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 150%;
+}
