@@ -7,11 +7,12 @@ class Home extends Component {
                 <div>
                     <img id="logo" src="./assets/images/lookncook.png" alt="logo" />
                     <div className="homeDiv">
-                        <h3>About</h3>
-                            <p>Potato clavela blanca kerr's pink atlantic adirondack red bildtstar marcy. Vivaldi linda carola marquis almond bonnotte bildtstar, ratte alturas megachip german butterball keuka gold golden wonder red norland. Kennebec annabelle almond camota ranger russet, marcy ratte arran victory norgold russet stobrawa alturas. Atlantic bonnotte cielo marquis french fries, alturas atlantic vivaldi red norland kipfler. Golden wonder maris piper annabelle home guard linda sieglinde arran victory. Estima sirco pink eye kipfler monalisa selma. Ratte yellow finn, tater pike belle de fontenay innovator anya stobrawa. Annabelle irish cobbler blazer russet clavela blanca maris piper. Arran victory megachip pink fir apple atlantic avalanche primura annabelle, norgold russet primura arran victory vivaldi marcy.
+                        <h2>About</h2>
+                            <p> Hello there! Welcome to look & cook, the premiere recipe site that is dedicated to making your next culinary dish a total grand-slam. We strive to make it eaiser in order to help you formulate and search for recipes of your favorite dishes, sides, entrees, and desserts. To start, just head over to the account page and sign up so that you can save all of favorites that you find. We hope you enjoy what we have to offer and cannot wait to see what the community creates!
                             </p>
+                        <h3>What Makes us Unique</h3>
                             <p>
-                            Cielo clavela blanca ranger russet keuka gold spud flava german butterball, kennebec superior rooster stobrawa apline bintje. Red pontiac norgold russet adirondack red annabelle maris piper golden wonder fingerling. King edward shepody clavela blanca blazer russet nicola marfona avalanche, kipfler rooster blazer russet pink eye kerr's pink german butterball. Flava cara, goldrush superior sirco annabelle kestrel keuka gold. Pike marfona fianna lady balfour red pontiac fingerling potato. Annabelle kestrel amandine atlantic, norgold russet pink fir apple rooster irish cobbler yellow finn jersey royal bannock russet. King edward nicola canela russet estima clavela blanca cara red pontiac. Flava superior agata alturas sieglinde spud.
+                            What differs us from the rest is the fact that we have a uniquely embedded timer which enables you to never have to worry about counting down the minutes for your next step. Once you find a recipe that you would like to use, our specialized timer will perfectly show you how much time is needed until your freshly baked cookies have to be pulled out of the oven. No more worrying, and no strings attached. 
                             </p>
                     </div>
                 </div>
