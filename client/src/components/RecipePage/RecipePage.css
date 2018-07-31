@@ -66,7 +66,74 @@
     font-family: "chalk", Fallback, serif;
 }
 
-.recipePage{
-    width:90vw;
-    margin:auto;
+.recipePage {
+    margin-left:5%;
+}
+@media (max-width: 1920px) {
+    #recipe-image{
+        max-height:400px;
+    }
+}
+
+@media (max-width: 950px) {
+    #recipe-image{
+        max-height:300px;
+        text-align:center;
+        margin-right:20%;
+
+    }
+    #title {
+        display:inline-block;
+        text-align: center;
+    }
+    .cookTime, .ingredients{
+        display:block;
+        text-align:center;   
+    }
+   
+}
+
+@media (max-width: 615px) {
+    #recipe-image{
+        max-height:250px;
+        text-align:center;
+        margin-right:10%;
+
+    }
+    #title-container {
+        text-align:left;
+        display:block;
+    }
+    #title {
+        display:inline-block
+    }
+    #title, .cookTime, .ingredients{
+        display:block;
+        text-align:center;
+        
+    }
+    .recipePage {
+        margin-left:3%;
+    }
+}
+
+@media (max-width: 480px) {
+    #recipe-image{
+        max-height:200px;
+        /* margin-left:10%; */
+        margin-right:10%;
+        text-align:center;
+    }
+   
+    #title-container {
+        text-align:left;
+    }
+    #title, .cookTime, .ingredients{
+        display:block;
+        text-align:center;
+        
+    }
+    .recipePage {
+        margin-left:.5%;
+    }
 }
