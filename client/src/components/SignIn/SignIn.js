@@ -27,7 +27,7 @@ class SignIn extends Component {
             console.log(res.data);
             if (res.data===true){
                 this.props.setLogin();
-                this.props.history.push('/');
+                this.props.history.push('/user');
             } else if (res.data===false) {
                 this.setState({
                     error: "Incorrect User Name or Password"

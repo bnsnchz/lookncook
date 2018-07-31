@@ -1,19 +1,55 @@
-.dashboard{
+.dashboard {
     text-align: center;
 }
 
-.dashboardImg{
-    width:65vw;
-    margin:auto;
+.dashboardImg {
+    width: 65vw;
+    margin: auto;
 }
 
-.savedTitle{
-    color:white;
-    font-family:"chalk",Fallback, serif;
+.savedTitle {
+    color: white;
+    font-family: "chalk", Fallback, serif;
+    font-size:200%;
 }
 
-.savedRecipes{
-    color:white;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.savedRecipeDiv {
+    overflow: auto;
+    width: 30vw;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(119, 119, 119, .6);
+    margin-bottom: 1%;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+.savedRecipes {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 150%;
+}
+
+.savedPic {
+    max-width: 15vw;
+    float: left;
+    border-radius: 10px;
+}
+
+.savedRecipeName {
+    color: white;
+    font-size: 200%;
+    font-family: 'chalk', Fallback, serif;
+}
+
+#user-saved {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 5%;
+}
+
+#user-created {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 5%;
 }
