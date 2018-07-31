@@ -33,10 +33,8 @@ class SearchRecipes extends Component {
           this.setState({
               recipeObject: results.data[0]
           })
-          this.props.history.push(this.state.recipeObject, `/recipe/${id}`)
-          console.log("this is results.data: ", results.data)
-          window.location.href = `/recipe/${id}`
-
+          this.props.history.push(`/recipe/${id}`)
+        //   console.log("this is results.data: ", results.data)
       })
 
   }
