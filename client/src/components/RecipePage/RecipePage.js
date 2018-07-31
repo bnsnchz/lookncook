@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Timer from "../Timer/Timer"
 import "./RecipePage.css"
 
 
@@ -19,21 +20,31 @@ class RecipePage extends Component {
         this.getRecipeById()
     }
 
-    onClick = event => {
+    onClick = (event, i) => {
         event.preventDefault();
-
+        this.state.instructions[i].flag = !this.state.instructions[i].flag
+        this.setState({
+           instruction: this.state.instructions
+        })
     }
 
     getRecipeById = () => {
         axios.get(window.location).then(response => {
             var recipe = response.data[0]
             if (recipe) {
+                let variable = recipe.instructions.map( item => {
+                    return {
+                        instructions : item,
+                        flag: false
+                    }
+                })
+                console.log("variable", variable)
                 this.setState({
                     dishname: recipe.dishname,
                     image: recipe.image,
                     cooktime: recipe.cooktime,
                     ingredients: recipe.ingredients,
-                    instructions : recipe.instructions,
+                    instructions: variable,
                     createdBy : recipe.createdBy
                 })
             } else {
@@ -44,7 +55,15 @@ class RecipePage extends Component {
 
         })
     }
+
+
     render() {
+        const strikeStlye = {
+            textDecoration: "line-through"
+        }
+        const NotStrikeStlye = {
+            textDecoration: "none"
+        }
         return(
             <div className="recipePage">
                 <br />
@@ -66,10 +85,10 @@ class RecipePage extends Component {
             <div id="instructions-container">
                 <h3><u>Directions: </u></h3>
                 <ol>
-                    {this.state.instructions.map((instructions, i)=>{
+                    {this.state.instructions.map((item, i)=>{
                         return (
                             <div>
-                                <li key={i}><div id="step-container">{instructions}</div><button id="instruction-btn">✔</button></li>
+                                <li key={i}><div style={item.flag ? strikeStlye : NotStrikeStlye}id="step-container"> {item.instructions}</div><button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>✔</button></li>
                             <br/>
                             </div>
                         )
