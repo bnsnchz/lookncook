@@ -28,7 +28,7 @@ class SearchRecipes extends Component {
     };
 
   handleRedirect= id => {
-      axios.post(`/recipe/${id}`, id)
+      axios.post(`/search/${id}`, id)
       .then(results => {
           this.setState({
               recipeObject: results.data[0]

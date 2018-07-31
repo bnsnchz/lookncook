@@ -60,11 +60,11 @@ router.get('/api/recipes', function(req,res) {
   });
 });
 
-router.post("/recipe/:id", function(req, res) {
+router.post("/search/:id", function(req, res) {
   Recipe.find({_id: req.params.id})
   .then(response => {
       res.json(response)
-    // res.redirect(`/recipe/${req.params.id}`, response)
+    res.redirect(`/recipe/${req.params.id}`, response)
   })
   .catch(error => {
     console.log(error)
