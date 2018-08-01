@@ -6,7 +6,7 @@
 }
 
 #title-container {
-    width: 85vw;
+    width: 960px;
     display: block;
     text-justify: left;
     padding: 20px;
@@ -23,7 +23,7 @@
 }
 
 #instructions-container {
-    width: 85vw;
+    width: 960px;
     margin-bottom: 3%;
     display: block;
     text-justify: left;
@@ -55,6 +55,7 @@
     vertical-align: middle;
     vertical-align: middle;
     margin-left: 10px;
+    margin-top:2%;
 }
 
 #step-container {
@@ -67,8 +68,17 @@
 }
 
 .recipePage {
-    margin-left:5%;
+    margin:auto;
+    width:960px;
+    /* text-align: center; */
+
 }
+
+.imgWrapper{
+    margin:auto;
+    text-align: center;
+}
+
 @media (max-width: 1920px) {
     #recipe-image{
         max-height:400px;

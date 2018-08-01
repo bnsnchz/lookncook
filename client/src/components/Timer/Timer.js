@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import './Timer.css';
 
-class TimerInput extends React.Component {
+class TimerInput extends Component {
   render() {
     return (
       <div style={{marginLeft:150, color:"white" }}>
@@ -13,7 +12,7 @@ class TimerInput extends React.Component {
   }
 }
 
-class Timer extends React.Component {
+class Timer extends Component {
   render() {
     return (
       <div>
@@ -23,7 +22,7 @@ class Timer extends React.Component {
   }
 }
 
-class StartButton extends React.Component {
+class StartButton extends Component {
   render() {
     return (
       <div style={{ marginLeft: 150  }}>
@@ -34,7 +33,7 @@ class StartButton extends React.Component {
   }
 }
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
