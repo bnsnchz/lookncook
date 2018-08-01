@@ -3,7 +3,6 @@ import axios from "axios";
 import Timer from "../Timer/Timer"
 import "./RecipePage.css"
 
-
 class RecipePage extends Component {
 
     state = {
@@ -76,6 +75,10 @@ class RecipePage extends Component {
         const NotStrikeStlye = {
             textDecoration: "none"
         }
+        // let timer = {
+        //     display:"none"
+        // }
+
         return(
             <div className="recipePage">
                 <br />
@@ -107,8 +110,10 @@ class RecipePage extends Component {
                     {this.state.instructions.map((item, i)=>{
                         return (
                             <div>
-                                <li key={i}><div style={item.flag ? strikeStlye : NotStrikeStlye}id="step-container"> {item.instructions}</div><button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>✔</button></li>
-                            <br/>
+                                <li key={i}><div style={item.flag ? strikeStlye : NotStrikeStlye} id="step-container"> {item.instructions}</div><button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>✔ Done</button>
+                                {item.instructions.match(/\d+(?= minutes| minute)/) ?<Timer timeValue={item.instructions.match(/\d+(?= minutes| minute)/)} />:null}
+                                
+                                </li>
                             </div>
                         )
                     })}
@@ -116,6 +121,7 @@ class RecipePage extends Component {
 
                 </ol>
                 </div>
+
             </div>
         )
     }

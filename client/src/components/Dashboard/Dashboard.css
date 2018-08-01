@@ -7,10 +7,16 @@
     margin: auto;
 }
 
+.savedLabel{
+    color:white;
+    font-size:50px;
+}
+
 .savedTitle {
     color: white;
     font-family: "chalk", Fallback, serif;
     font-size: 200%;
+    min-height:15vh;
 }
 
 .savedRecipeDiv {
@@ -22,6 +28,7 @@
     margin-bottom: 1%;
     padding: 1%;
     border-radius: 15px;
+    min-height:30vh;
 }
 
 .savedRecipes {
@@ -40,6 +47,39 @@
     color: white;
     font-size: 200%;
     font-family: 'chalk', Fallback, serif;
+}
+
+.viewBtn {
+    background-color: #4f7a7f;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    width: 200px;
+    font-family: "chalk", Fallback, Serif;
+}
+
+.dltBtn {
+    background-color: #4f7a7f;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    width: 200px;
+    font-family: "chalk", Fallback, Serif;
+    margin-left: 5%;
+}
+
+.btnDiv{
+    margin-top:1%;
 }
 
 #user-saved {

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Timer from "../Timer/Timer.js"
 import './SearchRecipes.css'
 import axios from 'axios';
 
@@ -60,6 +59,9 @@ class SearchRecipes extends Component {
             id:id
         }
         axios.post('/api/saverecipe', recipeID).then(res => {
+            if(res.data === "already saved"){
+                alert("Recipe Already Saved!");
+            }
             console.log("saved recipe sucessfully");
         })
     }

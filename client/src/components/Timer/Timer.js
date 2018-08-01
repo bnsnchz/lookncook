@@ -1,129 +1,83 @@
-import React, {Component} from 'react';
-import './Timer.css';
+import React from "react";
+import "./Timer.css"
 
-class TimerInput extends Component {
-  render() {
-    return (
-      <div style={{marginLeft:150, color:"white" }}>
-        <h2>Input your desired time</h2>
-        <input type="number" value={this.props.value} onChange={this.props.handleChange} required />
-      </div>
-    );
-  }
-}
-
-class Timer extends Component {
-  render() {
-    return (
-      <div>
-        <h3 style={{ fontSize: 50, marginLeft:200, color:"white" }}>{this.props.value}:{this.props.seconds}</h3>
-      </div>
-    );
-  }
-}
-
-class StartButton extends Component {
-  render() {
-    return (
-      <div style={{ marginLeft: 150  }}>
-        <button className="searchbutton" disabled={!this.props.value} onClick={this.props.startCountDown}>Start</button>
-      </div>
-
-    );
-  }
-}
-
-class App extends Component {
+class Timer extends React.Component {
+  // since this is a stateful react component, we can access "props" in the es6 constructor method...
   constructor(props) {
     super(props);
+
+    // ...which is only useful if the props are going to define the initial state. here, we are setting duration to the number of seconds between the timestamp and now
     this.state = {
-      seconds: '00',
-      value: '',
-      isClicked : false
-    }
-    this.secondsRemaining;
-    this.intervalHandle;
-    this.handleChange = this.handleChange.bind(this);
-    this.startCountDown = this.startCountDown.bind(this);
-    this.tick = this.tick.bind(this);
+      duration: Math.floor(this.props.timeValue * 60),
+      clicked:false
+    };
   }
 
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    })
+  startTimer = () => {
+
+    this.setState({clicked:true})
+    // after the component has loaded, let's continue to update the duration by one second
+    this.tick = setInterval(() => {
+      let ding = new Audio()
+      ding.src = "../assets/sounds/ding.mp3"
+      if(this.state.duration!==0){      
+        this.setState({
+        duration: this.state.duration - 1
+      });
+      }else{
+        ding.play();
+        clearInterval(this.tick);
+        this.setState({
+          clicked:false
+        })
+      }
+
+    }, 1000);
+    
   }
 
-  tick() {
-    var min = Math.floor(this.secondsRemaining / 60);
-    var sec = this.secondsRemaining - (min * 60);
-
-    this.setState({
-      value: min,
-      seconds: sec,
-    })
-
-    if (sec < 10) {
-      this.setState({
-        seconds: "0" + this.state.seconds,
-      })
-
-    }
-
-    if (min < 10) {
-      this.setState({
-        value: "0" + min,
-      })
-
-    }
-
-    if (min === 0 & sec === 0) {
-      clearInterval(this.intervalHandle);
-    }
-
-
-    this.secondsRemaining--
+  // this is a built-in react method that is triggered when the component has been destroyed / removed from the dom
+  componentWillUnmount() {
+    // we need to capture this event to stop our interval. otherwise, it will keep running forever, potentially causing memory leaks
+    clearInterval(this.tick);
   }
 
-  startCountDown() {
-    this.intervalHandle = setInterval(this.tick, 1000);
-    let time = this.state.value;
-    this.secondsRemaining = time * 60;
-    this.setState({
-      isClicked : true
-    })
+  // custom method to format the duration in 00:00 syntax
+  format = (t) => {
+    let minutes = Math.floor(t / 60);
+    let seconds = t - (minutes * 60);
+  
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+  
+    if (minutes === 0) {
+      minutes = "00";
+    }
+    else if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+  
+    return minutes + ":" + seconds;
   }
 
   render() {
-    const clicked = this.state.isClicked;
-    if(clicked){
-    return (
-      <div>
-        <div className="row">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
-            <Timer value={this.state.value} seconds={this.state.seconds} />
-          </div>
-        </div>
-      </div>
-    );
-    }else{
-      return (
-        <div>
-          <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4">
-              <TimerInput value={this.state.value} handleChange={this.handleChange} />
-              <Timer value={this.state.value} seconds={this.state.seconds} />
-              <StartButton startCountDown={this.startCountDown} value={this.state.value} />
-            </div>
-          </div>
-        </div>
-      );
+    let styles = {};
+
+    // turn the span red if the duration is over 10 minutes
+    if (this.state.duration < 60) {
+      styles.color = "red";
     }
-  }
-}
 
+      if(this.state.clicked){
+        return(
+        <span className="timer">{this.format(this.state.duration)}</span>
+        )}else{
+          return(       
+             <button className="timerBtn" onClick={this.startTimer} clicked={this.state.clicked}>Start Timer</button>
+            )
+          } 
+        }
+      }
 
-
-export default App;
+export default Timer;

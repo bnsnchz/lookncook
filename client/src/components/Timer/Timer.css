@@ -1,24 +1,18 @@
-h2, {
-  color: red;
-  font-family: 'chalk', Fallback, serif;
-}
-
-.searchbutton {
+.timerBtn {
   background-color: #4f7a7f;
   border: none;
   border-radius: 10px;
   color: white;
-  padding: 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 200%;
-  height: 100%;
-  width: 20%;
-  margin-top: -2%;
-  font-family: 'chalk', Fallback, serif;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-shadow: 2px 2px 4px #000000;
-  ;
+  font-size: 20px;
+  height: 40px;
+  width: 200px;
+  font-family: "chalk", Fallback, Serif;
+  margin-left: 1%;
 }
 
+.timer {
+  margin-left: 1%;
+}

@@ -62,7 +62,7 @@ class Dashboard extends Component {
         return(
             <div className="dashboard">
                 <img className="dashboardImg" src="./assets/images/dashboard.png" alt="dashboard"/>
-                <h1 className="savedTitle"><u>{this.state.userName}'s Saved Recipes:</u></h1>
+                <h1 className="savedLabel"><u>{this.state.userName}'s Saved Recipes:</u></h1>
                 <ul id = 'user-saved'>
                     {!this.state.savedRecipes?"You do not have any saved recipes at the moment":this.state.savedRecipes.map((recipe, i) => {
                         return (
@@ -70,12 +70,15 @@ class Dashboard extends Component {
                                 <img className="savedPic" src={recipe.image} alt={recipe.dishname} />
                                 <li  key ={i}>
                                     <p className="savedTitle">{recipe.dishname}</p>
-                                    <button onClick = {() => {this.handleRedirect(recipe._id)}}>
+                                    <br/>
+                                    <div className="btnDiv">
+                                    <button className="viewBtn" onClick = {() => {this.handleRedirect(recipe._id)}}>
                                         View Recipe
                                     </button>
-                                    <button onClick = {() => {this.removeSaved(recipe._id)}}>
+                                    <button className="dltBtn" onClick = {() => {this.removeSaved(recipe._id)}}>
                                         Remove Recipe
                                     </button>
+                                    </div>
                                 </li>
                             </div>
                             
@@ -83,7 +86,7 @@ class Dashboard extends Component {
                     })}
                 </ul>
                 <br/>
-                 <h1 className="savedTitle"><u>{this.state.userName}'s Created Recipes:</u></h1>
+                 <h1 className="savedLabel"><u>{this.state.userName}'s Created Recipes:</u></h1>
 
                 <ul id ='user-created'>
                     {!this.state.createdRecipes?"You haven't created any recipes yet!": this.state.createdRecipes.map((created, j) => {

@@ -40,13 +40,19 @@ router.post('/api/search', function(req,res) {
 
 router.post('/api/saverecipe', function(req,res) {
   console.log(req.body);
-  User.update(
-    {_id:req.session.user[0]._id},
-    {$push:{savedRecipes:req.body.id}}
-  ).then(response => {
-    res.json(response);
-  }).catch(error => {
-    res.json(error);
+  User.findOne({savedRecipes:req.body.id})
+  .then(response=>{
+    if(response){
+      res.send("already saved")
+    }else{  User.update(
+        {_id:req.session.user[0]._id},
+        {$push:{savedRecipes:req.body.id}}
+      ).then(response => {
+        res.json(response);
+      }).catch(error => {
+        res.json(error);
+      })
+    }
   })
 })
 
@@ -59,6 +65,17 @@ router.get('/api/recipes', function(req,res) {
     console.log(error)
   });
 });
+
+router.get('/api/savedrecipe/:id', function(req,res) {
+  Recipe.find({__id:req.params.id})
+  .then(response => {
+    res.json(response)
+  })
+  .catch(error => {
+    console.log(error)
+  });
+});
+
 
 router.post("/search/:id", function(req, res) {
   Recipe.find({_id: req.params.id})
