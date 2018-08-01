@@ -15,28 +15,49 @@ class SubmitRecipes extends Component {
         accepted:'',
         rejected:'',
         preview: null,
-        previewName:null
+        image:''
     }
     
 
     submitRecipe = (event) => {
-        var objData = {
-            title : this.state.recipeTitle,
-            cooktime: this.state.cookTime,
-            keywords: this.state.keywords.toLowerCase().split(/\n/),
-            instructions: this.state.instructionList.split(/\n/),
-            ingredients: this.state.ingredientList.split(/\n/),
-            previewName:this.state.previewName,
-            preview:this.state.preview
-        }
-        console.log(objData);
+        var formData = new FormData();
 
-        axios.post('/api/recipes', objData)
-        .then(response => {
-            console.log("Bon Appetit")
-        }).catch(err => {
-            console.log(err);
+        formData.append("title", this.state.recipeTitle);
+        formData.append("cooktime", this.state.cookTime);
+        formData.append("keywords", this.state.keywords);
+        formData.append("instructions", this.state.instructionList);
+        formData.append("ingredients", this.state.ingredientList);
+        formData.append("image", this.state.image);
+        formData.append("preview", this.state.preview);
+        axios({
+            url: "/api/recipes",
+            method: "POST",
+            data: formData,
+            //  headers: {
+            //   'Content-Type': 'multipart/form-data'
+            // }
+        }).then(function() {
+            console.log('Worked');
         })
+
+        // var objData = {
+        //     title : this.state.recipeTitle,
+        //     cooktime: this.state.cookTime,
+        //     keywords: this.state.keywords.toLowerCase().split(/\n/),
+        //     instructions: this.state.instructionList.split(/\n/),
+        //     ingredients: this.state.ingredientList.split(/\n/),
+        //     image:this.state.image,
+        //     previewName:this.state.previewName,
+        //     preview:this.state.preview
+        // }
+        // console.log(objData);
+
+        // axios.post('/api/recipes', formData)
+        // .then(response => {
+        //     console.log("Bon Appetit")
+        // }).catch(err => {
+        //     console.log(err);
+        // })
     }
 
     handleInputChange = event => {
@@ -54,8 +75,7 @@ class SubmitRecipes extends Component {
     handleDrop(preview) {
         console.log(preview)
         this.setState({ 
-            preview:preview[0].preview,
-            previewName:preview[0].name
+            preview:preview[0].preview
         })
     }
     
@@ -105,7 +125,7 @@ class SubmitRecipes extends Component {
                     </input>
                     <br />
                     <br />
-                    <label htmlFor='imageLink'>
+                    {/* <label htmlFor='imageLink'>
                         Image 
                         <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
                             <span className="tooltiptext">
@@ -114,7 +134,18 @@ class SubmitRecipes extends Component {
                         </div>
                     </label>
                     <br/>
-                    
+                    <input 
+                        type="text"
+                        id="image"
+                        name="image"
+                        value={this.state.image}
+                        onChange={this.handleInputChange}
+                        className='formTitle'
+                        placeholder='Image URL'
+                        size = '50'
+                    >
+                    </input> */}
+                    <input type='file' name='myUpload' /> 
                     <section id='dropzone'>
                         <Dropzone id = 'box'onDrop={ (files) => {this.handleDrop(files)}} accept="image/jpeg,image/jpg,image/tiff,image/gif, image/png" multiple={ false } onDropRejected={ handleDropRejected }>
                         Drag a file here or click to upload.

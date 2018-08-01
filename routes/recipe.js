@@ -4,34 +4,49 @@ const User = require('../models/user.js');
 const Image = require('../models/image.js');
 const encrypt = require('../encryption.js');
 const multer  = require('multer');
-const upload = multer({ dest: 'uploads/' });
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+      cb(null, 'uploads/');
+  },
+  filename: function(req, file, cb) {       
+      cb(null, Date.now() + file.originalname);
+  }
+});
+var upload = multer({storage: storage}).any();
+
 var loggedIn = false;
 
-router.post('/api/recipes', upload.single('image'), function(req,res) {
+router.post('/api/recipes', function(req,res) {
+  console.log(req.file);
   console.log(req.body);
-  Image.create({
-    image:req.body.preview
-  }).then(result => {
-    console.log(result);
-    Recipe.create({
-      dishname: req.body.title,
-      cooktime: req.body.cooktime,
-      keywords: req.body.keywords,
-      image: req.body.image,
-      ingredients: req.body.ingredients,
-      instructions: req.body.instructions,
-      createdBy: req.session.user[0]._id,
-      image: result._id
-    })
-    .then(response => {
-      res.json(response);
-    })
-    .catch(error => {
-      res.json(error);
-    });
-  }).catch(err => {
-    res.json(err);
-  });
+  // upload(req,res,function(err) {
+  //   // console.log(req.files);
+  //   console.log(req.file);
+  // })
+  // var upload = fs.readFileSync(req.file.path);
+  // Image.create({
+  //   image:req.body.preview
+  // }).then(result => {
+  //   console.log(result);
+  //   Recipe.create({
+  //     dishname: req.body.title,
+  //     cooktime: req.body.cooktime,
+  //     keywords: req.body.keywords,
+  //     image: req.body.image,
+  //     ingredients: req.body.ingredients,
+  //     instructions: req.body.instructions,
+  //     createdBy: req.session.user[0]._id,
+  //     upload: result._id
+  //   })
+  //   .then(response => {
+  //     res.json(response);
+  //   })
+  //   .catch(error => {
+  //     res.json(error);
+  //   });
+  // }).catch(err => {
+  //   res.json(err);
+  // });
  
 });
 
