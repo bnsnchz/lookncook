@@ -91,10 +91,8 @@ router.post("/search/:id", function(req, res) {
 router.get("/recipe/:id", function(req, res){
   Recipe.find({ _id: req.params.id })
   .then(response =>{
-    // console.log(response[0])
     res.send(response)
     console.log(response[0])
-    // (`/recipe/${req.params.id}`, response)
   })
   .catch(error => {
     res.json(error)
@@ -174,7 +172,6 @@ router.get("/userInfo", function(req,res) {
     {username:req.session.user[0].username}
   ).populate('savedRecipes')
   .then(response => {
-    // console.log(response);
     res.send(response);
   }).catch(error => {
     res.json(error);
@@ -186,7 +183,6 @@ router.get("/recipeInfo", function(req,res) {
     {createdBy:req.session.user[0]._id}
   )
   .then(response => {
-    // console.log(response);
     res.send(response);
   }).catch(error => {
     res.json(error);

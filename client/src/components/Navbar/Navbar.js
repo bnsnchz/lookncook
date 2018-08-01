@@ -61,7 +61,7 @@ class Navbar extends Component {
                             </option>
                             <option 
                                 style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
-                                value ="/user">{this.props.authenticated===false?null:"Account"}
+                                value ="/user">{this.props.authenticated===false?null:"Dashboard"}
                             </option>
                             
                            
