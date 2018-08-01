@@ -12,7 +12,8 @@ class RecipePage extends Component {
         cooktime: "",
         ingredients: [],
         instructions: [], 
-        createdBy: ""
+        createdBy: "",
+        ID: ""
 
     }
     
@@ -28,8 +29,18 @@ class RecipePage extends Component {
         })
     }
 
+    saveRecipe = id => {
+        var recipeId = {
+            id: id
+        }
+        axios.post('/api/saverecipe', recipeId).then(res => {
+            console.log("saved recipe sucessfully");
+        })
+    }
+
     getRecipeById = () => {
         axios.get(window.location).then(response => {
+            console.log(response.data[0])
             var recipe = response.data[0]
             if (recipe) {
                 let variable = recipe.instructions.map( item => {
@@ -45,13 +56,14 @@ class RecipePage extends Component {
                     cooktime: recipe.cooktime,
                     ingredients: recipe.ingredients,
                     instructions: variable,
-                    createdBy : recipe.createdBy
+                    createdBy : recipe.createdBy,
+                    ID : response.data[0]._id
                 })
             } else {
                 this.props.history.push("/search")
             }
         // console.log(JSON.stringify(response.data[0])); 
-        console.log(this.state);
+            
 
         })
     }
@@ -73,9 +85,13 @@ class RecipePage extends Component {
                 <br/>
                 <div id="title-container"> 
                 <img id="recipe-image" src={this.state.image} alt={this.state.dishname}/>
-                <h1 id='title'><u>{this.state.dishname}</u></h1>
-                <h3 className="cookTime"><u>Cook time:</u></h3><p className='cookTime'>{this.state.cooktime} minutes</p>
-                <h3 className='ingredients'><u>Ingredients:</u></h3>
+                <button
+                style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
+                onClick={ () => {this.saveRecipe(this.state.ID)}}
+                id = 'saveBtn'>Save Recipe</button>
+                <h1><u>{this.state.dishname}</u></h1>
+                <h3 className="cookTime"><u>Cook time:</u></h3><p>{this.state.cooktime} minutes</p>
+                <h3><u>Ingredients:</u></h3>
                 <ol>
                     {this.state.ingredients.map((ingredients, i) => {
                         return(

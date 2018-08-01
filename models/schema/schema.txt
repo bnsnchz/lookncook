@@ -3,7 +3,7 @@ db.recipes.insertMany([
     {
         "dishname" : "Avocado toast",
         "cooktime" : "7",
-        "image" : "https://gimmedelicious.com/wp-content/uploads/2016/07/avocado-toast-10-of-13.jpg",
+        "image" : "https://afm-6b83.kxcdn.com/wp-content/uploads/2017/02/Avo-Egg-Breakfast.jpg",
         "keywords": [
             "toast",
             "avocado",
@@ -239,6 +239,18 @@ db.recipes.insertMany([
             "1 cup water",
             "12 lasagna noodles, uncooked"
         ],
+        "instructions" : [
+            "Heat oven to 350°F.",
+            "Brown meat in large skillet on medium-high heat.",
+            "Meanwhile, mix 1-1/4 cups mozzarella, ricotta, ¼ cup Parmesan, parsley and egg until blended.",
+            "Drain meat; return to skillet.",
+            "Stir in pasta sauce. Add 1 cup water to empty sauce jar; cover with lid and shake well. Add to meat mixture; stir until blended.",
+            "Spread 1 cup meat sauce onto bottom of 13x9-inch baking dish; top with layers of 3 lasagna noodles, ⅓ of the ricotta cheese mixture and 1 cup meat sauce.",
+            "Repeat layers twice. Top with remaining noodles, meat sauce and cheeses.",
+            "Cover with foil sprayed with cooking spray.",
+            "Bake 1 hour or until heated through, removing foil after 45 min. Let stand 15 min. before cutting to serve."
+
+        ]
     },  {
         "dishname" : "Crispy cheese and bacon potatoes",
         "cooktime" : "60",
