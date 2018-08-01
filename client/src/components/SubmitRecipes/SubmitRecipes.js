@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './SubmitRecipes.css'
-import ImageUpload from '../Dropzone'
+import Dropzone from 'react-dropzone'
+
+const handleDropRejected = (...args) => console.log('reject', args)
 
 class SubmitRecipes extends Component {
     state = {
@@ -12,17 +14,20 @@ class SubmitRecipes extends Component {
         cookTime: '',
         accepted:'',
         rejected:'',
-        preview: this.props.preview
+        preview: null,
+        previewName:null
     }
+    
 
-    submitRecipe = () => {
+    submitRecipe = (event) => {
         var objData = {
             title : this.state.recipeTitle,
             cooktime: this.state.cookTime,
             keywords: this.state.keywords.toLowerCase().split(/\n/),
             instructions: this.state.instructionList.split(/\n/),
             ingredients: this.state.ingredientList.split(/\n/),
-            image:this.state.imageLink
+            previewName:this.state.previewName,
+            preview:this.state.preview
         }
         console.log(objData);
 
@@ -45,8 +50,18 @@ class SubmitRecipes extends Component {
     handleFormSubmit= event => {
         this.submitRecipe(this.state);
     }
+
+    handleDrop(preview) {
+        console.log(preview)
+        this.setState({ 
+            preview:preview[0].preview,
+            previewName:preview[0].name
+        })
+    }
     
     render() {
+        const { preview } = this.state
+
         return (
             <div id = 'submit-form'>
 
@@ -100,7 +115,17 @@ class SubmitRecipes extends Component {
                     </label>
                     <br/>
                     
-                    <ImageUpload {...this.props}/>
+                    <section id='dropzone'>
+                        <Dropzone id = 'box'onDrop={ (files) => {this.handleDrop(files)}} accept="image/jpeg,image/jpg,image/tiff,image/gif, image/png" multiple={ false } onDropRejected={ handleDropRejected }>
+                        Drag a file here or click to upload.
+                        </Dropzone>
+                        <div id = 'preview'>
+                            {this.state.previewName}
+                            { preview &&
+                            <img id='preview' src={ this.state.preview } alt={this.state.previewName} />
+                        }
+                        </div>
+                    </section>
                     
                     <br/>
                     <label htmlFor='keywords'>
@@ -183,7 +208,7 @@ class SubmitRecipes extends Component {
                     <br/>
                     <br/>
                     <button id="submitRecipe" 
-                        onClick={this.handleFormSubmit}>
+                        onClick={()=>this.handleFormSubmit()}>
                         Submit
                     </button>
                 </form>

@@ -11,7 +11,7 @@ import Register from "./components/Register";
 import RecipePage from "./components/RecipePage"
 import axios from "axios";
 import Dashboard from './components/Dashboard';
-import Timer from './components/Timer';
+// import Timer from './components/Timer';
 
 
 class App extends Component {

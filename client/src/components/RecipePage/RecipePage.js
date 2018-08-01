@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Timer from "../Timer/Timer"
+// import Timer from "../Timer/Timer"
 import "./RecipePage.css"
 
 

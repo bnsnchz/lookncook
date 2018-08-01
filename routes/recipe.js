@@ -3,24 +3,36 @@ const Recipe = require('../models/recipe.js');
 const User = require('../models/user.js');
 const Image = require('../models/image.js');
 const encrypt = require('../encryption.js');
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
 var loggedIn = false;
 
-router.post('/api/recipes',  function(req,res) {
-  Recipe.create({
-    dishname: req.body.title,
-    cooktime: req.body.cooktime,
-    keywords: req.body.keywords,
-    image: req.body.image,
-    ingredients: req.body.ingredients,
-    instructions: req.body.instructions,
-    createdBy: req.session.user[0]._id
-  })
-  .then(response => {
-    res.json(response);
-  })
-  .catch(error => {
-    res.json(error);
+router.post('/api/recipes', upload.single('image'), function(req,res) {
+  console.log(req.body);
+  Image.create({
+    image:req.body.preview
+  }).then(result => {
+    console.log(result);
+    Recipe.create({
+      dishname: req.body.title,
+      cooktime: req.body.cooktime,
+      keywords: req.body.keywords,
+      image: req.body.image,
+      ingredients: req.body.ingredients,
+      instructions: req.body.instructions,
+      createdBy: req.session.user[0]._id,
+      image: result._id
+    })
+    .then(response => {
+      res.json(response);
+    })
+    .catch(error => {
+      res.json(error);
+    });
+  }).catch(err => {
+    res.json(err);
   });
+ 
 });
 
 
