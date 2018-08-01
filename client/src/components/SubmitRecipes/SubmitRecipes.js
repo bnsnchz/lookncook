@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './SubmitRecipes.css'
+import ImageUpload from '../Dropzone'
 
 class SubmitRecipes extends Component {
     state = {
@@ -9,7 +10,9 @@ class SubmitRecipes extends Component {
         keywords: '',
         ingredientList:'',
         cookTime: '',
-        imageLink:''
+        accepted:'',
+        rejected:'',
+        preview: this.props.preview
     }
 
     submitRecipe = () => {
@@ -42,10 +45,11 @@ class SubmitRecipes extends Component {
     handleFormSubmit= event => {
         this.submitRecipe(this.state);
     }
-
+    
     render() {
         return (
             <div id = 'submit-form'>
+
                 <form>
                     <br/>
                     <label htmlFor='recipeTitle'>
@@ -87,7 +91,7 @@ class SubmitRecipes extends Component {
                     <br />
                     <br />
                     <label htmlFor='imageLink'>
-                        Image Link 
+                        Image 
                         <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
                             <span className="tooltiptext">
                             Add a tasty image to go with your recipe. Make sure to use a valid link or the image will not render properly!
@@ -95,16 +99,9 @@ class SubmitRecipes extends Component {
                         </div>
                     </label>
                     <br/>
-                    <input 
-                        type = 'text' 
-                        id='imageLink' 
-                        name='imageLink' 
-                        value={this.state.imageLink}
-                        onChange={this.handleInputChange}
-                        className = 'formTitle'
-                        placeholder='Photo URL'
-                        size = '50'>
-                    </input>
+                    
+                    <ImageUpload {...this.props}/>
+                    
                     <br/>
                     <label htmlFor='keywords'>
                         Keywords

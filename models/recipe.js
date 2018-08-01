@@ -8,8 +8,8 @@ const recipeSchema = new Schema({
     unique: true
   },
   image: {
-    type: String,
-    required: false
+    type: Schema.Types.ObjectId,
+    ref: "Image"
   },
   cooktime: {
     type: String,

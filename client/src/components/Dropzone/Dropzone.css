@@ -1,0 +1,19 @@
+section, #dropzone, #box {
+    text-align:left;
+    display:inline-block;
+    margin-left:0;
+    
+}
+#box {
+    background-color : white;
+    
+}
+
+
+#preview {
+    /* display:inline-block; */
+    float:right;
+    max-height:300px;
+    max-width:300px;
+    color: white;
+}
