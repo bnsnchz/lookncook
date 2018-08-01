@@ -67,6 +67,9 @@ class RecipePage extends Component {
         return(
             <div className="recipePage">
                 <br />
+                <div className="imgWrapper">
+                <img className="recipeImg" src="../assets/images/recipe.png" alt="recipe" />
+                </div>
                 <br/>
                 <div id="title-container"> 
                 <img id="recipe-image" src={this.state.image} alt={this.state.dishname}/>

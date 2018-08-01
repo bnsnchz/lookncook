@@ -10,7 +10,7 @@
 .savedTitle {
     color: white;
     font-family: "chalk", Fallback, serif;
-    font-size:200%;
+    font-size: 200%;
 }
 
 .savedRecipeDiv {
@@ -43,12 +43,16 @@
 }
 
 #user-saved {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 5%;
 }
 
 #user-created {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 5%;
