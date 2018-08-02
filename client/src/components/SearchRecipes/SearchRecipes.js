@@ -111,7 +111,7 @@ class SearchRecipes extends Component {
                                     <button
                                         style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
                                         onClick={ () => {this.saveRecipe(recipe._id)}}
-                                        id = 'saveBtn'>Save Recipe</button>
+                                        id = 'saveBtn'><i className="fas fa-heart"></i></button>
                                     <img className="dishPic" onClick={() =>
                                     this.handleRedirect(recipe._id)} 
                                     src={!recipe.image?"data:image/jpeg;base64,"+ Buffer.from(recipe.upload,'base64').toString('base64'):recipe.image} 

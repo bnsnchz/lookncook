@@ -63,6 +63,11 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.fas{
+    font-size: 300%;
+    color:red;
+}
+
 #recipeResults {
     text-align: center;
     padding: 0 15%;
@@ -113,8 +118,18 @@
 #imgContainer #saveBtn {
     z-index: 999;
     position: absolute;
-    top: 0;
-    right: 10%;
+    top: 1%;
+    left: 1%;
+}
+
+#saveBtn{
+    padding: 0;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
 }
 
 @media (max-width: 1920px) {
