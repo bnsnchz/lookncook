@@ -50,6 +50,7 @@ submitRecipe = (event) => {
             <div id = 'submit-form'>
                 <img id="header" src="./assets/images/submit.png" alt="submit" />
                 <form>
+                    <div className="recpeForm">
                     <div className="formGrid">
                         <br/>
                         <label htmlFor='recipeTitle'>
@@ -188,6 +189,7 @@ submitRecipe = (event) => {
                             onClick={this.submitRecipe}>
                             Submit
                         </button>
+                    </div>
                     </div>
                 </form>
                
