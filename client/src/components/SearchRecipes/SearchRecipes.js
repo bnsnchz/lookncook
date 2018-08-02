@@ -33,7 +33,7 @@ class SearchRecipes extends Component {
               recipeObject: results.data[0]
           })
           this.props.history.push(`/recipe/${id}`)
-        //   console.log("this is results.data: ", results.data)
+    
       })
 
   }
@@ -62,7 +62,6 @@ class SearchRecipes extends Component {
             if(res.data === "already saved"){
                 alert("Recipe Already Saved!");
             }
-            console.log("saved recipe sucessfully");
         })
     }
    
@@ -81,7 +80,6 @@ class SearchRecipes extends Component {
         })
     }
 
-    // Strikethrough
 
     
 

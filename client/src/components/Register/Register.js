@@ -7,7 +7,6 @@ import axios from 'axios';
 class Register extends Component {
 
     state = {
-        // authenticated:false,
         userName: "",
         password: "",
         token: ""
@@ -25,10 +24,9 @@ class Register extends Component {
             password:this.state.password,
             token:this.state.token
         }
-        console.log("button clicked");
+
         axios.post("/register", userInfo)
         .then(res => {
-            console.log(res.data);
             window.location.href ='/signin'
         })
         .catch(error=> {

@@ -9,7 +9,8 @@ class SubmitRecipes extends Component {
     keywords: '',
     ingredientList:'',
     cookTime: '',
-    image:''
+    image:'',
+    createdBy:''
   }
 
 submitRecipe = (event) => {
@@ -32,7 +33,6 @@ submitRecipe = (event) => {
               'Content-Type': 'multipart/form-data'
             }
         }).then(function() {
-            console.log('Worked');
             window.location.href="/search"
         });
     }

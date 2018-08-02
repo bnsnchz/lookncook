@@ -24,7 +24,6 @@ class SignIn extends Component {
             password: this.state.password
         }
         axios.post("/signin", userInfo).then(res=>{
-            console.log(res.data);
             if (res.data===true){
                 this.props.setLogin();
                 this.props.history.push('/user');

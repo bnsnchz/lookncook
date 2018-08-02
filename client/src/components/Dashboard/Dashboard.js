@@ -25,11 +25,8 @@ class Dashboard extends Component {
 
     getUserCreated = () => {
         axios.get('/recipeInfo').then(res => {
-            console.log(res);
             this.setState({
                 createdRecipes:res.data
-            }, () => {
-                console.log(this.state.createdRecipes)
             })
         })
     }
@@ -39,7 +36,6 @@ class Dashboard extends Component {
             id:id
         }
         axios.post('/removesave', recipeID).then( res => {
-            console.log(res);
             this.setState({
                 savedRecipes:res.data[0].savedRecipes
             })
@@ -66,9 +62,9 @@ class Dashboard extends Component {
                 <ul id = 'user-saved'>
                     {!this.state.savedRecipes?"You do not have any saved recipes at the moment":this.state.savedRecipes.map((recipe, i) => {
                         return (
-                            <div className="savedRecipeDiv">
-                                <img className="savedPic" src={recipe.image} alt={recipe.dishname} />
-                                <li  key ={i}>
+                            <div key ={i} className="savedRecipeDiv">
+                                <img className="savedPic" src={!recipe.image?"data:image/jpeg;base64,"+ Buffer.from(recipe.upload,'base64').toString('base64'):recipe.image} alt={recipe.dishname} />
+                                <li key ={i}>
                                     <p className="savedTitle">{recipe.dishname}</p>
                                     <br/>
                                     <div className="btnDiv">
@@ -91,11 +87,21 @@ class Dashboard extends Component {
                 <ul id ='user-created'>
                     {!this.state.createdRecipes?"You haven't created any recipes yet!": this.state.createdRecipes.map((created, j) => {
                         return (
+                            <div key={j} className="createdRecipes">
+
                             <li onClick = { () => {this.handleRedirect(created._id)}}
                                 key = {j}> 
-                                <img className="dishPic" src={created.image} alt={created.dishname} />
-                                {created.dishname}
+                                <img className="savedPic" src={!created.image?"data:image/jpeg;base64,"+ Buffer.from(created.upload,'base64').toString('base64'):created.image} alt={created.dishname} />
+                                <p className='savedTitle'>{created.dishname}
+                                </p>
                             </li>
+                            <br/>
+                            <div className="btnDiv">
+                                    <button className="viewBtn" onClick = {() => {this.handleRedirect(created._id)}}>
+                                        View Recipe
+                                    </button>
+                                    </div>
+                            </div>
                         )
                     })}
                 </ul>

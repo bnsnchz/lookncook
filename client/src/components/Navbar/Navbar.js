@@ -67,6 +67,7 @@ class Navbar extends Component {
                            
                         </select>
                         <a id = 'logInOut'  
+                        onClick ={this.props.authenticated === true? this.props.logOut:null}
                             href = {this.props.authenticated===true?'/':'/signin'}>{this.props.authenticated===false?"Log In ":"Log Out"}
                         </a>
                     </div>                     
