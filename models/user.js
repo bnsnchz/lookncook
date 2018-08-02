@@ -17,8 +17,7 @@ const userSchema = new Schema({
   },
   savedRecipes : [{
       type: Schema.Types.ObjectId,
-      ref: "Recipe",
-      unique:true,
+      ref: "Recipe"
       
   }]
 });
