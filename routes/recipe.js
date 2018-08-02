@@ -78,7 +78,6 @@ router.post("/search/:id", function(req, res) {
   Recipe.find({_id: req.params.id})
   .then(response => {
       res.json(response)
-    res.redirect(`/recipe/${req.params.id}`, response)
   })
   .catch(error => {
     res.json(error)

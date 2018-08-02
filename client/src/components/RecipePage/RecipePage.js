@@ -12,7 +12,14 @@ class RecipePage extends Component {
         cooktime: "",
         ingredients: [],
         instructions: [], 
-        createdBy: ""
+        createdBy: "",
+        ID:'',
+        stylesShow: {
+            "display":"block"
+        },
+        stylesNone: {
+            "display":"none"
+        }
 
     }
     
@@ -45,10 +52,21 @@ class RecipePage extends Component {
                     ingredients: recipe.ingredients,
                     instructions: variable,
                     createdBy : recipe.createdBy,
-                    upload:recipe.upload
+                    upload:recipe.upload,
+                    ID:recipe._id
                 })
             } else {
                 this.props.history.push("/search")
+            }
+        })
+    }
+    saveRecipe = id => {
+        var recipeID = {
+            id:id
+        }
+        axios.post('/api/saverecipe', recipeID).then(res => {
+            if(res.data === "already saved"){
+                alert("Recipe Already Saved!");
             }
         })
     }
@@ -74,7 +92,7 @@ class RecipePage extends Component {
                 <button
                 style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
                 onClick={ () => {this.saveRecipe(this.state.ID)}}
-                id = 'saveBtn'>Save Recipe</button>
+                id = 'saveBtn'><i className="fas fa-heart"></i></button>
                 <h1><u>{this.state.dishname}</u></h1>
                 <h3 className="cookTime"><u>Cook time:</u></h3><p>{this.state.cooktime} minutes</p>
                 <h3><u>Ingredients:</u></h3>
@@ -92,8 +110,8 @@ class RecipePage extends Component {
                 <ol>
                     {this.state.instructions.map((item, i)=>{
                         return (
-                            <div>
-                                <li key={i}><div style={item.flag ? strikeStlye : NotStrikeStlye} id="step-container"> {item.instructions}</div><button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>✔ Done</button>
+                            <div key={i}>
+                                <li ><div style={item.flag ? strikeStlye : NotStrikeStlye} id="step-container"> {item.instructions}</div><button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>Done</button>
                                 {item.instructions.match(/\d+(?= minutes| minute)/) ?<Timer timeValue={item.instructions.match(/\d+(?= minutes| minute)/)} />:null}
                                 
                                 </li>

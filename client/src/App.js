@@ -58,7 +58,8 @@ class App extends Component {
               <Route exact path = '/' component={Home} />
               <Route exact path = '/search' render ={(props) => 
                 <SearchRecipes {...props} authenticated={this.state.authenticated}/>} />
-              <Route path="/recipe" component={RecipePage} /> 
+             <Route path="/recipe" render={(props) =>
+                <RecipePage {...props} authenticated={this.state.authenticated}/>}/> 
               <Route exact path = '/signin' render ={(props) => 
               <SignIn {...props} setLogin={this.setLogin}/>}
               />
