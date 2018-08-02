@@ -98,7 +98,6 @@ router.get("/recipe/:id", function(req, res){
 
 
 router.get('/auth', function(req,res) {
-  console.log(req.session);
   if (req.session.user){
     loggedIn=true
     res.json(loggedIn)
