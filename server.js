@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const fileUpload = require("express-fileupload");
 
-app.use(routes);
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,6 +29,7 @@ app.use(
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+app.use(routes);
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
