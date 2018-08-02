@@ -6,6 +6,7 @@ var loggedIn = false;
 
 router.post('/api/recipes',  function(req,res) {
   console.log(req.body);
+  console.log(req.files);
   Recipe.create({
       dishname: req.body.title,
       cooktime: req.body.cooktime,

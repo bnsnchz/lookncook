@@ -14,7 +14,6 @@ class SubmitRecipes extends Component {
 
 submitRecipe = (event) => {
         event.preventDefault();
-
         var formData = new FormData();
 
         formData.append("title", this.state.recipeTitle);
@@ -34,6 +33,7 @@ submitRecipe = (event) => {
             }
         }).then(function() {
             console.log('Worked');
+            window.location.href="/search"
         });
     }
 
@@ -43,10 +43,6 @@ submitRecipe = (event) => {
         this.setState({
             [name]:value
         })
-    }
-
-    handleFormSubmit= event => {
-        this.submitRecipe(this.state);
     }
 
     render() {
@@ -184,7 +180,7 @@ submitRecipe = (event) => {
                     <br/>
                     <br/>
                     <button id="submitRecipe" 
-                        onClick={this.handleFormSubmit}>
+                        onClick={this.submitRecipe}>
                         Submit
                     </button>
                 </form>
