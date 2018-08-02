@@ -28,7 +28,7 @@ class Timer extends React.Component {
         ding.play();
         clearInterval(this.tick);
         this.setState({
-          duration:Math.floof(this.props.timeValue * 60),
+          duration:Math.floor(this.props.timeValue * 60),
           clicked:false
         })
       }
