@@ -7,12 +7,14 @@ const cookieParser = require("cookie-parser");
 const routes = require("./routes/recipe.js");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const fileUpload = require("express-fileupload");
 
 // Define middleware here
 // app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(fileUpload());
 
 app.use(
   session({
