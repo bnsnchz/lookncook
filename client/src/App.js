@@ -31,7 +31,6 @@ class App extends Component {
   setLogout = event => {
     event.preventDefault();
     axios.get('/logout').then(res => {
-      console.log(res.data);
       if (res.data === "Session ended."){
         this.setState({
           authenticated: false,

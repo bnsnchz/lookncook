@@ -31,7 +31,6 @@ class RecipePage extends Component {
     getRecipeById = () => {
         axios.get(window.location).then(response => {
             var recipe = response.data[0]
-            console.log(recipe);
             if (recipe) {
                 let variable = recipe.instructions.map( item => {
                     return {
@@ -39,7 +38,6 @@ class RecipePage extends Component {
                         flag: false
                     }
                 })
-                console.log("variable", variable)
                 this.setState({
                     dishname: recipe.dishname,
                     image: recipe.image,
@@ -52,9 +50,6 @@ class RecipePage extends Component {
             } else {
                 this.props.history.push("/search")
             }
-        // console.log(JSON.stringify(response.data[0])); 
-        console.log(this.state);
-
         })
     }
 
@@ -66,10 +61,7 @@ class RecipePage extends Component {
         const NotStrikeStlye = {
             textDecoration: "none"
         }
-        // let timer = {
-        //     display:"none"
-        // }
-
+    
         return(
             <div className="recipePage">
                 <br />

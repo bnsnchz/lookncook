@@ -5,8 +5,6 @@ const encrypt = require('../encryption.js');
 var loggedIn = false;
 
 router.post('/api/recipes',  function(req,res) {
-  console.log(req.body);
-  console.log(req.files);
   Recipe.create({
       dishname: req.body.title,
       cooktime: req.body.cooktime,
@@ -14,7 +12,8 @@ router.post('/api/recipes',  function(req,res) {
       ingredients: req.body.ingredients,
       instructions: req.body.instructions,
       upload: req.files.upload.data,
-      image:req.body.image
+      image:req.body.image,
+      createdBy:req.session.user[0]._id
   })
   .then(response => {
     res.json(response);
@@ -25,9 +24,7 @@ router.post('/api/recipes',  function(req,res) {
 });
 
 
-router.post('/api/search', function(req,res) {
-  console.log(req.body.search);
-  
+router.post('/api/search', function(req,res) {  
   Recipe.find(
     {keywords:{$in:req.body.search}}
   )
@@ -40,7 +37,6 @@ router.post('/api/search', function(req,res) {
 })
 
 router.post('/api/saverecipe', function(req,res) {
-  console.log(req.body);
   User.findOne({savedRecipes:req.body.id})
   .then(response=>{
     if(response){
@@ -63,7 +59,7 @@ router.get('/api/recipes', function(req,res) {
     res.json(response)
   })
   .catch(error => {
-    console.log(error)
+    res.json(error)
   });
 });
 
@@ -73,7 +69,7 @@ router.get('/api/savedrecipe/:id', function(req,res) {
     res.json(response)
   })
   .catch(error => {
-    console.log(error)
+    res.json(error)
   });
 });
 
@@ -85,7 +81,7 @@ router.post("/search/:id", function(req, res) {
     res.redirect(`/recipe/${req.params.id}`, response)
   })
   .catch(error => {
-    console.log(error)
+    res.json(error)
   });
 });
 
@@ -93,7 +89,6 @@ router.get("/recipe/:id", function(req, res){
   Recipe.find({ _id: req.params.id })
   .then(response =>{
     res.send(response)
-    console.log(response[0])
   })
   .catch(error => {
     res.json(error)
@@ -161,7 +156,7 @@ router.post('/register', function(req,res) {
       }).then(response => {
         res.json(response);
       }).catch(error => {
-        console.log(error);
+        res.json(error);
       })
     }
   })
