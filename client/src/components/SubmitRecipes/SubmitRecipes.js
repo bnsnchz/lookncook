@@ -12,7 +12,8 @@ class SubmitRecipes extends Component {
     image:''
   }
 
-ssubmitRecipe = (event) => {
+submitRecipe = (event) => {
+        event.preventDefault();
 
         var formData = new FormData();
 
