@@ -3,32 +3,37 @@ import axios from 'axios';
 import './SubmitRecipes.css'
 
 class SubmitRecipes extends Component {
-    state = {
-        recipeTitle:'',
-        instructionList:'',
-        keywords: '',
-        ingredientList:'',
-        cookTime: '',
-        imageLink:''
-    }
+ state = {
+    recipeTitle:'',
+    instructionList:'',
+    keywords: '',
+    ingredientList:'',
+    cookTime: '',
+    image:''
+  }
 
-    submitRecipe = () => {
-        var objData = {
-            title : this.state.recipeTitle,
-            cooktime: this.state.cookTime,
-            keywords: this.state.keywords.toLowerCase().split(/\n/),
-            instructions: this.state.instructionList.split(/\n/),
-            ingredients: this.state.ingredientList.split(/\n/),
-            image:this.state.imageLink
-        }
-        console.log(objData);
+ssubmitRecipe = (event) => {
 
-        axios.post('/api/recipes', objData)
-        .then(response => {
-            console.log("Bon Appetit")
-        }).catch(err => {
-            console.log(err);
-        })
+        var formData = new FormData();
+
+        formData.append("title", this.state.recipeTitle);
+        formData.append("cooktime", this.state.cookTime);
+        formData.append("keywords", this.state.keywords);
+        formData.append("instructions", this.state.instructionList);
+        formData.append("ingredients", this.state.ingredientList);
+        formData.append("image", this.state.image);
+        formData.append("upload", document.querySelector('input[type=file]').files[0]);
+
+        axios({
+            url: "/api/recipes",
+            method: "POST",
+            data: formData,
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        }).then(function() {
+            console.log('Worked');
+        });
     }
 
     handleInputChange = event => {
@@ -86,25 +91,17 @@ class SubmitRecipes extends Component {
                     </input>
                     <br />
                     <br />
-                    <label htmlFor='imageLink'>
-                        Image Link 
-                        <div className="tooltip">  <i className="far fa-xs fa-question-circle"></i>
-                            <span className="tooltiptext">
-                            Add a tasty image to go with your recipe. Make sure to use a valid link or the image will not render properly!
-                            </span>
-                        </div>
+                    <label htmlFor='Image'>
+                        Image
                     </label>
                     <br/>
-                    <input 
-                        type = 'text' 
-                        id='imageLink' 
-                        name='imageLink' 
-                        value={this.state.imageLink}
-                        onChange={this.handleInputChange}
-                        className = 'formTitle'
-                        placeholder='Photo URL'
-                        size = '50'>
-                    </input>
+                    <input
+                        type = 'file' 
+                        id='image' 
+                        name='image'
+                        cols = '50'
+                        >
+                    </input> 
                     <br/>
                     <label htmlFor='keywords'>
                         Keywords

@@ -7,9 +7,13 @@ const recipeSchema = new Schema({
     required: true,
     unique: true
   },
+  upload: {
+    type: Buffer,
+    contentType:String     
+  },
   image: {
-    type: String,
-    required: false
+    type:String,
+    required:false
   },
   cooktime: {
     type: String,

@@ -113,7 +113,9 @@ class SearchRecipes extends Component {
                                         onClick={ () => {this.saveRecipe(recipe._id)}}
                                         id = 'saveBtn'>Save Recipe</button>
                                     <img className="dishPic" onClick={() =>
-                                    this.handleRedirect(recipe._id)} src={recipe.image} alt={recipe.dishname}/>
+                                    this.handleRedirect(recipe._id)} 
+                                    src={!recipe.image?"data:image/jpeg;base64,"+ Buffer.from(recipe.upload,'base64').toString('base64'):recipe.image} 
+                                    alt={recipe.dishname}/>
                                 </div>
                                 <div id = 'nameContainer'>
                                     <li className="dishName" 

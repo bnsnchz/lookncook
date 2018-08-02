@@ -5,14 +5,14 @@ import "./RecipePage.css"
 
 class RecipePage extends Component {
 
-    state = {
+   state = {
         dishname: "",
         image: "",
+        upload:[],
         cooktime: "",
         ingredients: [],
         instructions: [], 
-        createdBy: "",
-        ID: ""
+        createdBy: ""
 
     }
     
@@ -28,19 +28,10 @@ class RecipePage extends Component {
         })
     }
 
-    saveRecipe = id => {
-        var recipeId = {
-            id: id
-        }
-        axios.post('/api/saverecipe', recipeId).then(res => {
-            console.log("saved recipe sucessfully");
-        })
-    }
-
     getRecipeById = () => {
         axios.get(window.location).then(response => {
-            console.log(response.data[0])
             var recipe = response.data[0]
+            console.log(recipe);
             if (recipe) {
                 let variable = recipe.instructions.map( item => {
                     return {
@@ -56,13 +47,13 @@ class RecipePage extends Component {
                     ingredients: recipe.ingredients,
                     instructions: variable,
                     createdBy : recipe.createdBy,
-                    ID : response.data[0]._id
+                    upload:recipe.upload
                 })
             } else {
                 this.props.history.push("/search")
             }
         // console.log(JSON.stringify(response.data[0])); 
-            
+        console.log(this.state);
 
         })
     }
@@ -87,7 +78,7 @@ class RecipePage extends Component {
                 </div>
                 <br/>
                 <div id="title-container"> 
-                <img id="recipe-image" src={this.state.image} alt={this.state.dishname}/>
+                <img id="recipe-image" src={!this.state.image?"data:image/jpeg;base64,"+ Buffer.from(this.state.upload,'base64').toString('base64'):this.state.image} alt={this.state.dishname}/>
                 <button
                 style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
                 onClick={ () => {this.saveRecipe(this.state.ID)}}
