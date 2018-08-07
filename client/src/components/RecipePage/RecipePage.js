@@ -36,7 +36,9 @@ class RecipePage extends Component {
     }
 
     getRecipeById = () => {
-        axios.get(window.location).then(response => {
+        var id = (window.location.href).match(/(recipe).+\w/g);
+        console.log(id);
+        axios.get("/api/"+id).then(response => {
             var recipe = response.data[0]
             if (recipe) {
                 let variable = recipe.instructions.map( item => {

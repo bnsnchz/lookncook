@@ -84,7 +84,7 @@ router.post("/search/:id", function(req, res) {
   });
 });
 
-router.get("/recipe/:id", function(req, res){
+router.get("/api/recipe/:id", function(req, res){
   Recipe.find({ _id: req.params.id })
   .then(response =>{
     res.send(response)
