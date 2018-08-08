@@ -12,6 +12,7 @@ class RecipePage extends Component {
         cooktime: "",
         ingredients: [],
         instructions: [], 
+        savedRecipes:[],
         createdBy: "",
         ID:'',
         stylesShow: {
@@ -24,7 +25,8 @@ class RecipePage extends Component {
     }
     
     componentDidMount() {
-        this.getRecipeById()
+        this.getRecipeById();
+        this.getSavedRecipes();
     }
 
     onClick = (event, i) => {
@@ -37,7 +39,6 @@ class RecipePage extends Component {
 
     getRecipeById = () => {
         var id = (window.location.href).match(/(recipe).+\w/g);
-        console.log(id);
         axios.get("/api/"+id).then(response => {
             var recipe = response.data[0]
             if (recipe) {
@@ -62,6 +63,19 @@ class RecipePage extends Component {
             }
         })
     }
+    getSavedRecipes = () => {
+        if (this.props.authenticated) {
+            axios.get("/userInfo").then(res =>{
+                if (res) {
+                    this.setState({
+                        savedRecipes:res.data[0].savedRecipes
+                    }, () => {
+                        console.log(this.state.savedRecipes)
+                    })
+                }
+            })
+        }
+    }
     saveRecipe = id => {
         var recipeID = {
             id:id
@@ -69,7 +83,19 @@ class RecipePage extends Component {
         axios.post('/api/saverecipe', recipeID).then(res => {
             if(res.data === "already saved"){
                 alert("Recipe Already Saved!");
+            } else {
+                this.getSavedRecipes();
             }
+        })
+    }
+    removeSaved = (id) => {
+        var recipeID = {
+            id:id
+        }
+        axios.post('/removesave', recipeID).then( res => {
+            this.setState({
+                savedRecipes:res.data[0].savedRecipes
+            })
         })
     }
 
@@ -81,6 +107,9 @@ class RecipePage extends Component {
         const NotStrikeStlye = {
             textDecoration: "none"
         }
+        let savedRecipe = this.state.savedRecipes.map(item => {
+            return item._id
+        })
     
         return(
             <div className="recipePage">
@@ -93,8 +122,12 @@ class RecipePage extends Component {
                 <img id="recipe-image" src={!this.state.image?"data:image/jpeg;base64,"+ Buffer.from(this.state.upload,'base64').toString('base64'):this.state.image} alt={this.state.dishname}/>
                 <button
                 style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
-                onClick={ () => {this.saveRecipe(this.state.ID)}}
-                id = 'saveBtn'><i className="fas fa-heart"></i></button>
+                onClick={() => {savedRecipe.indexOf(this.state.ID)!==-1?this.removeSaved(this.state.ID):this.saveRecipe(this.state.ID)}}
+                id = 'saveBtn'>
+                    <i
+                    className={savedRecipe.indexOf(this.state.ID)!==-1?"fas fa-heart":"far fa-heart"}>
+                    </i>
+                </button>
                 <h1><u>{this.state.dishname}</u></h1>
                 <h3 className="cookTime"><u>Cook time:</u></h3><p>{this.state.cooktime} minutes</p>
                 <h3><u>Ingredients:</u></h3>
@@ -113,7 +146,10 @@ class RecipePage extends Component {
                     {this.state.instructions.map((item, i)=>{
                         return (
                             <div key={i}>
-                                <li ><div style={item.flag ? strikeStlye : NotStrikeStlye} id="step-container"> {item.instructions}</div><button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>Done</button>
+                                <li >
+                                    <div style={item.flag ? strikeStlye : NotStrikeStlye} id="step-container"> {item.instructions}
+                                    </div>
+                                    <button id="instruction-btn" onClick={(event) => this.onClick( event, i)}>Done</button>
                                 {item.instructions.match(/\d+(?= minutes| minute)/) ?<Timer timeValue={item.instructions.match(/\d+(?= minutes| minute)/)} />:null}
                                 
                                 </li>
