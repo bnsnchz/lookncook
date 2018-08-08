@@ -81,10 +81,21 @@ class SearchRecipes extends Component {
         axios.post('/api/saverecipe', recipeID).then(res => {
             if(res.data === "already saved"){
                 alert("Recipe Already Saved!");
+            } else {
+                this.getSavedRecipes();
             }
         })
     }
-   
+    removeSaved = (id) => {
+        var recipeID = {
+            id:id
+        }
+        axios.post('/removesave', recipeID).then( res => {
+            this.setState({
+                savedRecipes:res.data[0].savedRecipes
+            })
+        })
+    }
 
     searchRecipes = () => {
         var search = {
@@ -132,11 +143,10 @@ class SearchRecipes extends Component {
                                 <div id = 'imgContainer'>
                                     <button
                                         style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
-                                        onClick={() => {this.saveRecipe(recipe._id)}}
+                                        onClick={() => {savedRecipe.indexOf(recipe._id)!==-1?this.removeSaved(recipe._id):this.saveRecipe(recipe._id)}}
                                         id = 'saveBtn'>
                                             <i
-                                                className={savedRecipe.indexOf(recipe._id)!==-1?"fas fa-heart":"far fa-heart"}
-                                                id = {this.state.savedRecipes.indexOf(recipe._id)}>
+                                                className={savedRecipe.indexOf(recipe._id)!==-1?"fas fa-heart":"far fa-heart"}>
                                             </i>
                                     </button>
                                     <img 

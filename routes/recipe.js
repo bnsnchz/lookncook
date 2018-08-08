@@ -38,12 +38,13 @@ router.post('/api/search', function(req,res) {
 
 router.post('/api/saverecipe', function(req,res) {
   User.findOne({
-    __id:req.session.user[0].__id,
+    _id:req.session.user[0]._id,
     savedRecipes:req.body.id})
   .then(response=>{
     if(response){
       res.send("already saved")
-    }else{  User.update(
+    }else{  
+      User.update(
         {_id:req.session.user[0]._id},
         {$push:{savedRecipes:req.body.id}}
       ).then(response => {
