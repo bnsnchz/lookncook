@@ -37,7 +37,9 @@ router.post('/api/search', function(req,res) {
 })
 
 router.post('/api/saverecipe', function(req,res) {
-  User.findOne({savedRecipes:req.body.id})
+  User.findOne({
+    __id:req.session.user[0].__id,
+    savedRecipes:req.body.id})
   .then(response=>{
     if(response){
       res.send("already saved")
