@@ -20,6 +20,7 @@ class SearchRecipes extends Component {
     componentDidMount() {
         this.getRecipes();
         this.getSavedRecipes();
+
     }
     
     handleInputChange = event => {
@@ -101,9 +102,11 @@ class SearchRecipes extends Component {
     
 
     render() {
-        let savedRecipeMap = this.state.savedRecipes.map(item => {
-            return item._id;
+        let savedRecipe = this.state.savedRecipes.map(item => {
+            return item._id
         })
+
+
         return (
             
             <div>
@@ -132,8 +135,8 @@ class SearchRecipes extends Component {
                                         onClick={() => {this.saveRecipe(recipe._id)}}
                                         id = 'saveBtn'>
                                             <i
-                                                className={(savedRecipeMap.match(/\/recipe_id.+\w\/g/))?"fas fa-heart":"far fa-heart"}
-                                                id = {savedRecipeMap}>
+                                                className={savedRecipe.indexOf(recipe._id)!==-1?"fas fa-heart":"far fa-heart"}
+                                                id = {this.state.savedRecipes.indexOf(recipe._id)}>
                                             </i>
                                     </button>
                                     <img 
