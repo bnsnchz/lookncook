@@ -5,6 +5,8 @@ import axios from 'axios';
 class SearchRecipes extends Component {
     state = {
         recipes: [],
+        recipesID:[],
+        savedRecipes:[],
         search:'',
         recipeObject: [],
         stylesShow: {
@@ -17,25 +19,24 @@ class SearchRecipes extends Component {
 
     componentDidMount() {
         this.getRecipes();
+        this.getSavedRecipes();
     }
     
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-        [name]: value
+            [name]: value
         });
     };
 
-  handleRedirect= id => {
+    handleRedirect= id => {
       axios.post(`/search/${id}`, id)
       .then(results => {
           this.setState({
               recipeObject: results.data[0]
           })
           this.props.history.push(`/recipe/${id}`)
-    
       })
-
   }
 
     handleSubmit = event => {
@@ -45,13 +46,31 @@ class SearchRecipes extends Component {
 
     getRecipes = () => {
         axios.get('/api/recipes').then(response => {
+            let ID = response.data.map(item => {
+                return item._id
+            })
             this.setState({
-                recipes: response.data
+                recipes: response.data,
+                recipesID:ID
             })
         })
         .catch(error => {
             console.log(error);
-        })
+        })  
+    }
+
+    getSavedRecipes = () => {
+        if (this.props.authenticated) {
+            axios.get("/userInfo").then(res =>{
+                if (res) {
+                    this.setState({
+                        savedRecipes:res.data[0].savedRecipes
+                    }, () => {
+                        console.log(this.state.savedRecipes)
+                    })
+                }
+            })
+        }
     }
 
     saveRecipe = id => {
@@ -79,12 +98,14 @@ class SearchRecipes extends Component {
             console.log(error);
         })
     }
-
-
     
 
     render() {
+        let savedRecipeMap = this.state.savedRecipes.map(item => {
+            return item._id;
+        })
         return (
+            
             <div>
                 <img id="searchRecipes" src="./assets/images/search.png" alt="search" />
                 <form id = 'searchForm'>
@@ -108,17 +129,25 @@ class SearchRecipes extends Component {
                                 <div id = 'imgContainer'>
                                     <button
                                         style = {this.props.authenticated===false?this.state.stylesNone:this.stylesShow}
-                                        onClick={ () => {this.saveRecipe(recipe._id)}}
-                                        id = 'saveBtn'><i className="fas fa-heart"></i></button>
-                                    <img className="dishPic" onClick={() =>
-                                    this.handleRedirect(recipe._id)} 
-                                    src={!recipe.image?"data:image/jpeg;base64,"+ Buffer.from(recipe.upload,'base64').toString('base64'):recipe.image} 
-                                    alt={recipe.dishname}/>
+                                        onClick={() => {this.saveRecipe(recipe._id)}}
+                                        id = 'saveBtn'>
+                                            <i
+                                                className={(savedRecipeMap.match(/\/recipe_id.+\w\/g/))?"fas fa-heart":"far fa-heart"}
+                                                id = {savedRecipeMap}>
+                                            </i>
+                                    </button>
+                                    <img 
+                                        className="dishPic" 
+                                        onClick={() => this.handleRedirect(recipe._id)} 
+                                        src={!recipe.image?"data:image/jpeg;base64,"+ Buffer.from(recipe.upload,'base64').toString('base64'):recipe.image} 
+                                        alt={recipe.dishname}
+                                    />
                                 </div>
                                 <div id = 'nameContainer'>
                                     <li className="dishName" 
-                                    onClick ={ () => this.handleRedirect(recipe._id)} id = {recipe._id}>
-                                    {recipe.dishname}
+                                        onClick ={ () => this.handleRedirect(recipe._id)} 
+                                        id = {recipe._id}>
+                                        {recipe.dishname}
                                     <br/>
                                     </li>
                                 </div>

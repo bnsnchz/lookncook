@@ -98,7 +98,7 @@ router.get("/api/recipe/:id", function(req, res){
 
 router.get('/auth', function(req,res) {
   if (req.session.user){
-    loggedIn=true
+      loggedIn=true
     res.json(loggedIn)
   } else {
     loggedIn = false;
