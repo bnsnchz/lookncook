@@ -29,7 +29,7 @@
 }
 
 .dishPic {
-    min-width: 22vw;
+    max-width: 22vw;
     float: left;
     max-height: 35vh;
     border-radius: 10px;
@@ -63,15 +63,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.fas{
+.fa-heart{
     font-size: 300%;
     color:red;
 }
-.far{
-    font-size: 300%;
-    color:red;
-}
-
 #recipeResults {
     text-align: center;
     padding: 0 15%;
@@ -79,11 +74,11 @@
 
 #recipeUL {
     list-style-type: none;
-    max-width: 960px;
+    max-width: 960;
     text-align: center;
     /* margin: 10px; */
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
     overflow: auto;
     padding: 0;
     margin: auto;
@@ -97,10 +92,13 @@
 }
 
 #searchRecipes {
-    margin-left: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     margin-bottom: 2%;
     width: 75vw;
-    max-width: 960px;
+    max-width: 960vw;
 }
 
 #imgContainer {
@@ -137,6 +135,27 @@
 }
 
 @media (max-width: 1920px) {
+    #recipeResults {
+    padding: 0; 
+}
+    .dishPic {
+        max-width: 28vw;
+        float: left;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #recipeResults {
+    padding: 0; 
+    padding-left: 1%;
+}
+    #recipeUL{
+        margin: 0 0;
+    }
     .dishPic {
         max-width: 28vw;
         float: left;
@@ -148,6 +167,11 @@
 }
 
 @media (max-width: 950px) {
+    #recipeResults {
+    padding-left: 20%;
+    padding-right: 20%; 
+     
+}
     #recipeUL {
         grid-template-columns: 100%;
     }
